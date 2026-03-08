@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import FileUploader from '@/components/tools/FileUploader';
-import { Download, Stamp, Image as ImageIcon, Trash2, RefreshCcw, Save } from 'lucide-react';
+import { Download, Stamp, Image as ImageIcon, RefreshCcw, Save } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';

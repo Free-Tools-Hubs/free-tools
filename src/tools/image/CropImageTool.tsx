@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import FileUploader from '@/components/tools/FileUploader';
 import { Download, Crop as CropIcon, Image as ImageIcon, Unlink, Link as LinkIcon, RefreshCcw } from 'lucide-react';
 import ReactCrop, { Crop, PixelCrop, centerCrop, makeAspectCrop } from 'react-image-crop';

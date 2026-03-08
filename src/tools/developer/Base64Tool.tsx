@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Copy, Trash2, ArrowLeftRight, Check, AlertCircle } from 'lucide-react';
 
 export default function Base64Tool() {

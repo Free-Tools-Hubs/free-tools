@@ -1,9 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Search as SearchIcon, X, ArrowRight, Zap } from 'lucide-react';
 import { tools } from '@/data/tools';
-import { categories } from '@/data/categories';
 import Link from 'next/link';
 
 export function SearchModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {

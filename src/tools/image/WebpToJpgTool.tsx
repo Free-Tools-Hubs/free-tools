@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import FileUploader from '@/components/tools/FileUploader';
 import { Download, Image as ImageIcon, Trash2 } from 'lucide-react';
 

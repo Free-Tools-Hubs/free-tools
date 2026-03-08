@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import FileUploader from '@/components/tools/FileUploader';
 import { Download, Eraser, Image as ImageIcon, Loader2 } from 'lucide-react';
 import { removeBackground } from '@imgly/background-removal';
