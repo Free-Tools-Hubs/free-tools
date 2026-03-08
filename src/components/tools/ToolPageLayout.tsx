@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import Link from 'next/link';
 import { ToolDefinition } from '@/types/tool';
 import { Header } from '@/components/layout/Header';
@@ -7,7 +7,6 @@ import { AdPlaceholder } from '@/components/layout/AdPlaceholder';
 import { tools } from '@/data/tools';
 import * as LucideIcons from 'lucide-react';
 import { ChevronRight, Share2, Info, HelpCircle, Star, Sparkles } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import { generateToolSchema, generateFAQSchema } from '@/lib/seo';
 
 interface ToolPageLayoutProps {

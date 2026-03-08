@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Copy, Trash2, FileText, Hash, AlignLeft, Type } from 'lucide-react';
 
 export default function WordCounter() {
