@@ -2,20 +2,22 @@ import { tools } from '@/data/tools';
 import { ToolPageLayout } from '@/components/tools/ToolPageLayout';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
-import WordCounter from '@/tools/text/WordCounter';
-import Base64Tool from '@/tools/developer/Base64Tool';
-import PngToJpgTool from '@/tools/image/PngToJpgTool';
-import JpgToPngTool from '@/tools/image/JpgToPngTool';
-import ImageToPdfTool from '@/tools/image/ImageToPdfTool';
-import CompressImageTool from '@/tools/image/CompressImageTool';
-import ResizeImageTool from '@/tools/image/ResizeImageTool';
-import WebpToJpgTool from '@/tools/image/WebpToJpgTool';
-import HeicToJpgTool from '@/tools/image/HeicToJpgTool';
-import CropImageTool from '@/tools/image/CropImageTool';
-import ImageWatermarkTool from '@/tools/image/ImageWatermarkTool';
-import ScreenshotToPdfTool from '@/tools/image/ScreenshotToPdfTool';
-import PdfToJpgTool from '@/tools/image/PdfToJpgTool';
-import BackgroundRemoverTool from '@/tools/image/BackgroundRemoverTool';
+import dynamic from 'next/dynamic';
+
+const WordCounter = dynamic(() => import('@/tools/text/WordCounter'), { ssr: false });
+const Base64Tool = dynamic(() => import('@/tools/developer/Base64Tool'), { ssr: false });
+const PngToJpgTool = dynamic(() => import('@/tools/image/PngToJpgTool'), { ssr: false });
+const JpgToPngTool = dynamic(() => import('@/tools/image/JpgToPngTool'), { ssr: false });
+const ImageToPdfTool = dynamic(() => import('@/tools/image/ImageToPdfTool'), { ssr: false });
+const CompressImageTool = dynamic(() => import('@/tools/image/CompressImageTool'), { ssr: false });
+const ResizeImageTool = dynamic(() => import('@/tools/image/ResizeImageTool'), { ssr: false });
+const WebpToJpgTool = dynamic(() => import('@/tools/image/WebpToJpgTool'), { ssr: false });
+const HeicToJpgTool = dynamic(() => import('@/tools/image/HeicToJpgTool'), { ssr: false });
+const CropImageTool = dynamic(() => import('@/tools/image/CropImageTool'), { ssr: false });
+const ImageWatermarkTool = dynamic(() => import('@/tools/image/ImageWatermarkTool'), { ssr: false });
+const ScreenshotToPdfTool = dynamic(() => import('@/tools/image/ScreenshotToPdfTool'), { ssr: false });
+const PdfToJpgTool = dynamic(() => import('@/tools/image/PdfToJpgTool'), { ssr: false });
+const BackgroundRemoverTool = dynamic(() => import('@/tools/image/BackgroundRemoverTool'), { ssr: false });
 
 interface PageProps {
     params: Promise<{
