@@ -28,7 +28,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your PNG file, select quality, and click Convert.',
         relatedToolIds: ['jpg-to-png', 'webp-to-jpg', 'compress-image'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'jpg-to-png',
@@ -51,7 +51,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select your JPG files and click the convert button to get your PNGs.',
         relatedToolIds: ['png-to-jpg', 'webp-to-jpg'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'image-to-pdf',
@@ -74,7 +74,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your images, arrange them, and click "Generate PDF".',
         relatedToolIds: ['pdf-to-jpg', 'screenshot-to-pdf'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'pdf-to-jpg',
@@ -97,7 +97,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select your PDF file and download the extracted images as a ZIP archive.',
         relatedToolIds: ['image-to-pdf', 'compress-image'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'compress-image',
@@ -120,7 +120,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your images, choose the compression level, and download the results.',
         relatedToolIds: ['resize-image', 'png-to-jpg'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'resize-image',
@@ -139,7 +139,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter the new width or height and click Resize.',
         relatedToolIds: ['crop-image', 'compress-image'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'crop-image',
@@ -158,7 +158,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select the area you want to keep and download the cropped image.',
         relatedToolIds: ['resize-image', 'image-watermark'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'webp-to-jpg',
@@ -177,7 +177,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Drag your WebP file into the box and get a JPG instantly.',
         relatedToolIds: ['heic-to-jpg', 'png-to-jpg'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'heic-to-jpg',
@@ -196,7 +196,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your .HEIC files and download them as .JPG files.',
         relatedToolIds: ['webp-to-jpg', 'png-to-jpg'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'background-remover',
@@ -215,7 +215,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload a product photo or portrait and watch the background disappear.',
         relatedToolIds: ['crop-image', 'image-watermark'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'image-watermark',
@@ -234,7 +234,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Add your logo, place it in the corner, and download your watermarked image.',
         relatedToolIds: ['resize-image', 'background-remover'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'screenshot-to-pdf',
@@ -253,7 +253,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your screenshots and get a PDF document ready for sharing.',
         relatedToolIds: ['image-to-pdf', 'pdf-to-jpg'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     // PDF Tools
     {
@@ -277,7 +277,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your PDF files, arrange them, and click "Merge PDF".',
         relatedToolIds: ['split-pdf', 'compress-pdf'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'split-pdf',
@@ -296,7 +296,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select your PDF, choose the pages to extract, and download the results.',
         relatedToolIds: ['merge-pdf', 'pdf-to-jpg'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'compress-pdf',
@@ -315,7 +315,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your PDF and choose your preferred compression level.',
         relatedToolIds: ['merge-pdf', 'unlock-pdf'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'rotate-pdf',
@@ -334,7 +334,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select the pages you want to rotate and use the rotation buttons.',
         relatedToolIds: ['merge-pdf', 'split-pdf'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'pdf-to-word',
@@ -353,7 +353,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your PDF and wait for the conversion to finish.',
         relatedToolIds: ['word-to-pdf', 'pdf-to-jpg'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'word-to-pdf',
@@ -372,7 +372,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select your Word file and download your new PDF.',
         relatedToolIds: ['pdf-to-word', 'excel-to-pdf'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'excel-to-pdf',
@@ -391,7 +391,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your Excel file and download the PDF version.',
         relatedToolIds: ['word-to-pdf', 'powerpoint-to-pdf'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'powerpoint-to-pdf',
@@ -410,7 +410,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your presentation slides and get a PDF in seconds.',
         relatedToolIds: ['word-to-pdf', 'excel-to-pdf'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'add-watermark-to-pdf',
@@ -429,7 +429,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your PDF, design your watermark, and download the protected file.',
         relatedToolIds: ['protect-pdf', 'unlock-pdf'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'unlock-pdf',
@@ -448,7 +448,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your protected PDF, enter the password, and download the unlocked version.',
         relatedToolIds: ['protect-pdf', 'compress-pdf'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'protect-pdf',
@@ -467,7 +467,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your PDF, set a password, and download the encrypted file.',
         relatedToolIds: ['unlock-pdf', 'add-watermark-to-pdf'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     // Text Tools
     {
@@ -487,7 +487,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your content into the editor and view the statistics update instantly.',
         relatedToolIds: ['case-converter', 'remove-duplicate-lines'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'character-counter',
@@ -506,7 +506,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Type or paste your text and select a target platform to see if you are within the limit.',
         relatedToolIds: ['word-counter', 'case-converter'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'case-converter',
@@ -525,7 +525,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your text, choose the desired case format, and copy the result.',
         relatedToolIds: ['word-counter', 'sort-text-lines'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'remove-duplicate-lines',
@@ -544,7 +544,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your list and click "Remove Duplicates" to get a unique set of lines.',
         relatedToolIds: ['sort-text-lines', 'word-counter'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'sort-text-lines',
@@ -563,7 +563,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Input your list, choose your sorting method, and instantly see the ordered result.',
         relatedToolIds: ['remove-duplicate-lines', 'case-converter'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'text-diff-checker',
@@ -582,7 +582,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste the original text in the left box and the modified text in the right box.',
         relatedToolIds: ['word-counter', 'remove-duplicate-lines'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
 
     // Developer Tools
@@ -607,7 +607,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your raw JSON text and click "Format" to get a clean, indented version.',
         relatedToolIds: ['json-validator', 'base64-encode-decode'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'json-validator',
@@ -626,7 +626,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your JSON and click "Validate". If there are errors, they will be highlighted immediately.',
         relatedToolIds: ['json-formatter', 'jwt-decoder'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'base64-encode-decode',
@@ -645,7 +645,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select "Encode" or "Decode", enter your content, and get the result instantly.',
         relatedToolIds: ['url-encoder-decoder', 'json-formatter'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'url-encoder-decoder',
@@ -664,7 +664,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your URL or text string and click Encode or Decode to transform it.',
         relatedToolIds: ['base64-encode-decode', 'regex-tester'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'regex-tester',
@@ -683,7 +683,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter your pattern and the test string to see matches highlighted in real-time.',
         relatedToolIds: ['js-minifier', 'url-encoder-decoder'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'timestamp-converter',
@@ -702,7 +702,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter a timestamp or a date string to see the conversion in various formats.',
         relatedToolIds: ['json-formatter', 'url-encoder-decoder'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'html-minifier',
@@ -721,7 +721,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your HTML and click Minify to get the compressed version.',
         relatedToolIds: ['css-minifier', 'js-minifier'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'css-minifier',
@@ -740,7 +740,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Input your CSS code and copy the minified output to your production project.',
         relatedToolIds: ['html-minifier', 'js-minifier'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'js-minifier',
@@ -759,7 +759,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your script and get a production-ready minified JS file.',
         relatedToolIds: ['html-minifier', 'css-minifier'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'jwt-decoder',
@@ -782,7 +782,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your JWT string to see the header and payload data formatted clearly.',
         relatedToolIds: ['json-formatter', 'json-validator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     // Calculators
     {
@@ -806,7 +806,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter your date of birth and click "Calculate Age" to see the result.',
         relatedToolIds: ['date-difference-calculator', 'time-duration-calculator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'percentage-calculator',
@@ -825,7 +825,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select the type of calculation, enter your numbers, and get the percentage result.',
         relatedToolIds: ['discount-calculator', 'loan-emi-calculator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'loan-emi-calculator',
@@ -844,7 +844,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter the principal amount, interest rate, and months/years to see your monthly payment.',
         relatedToolIds: ['percentage-calculator', 'discount-calculator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'gpa-calculator',
@@ -863,7 +863,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Add your courses, select the grade, enter credits, and view your GPA instantly.',
         relatedToolIds: ['age-calculator', 'percentage-calculator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'bmi-calculator',
@@ -882,7 +882,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter your weight and height in metric or imperial units to get your BMI score.',
         relatedToolIds: ['age-calculator', 'percentage-calculator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'date-difference-calculator',
@@ -901,7 +901,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select the start and end dates to see the duration in multiple units.',
         relatedToolIds: ['age-calculator', 'time-duration-calculator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'discount-calculator',
@@ -920,7 +920,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter the original price and the discount percentage to see your savings.',
         relatedToolIds: ['percentage-calculator', 'loan-emi-calculator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'time-duration-calculator',
@@ -939,7 +939,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter the start time and end time to get the total duration.',
         relatedToolIds: ['date-difference-calculator', 'age-calculator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     // Generators
     {
@@ -963,7 +963,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter your URL or text, customize the appearance, and download your QR code.',
         relatedToolIds: ['barcode-generator', 'slug-generator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'barcode-generator',
@@ -982,7 +982,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter the value, select the barcode type, and generate your barcode image.',
         relatedToolIds: ['qr-code-generator', 'uuid-generator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'uuid-generator',
@@ -1001,7 +1001,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Click "Generate" to get a new batch of unique UUIDs.',
         relatedToolIds: ['password-generator', 'slug-generator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'slug-generator',
@@ -1020,7 +1020,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Type your title and copy the generated slug for your article or page.',
         relatedToolIds: ['qr-code-generator', 'uuid-generator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'fake-data-generator',
@@ -1039,7 +1039,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select the fields you need and generate a list of mock data in various formats like JSON or CSV.',
         relatedToolIds: ['username-generator', 'random-text-generator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'password-generator',
@@ -1058,7 +1058,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select your preferred length and security options, then copy your new password.',
         relatedToolIds: ['uuid-generator', 'username-generator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'username-generator',
@@ -1077,7 +1077,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter a keyword or click "Random" to get a list of creative username ideas.',
         relatedToolIds: ['fake-data-generator', 'password-generator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'random-text-generator',
@@ -1096,7 +1096,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Choose the type of text you need, set the parameters, and click Generate.',
         relatedToolIds: ['lorem-ipsum-generator', 'password-generator'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
     {
         id: 'lorem-ipsum-generator',
@@ -1115,6 +1115,6 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select the number of paragraphs you need and click Generate.',
         relatedToolIds: ['random-text-generator', 'word-counter'],
-        lastUpdated: '2024-03-08'
+        lastUpdated: '2026-03-08'
     },
 ];

@@ -4,6 +4,18 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import WordCounter from '@/tools/text/WordCounter';
 import Base64Tool from '@/tools/developer/Base64Tool';
+import PngToJpgTool from '@/tools/image/PngToJpgTool';
+import JpgToPngTool from '@/tools/image/JpgToPngTool';
+import ImageToPdfTool from '@/tools/image/ImageToPdfTool';
+import CompressImageTool from '@/tools/image/CompressImageTool';
+import ResizeImageTool from '@/tools/image/ResizeImageTool';
+import WebpToJpgTool from '@/tools/image/WebpToJpgTool';
+import HeicToJpgTool from '@/tools/image/HeicToJpgTool';
+import CropImageTool from '@/tools/image/CropImageTool';
+import ImageWatermarkTool from '@/tools/image/ImageWatermarkTool';
+import ScreenshotToPdfTool from '@/tools/image/ScreenshotToPdfTool';
+import PdfToJpgTool from '@/tools/image/PdfToJpgTool';
+import BackgroundRemoverTool from '@/tools/image/BackgroundRemoverTool';
 
 interface PageProps {
     params: Promise<{
@@ -49,6 +61,30 @@ export default async function ToolPage({ params }: PageProps) {
                 return <WordCounter />;
             case 'base64-encode-decode':
                 return <Base64Tool />;
+            case 'png-to-jpg':
+                return <PngToJpgTool />;
+            case 'jpg-to-png':
+                return <JpgToPngTool />;
+            case 'image-to-pdf':
+                return <ImageToPdfTool />;
+            case 'compress-image':
+                return <CompressImageTool />;
+            case 'resize-image':
+                return <ResizeImageTool />;
+            case 'webp-to-jpg':
+                return <WebpToJpgTool />;
+            case 'heic-to-jpg':
+                return <HeicToJpgTool />;
+            case 'crop-image':
+                return <CropImageTool />;
+            case 'image-watermark':
+                return <ImageWatermarkTool />;
+            case 'screenshot-to-pdf':
+                return <ScreenshotToPdfTool />;
+            case 'pdf-to-jpg':
+                return <PdfToJpgTool />;
+            case 'background-remover':
+                return <BackgroundRemoverTool />;
             default:
                 return (
                     <div className="p-8 flex flex-col items-center justify-center text-center gap-6 min-h-[400px]">

@@ -25,7 +25,7 @@ export default function Home() {
               <span className="premium-gradient bg-clip-text text-transparent italic">Smart Micro Tools</span>
             </h1>
             <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
-              A high-performance hub of free online tools for image processing, development, PDF management, and more. No registration, just speed.
+              A high-performance hub of free online tools for image processing, development, PDF management, and more. No registration, No watermarks, just speed.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
