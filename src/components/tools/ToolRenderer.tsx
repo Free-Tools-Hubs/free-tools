@@ -5,13 +5,33 @@ import { Sparkles } from 'lucide-react';
 
 // Dynamically import all tools with SSR disabled
 const WordCounter = dynamic(() => import('@/tools/text/WordCounter'), { ssr: false });
+// Developer Tools
 const Base64Tool = dynamic(() => import('@/tools/developer/Base64Tool'), { ssr: false });
+const JsonFormatterTool = dynamic(() => import('@/tools/developer/JsonFormatterTool'), { ssr: false });
+const JsonValidatorTool = dynamic(() => import('@/tools/developer/JsonValidatorTool'), { ssr: false });
+const UrlEncoderDecoderTool = dynamic(() => import('@/tools/developer/UrlEncoderDecoderTool'), { ssr: false });
+const RegexTesterTool = dynamic(() => import('@/tools/developer/RegexTesterTool'), { ssr: false });
+const TimestampConverterTool = dynamic(() => import('@/tools/developer/TimestampConverterTool'), { ssr: false });
+const HtmlMinifierTool = dynamic(() => import('@/tools/developer/HtmlMinifierTool'), { ssr: false });
+const CssMinifierTool = dynamic(() => import('@/tools/developer/CssMinifierTool'), { ssr: false });
+const JsMinifierTool = dynamic(() => import('@/tools/developer/JsMinifierTool'), { ssr: false });
+const JwtDecoderTool = dynamic(() => import('@/tools/developer/JwtDecoderTool'), { ssr: false });
+
+// Text Tools
 const CharacterCounterTool = dynamic(() => import('@/tools/text/CharacterCounterTool'), { ssr: false });
 const CaseConverterTool = dynamic(() => import('@/tools/text/CaseConverterTool'), { ssr: false });
 const RemoveDuplicateLinesTool = dynamic(() => import('@/tools/text/RemoveDuplicateLinesTool'), { ssr: false });
 const SortTextLinesTool = dynamic(() => import('@/tools/text/SortTextLinesTool'), { ssr: false });
 const TextDiffCheckerTool = dynamic(() => import('@/tools/text/TextDiffCheckerTool'), { ssr: false });
 const PngToJpgTool = dynamic(() => import('@/tools/image/PngToJpgTool'), { ssr: false });
+const AgeCalculatorTool = dynamic(() => import('@/tools/calculators/AgeCalculatorTool'), { ssr: false });
+const PercentageCalculatorTool = dynamic(() => import('@/tools/calculators/PercentageCalculatorTool'), { ssr: false });
+const LoanEmiCalculatorTool = dynamic(() => import('@/tools/calculators/LoanEmiCalculatorTool'), { ssr: false });
+const BmiCalculatorTool = dynamic(() => import('@/tools/calculators/BmiCalculatorTool'), { ssr: false });
+const GpaCalculatorTool = dynamic(() => import('@/tools/calculators/GpaCalculatorTool'), { ssr: false });
+const DateDifferenceCalculatorTool = dynamic(() => import('@/tools/calculators/DateDifferenceCalculatorTool'), { ssr: false });
+const TimeDurationCalculatorTool = dynamic(() => import('@/tools/calculators/TimeDurationCalculatorTool'), { ssr: false });
+const DiscountCalculatorTool = dynamic(() => import('@/tools/calculators/DiscountCalculatorTool'), { ssr: false });
 const JpgToPngTool = dynamic(() => import('@/tools/image/JpgToPngTool'), { ssr: false });
 const ImageToPdfTool = dynamic(() => import('@/tools/image/ImageToPdfTool'), { ssr: false });
 const CompressImageTool = dynamic(() => import('@/tools/image/CompressImageTool'), { ssr: false });
@@ -35,6 +55,17 @@ const WordToPdfTool = dynamic(() => import('@/tools/pdf/WordToPdfTool'), { ssr: 
 const ExcelToPdfTool = dynamic(() => import('@/tools/pdf/ExcelToPdfTool'), { ssr: false });
 const PowerpointToPdfTool = dynamic(() => import('@/tools/pdf/PowerpointToPdfTool'), { ssr: false });
 
+// Generators
+const QrCodeGeneratorTool = dynamic(() => import('@/tools/generators/QrCodeGeneratorTool'), { ssr: false });
+const BarcodeGeneratorTool = dynamic(() => import('@/tools/generators/BarcodeGeneratorTool'), { ssr: false });
+const UuidGeneratorTool = dynamic(() => import('@/tools/generators/UuidGeneratorTool'), { ssr: false });
+const SlugGeneratorTool = dynamic(() => import('@/tools/generators/SlugGeneratorTool'), { ssr: false });
+const FakeDataGeneratorTool = dynamic(() => import('@/tools/generators/FakeDataGeneratorTool'), { ssr: false });
+const PasswordGeneratorTool = dynamic(() => import('@/tools/generators/PasswordGeneratorTool'), { ssr: false });
+const UsernameGeneratorTool = dynamic(() => import('@/tools/generators/UsernameGeneratorTool'), { ssr: false });
+const RandomTextGeneratorTool = dynamic(() => import('@/tools/generators/RandomTextGeneratorTool'), { ssr: false });
+const LoremIpsumGeneratorTool = dynamic(() => import('@/tools/generators/LoremIpsumGeneratorTool'), { ssr: false });
+
 interface ToolRendererProps {
     slug: string;
     toolTitle: string;
@@ -54,8 +85,48 @@ export function ToolRenderer({ slug, toolTitle }: ToolRendererProps) {
             return <SortTextLinesTool />;
         case 'text-diff-checker':
             return <TextDiffCheckerTool />;
+
+        // Developer Tools
         case 'base64-encode-decode':
             return <Base64Tool />;
+        case 'json-formatter':
+            return <JsonFormatterTool />;
+        case 'json-validator':
+            return <JsonValidatorTool />;
+        case 'url-encoder-decoder':
+            return <UrlEncoderDecoderTool />;
+        case 'regex-tester':
+            return <RegexTesterTool />;
+        case 'timestamp-converter':
+            return <TimestampConverterTool />;
+        case 'html-minifier':
+            return <HtmlMinifierTool />;
+        case 'css-minifier':
+            return <CssMinifierTool />;
+        case 'js-minifier':
+            return <JsMinifierTool />;
+        case 'jwt-decoder':
+            return <JwtDecoderTool />;
+
+        // Calculators
+        case 'age-calculator':
+            return <AgeCalculatorTool />;
+        case 'percentage-calculator':
+            return <PercentageCalculatorTool />;
+        case 'loan-emi-calculator':
+            return <LoanEmiCalculatorTool />;
+        case 'bmi-calculator':
+            return <BmiCalculatorTool />;
+        case 'gpa-calculator':
+            return <GpaCalculatorTool />;
+        case 'date-difference-calculator':
+            return <DateDifferenceCalculatorTool />;
+        case 'time-duration-calculator':
+            return <TimeDurationCalculatorTool />;
+        case 'discount-calculator':
+            return <DiscountCalculatorTool />;
+
+        // Image Tools
         case 'png-to-jpg':
             return <PngToJpgTool />;
         case 'jpg-to-png':
@@ -102,6 +173,27 @@ export function ToolRenderer({ slug, toolTitle }: ToolRendererProps) {
             return <ExcelToPdfTool />;
         case 'powerpoint-to-pdf':
             return <PowerpointToPdfTool />;
+
+        // Generators
+        case 'qr-code-generator':
+            return <QrCodeGeneratorTool />;
+        case 'barcode-generator':
+            return <BarcodeGeneratorTool />;
+        case 'uuid-generator':
+            return <UuidGeneratorTool />;
+        case 'slug-generator':
+            return <SlugGeneratorTool />;
+        case 'fake-data-generator':
+            return <FakeDataGeneratorTool />;
+        case 'password-generator':
+            return <PasswordGeneratorTool />;
+        case 'username-generator':
+            return <UsernameGeneratorTool />;
+        case 'random-text-generator':
+            return <RandomTextGeneratorTool />;
+        case 'lorem-ipsum-generator':
+            return <LoremIpsumGeneratorTool />;
+
         default:
             return (
                 <div className="p-8 flex flex-col items-center justify-center text-center gap-6 min-h-[400px]">
