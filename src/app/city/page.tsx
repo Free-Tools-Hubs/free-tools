@@ -1,78 +1,114 @@
 import { topCities } from '@/lib/data-dictionaries';
-import { MapPin } from 'lucide-react';
-import Link from 'next/link';
+import { MapPin, Info, CloudSun, Wind, Thermometer } from 'lucide-react';
 import { ClientSearch } from '@/components/tools/ClientSearch';
+import { ExplorerGrid } from '@/components/tools/ExplorerGrid';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { generateCityHubArticle } from '@/lib/seo-generator';
 
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata = {
-    title: 'City Weather Hub - Real-Time Forecasts for 1000+ Cities',
+    title: 'City Weather Hub - Real-Time Forecasts for 2000+ Cities',
     description: 'Get accurate, real-time weather forecasts, humidity, wind speed, and daylight information for cities worldwide. Search any city for instant weather data.',
-    keywords: ['city weather', 'weather forecast', 'real-time weather', 'global weather hub', 'weather tracker'],
+    keywords: ['city weather', 'weather forecast', 'real-time weather', 'global weather hub', 'weather tracker', 'world cities weather'],
     openGraph: {
-        title: 'City Weather Hub - Real-Time Forecasts for 1000+ Cities',
+        title: 'City Weather Hub - Real-Time Forecasts for 2000+ Cities',
         description: 'Get accurate, real-time weather forecasts, humidity, wind speed, and daylight information for cities worldwide. Search any city for instant weather data.',
         type: 'website',
         url: 'https://free-tools-steel.vercel.app/city',
-        siteName: 'Free Tools',
-        images: [
-            {
-                url: 'https://free-tools-steel.vercel.app/city.png',
-                width: 1200,
-                height: 630,
-                alt: 'City Weather Hub - Real-Time Forecasts for 1000+ Cities',
-            },
-        ],
+        siteName: 'Free Tools Hub',
     },
     twitter: {
-        title: 'City Weather Hub - Real-Time Forecasts for 1000+ Cities',
+        title: 'City Weather Hub - Real-Time Forecasts for 2000+ Cities',
         description: 'Get accurate, real-time weather forecasts, humidity, wind speed, and daylight information for cities worldwide. Search any city for instant weather data.',
-        card: 'summary_large_image',
-        images: [
-            {
-                url: 'https://free-tools-steel.vercel.app/city.png',
-                width: 1200,
-                height: 630,
-                alt: 'City Weather Hub - Real-Time Forecasts for 1000+ Cities',
-            },
-        ],
-    },
+    }
 };
 
 export default function CityHubPage() {
+    const article = generateCityHubArticle();
+
     return (
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col bg-surface-50 dark:bg-surface-950">
             <JsonLd data={{
                 "@context": "https://schema.org",
-                "@type": "WebPage",
-                "name": "City Weather Hub",
+                "@type": "WebSite",
+                "name": "City Weather Hub | FreeToolsHub",
                 "description": "Find real-time weather information for any city in the world.",
                 "url": "https://free-tools-steel.vercel.app/city"
             }} />
             <Header />
-            <main className="flex-grow pt-32 pb-20 container mx-auto px-4 max-w-5xl">
-                <div className="text-center mb-12">
-                    <h1 className="text-4xl md:text-5xl font-black mb-4 font-outfit">City Weather Hub</h1>
-                    <p className="text-muted-foreground text-lg">Search for a city or browse popular destinations below.</p>
+
+            <main className="flex-grow pt-32 pb-20 container mx-auto px-4 max-w-6xl">
+                {/* Hero Section */}
+                <div className="text-center mb-16 max-w-3xl mx-auto">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary font-bold text-sm mb-6 border border-brand-primary/20 animate-fade-in">
+                        <CloudSun size={16} />
+                        <span>Live Global Meteorological Database</span>
+                    </div>
+                    <h1 className="text-5xl md:text-7xl font-black mb-6 font-outfit tracking-tight leading-tight">
+                        City Weather <span className="text-brand-primary">Hub</span>
+                    </h1>
+                    <p className="text-muted-foreground text-xl leading-relaxed">
+                        Access real-time atmospheric data, temperature trends, and local forecasts for thousands of cities globally.
+                    </p>
                 </div>
 
-                <ClientSearch basePath="/city" placeholder="E.g. Tokyo, Paris, New York..." />
+                {/* Search Interaction */}
+                <div className="mb-20">
+                    <ClientSearch basePath="/city" placeholder="Search any city (e.g. Tokyo, London, Dubai...)" />
+                </div>
 
-                <div className="mb-8 p-8 glass-card">
-                    <h2 className="text-2xl font-bold mb-6 font-outfit text-center">Popular Cities</h2>
-                    <div className="flex flex-wrap gap-4 justify-center">
-                        {topCities.map(city => (
-                            <Link
-                                key={city}
-                                href={`/city/${city.toLowerCase().replace(/ /g, '-')}`}
-                                className="flex items-center gap-2 px-4 py-2 rounded-xl border bg-background hover:bg-surface-50 dark:hover:bg-surface-900 !border-border hover:!border-brand-primary transition-all shadow-sm"
-                            >
-                                <MapPin size={16} className="text-brand-primary" />
-                                <span className="font-medium">{city.replace(/-/g, ' ')}</span>
-                            </Link>
-                        ))}
+                {/* Feature Cards for SEO content */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+                    <div className="glass-card p-8 group hover:!border-brand-primary/50 transition-all">
+                        <div className="w-12 h-12 rounded-2xl bg-orange-500/10 text-orange-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <Thermometer size={24} />
+                        </div>
+                        <h3 className="text-xl font-bold font-outfit mb-3">Live Temperature</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">Get accurate Celsius and Fahrenheit readings with real-time solar positioning data for every coordinate.</p>
+                    </div>
+                    <div className="glass-card p-8 group hover:!border-brand-primary/50 transition-all">
+                        <div className="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <Wind size={24} />
+                        </div>
+                        <h3 className="text-xl font-bold font-outfit mb-3">Wind Dynamics</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">Monitor wind speed and atmospheric pressure variables to plan your travel and outdoor activities with precision.</p>
+                    </div>
+                    <div className="glass-card p-8 group hover:!border-brand-primary/50 transition-all">
+                        <div className="w-12 h-12 rounded-2xl bg-brand-primary/10 text-brand-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                            <MapPin size={24} />
+                        </div>
+                        <h3 className="text-xl font-bold font-outfit mb-3">Global Tracking</h3>
+                        <p className="text-muted-foreground text-sm leading-relaxed">Our programmatic database covers thousands of urban centers, from major world capitals to smaller regional districts.</p>
+                    </div>
+                </div>
+
+                {/* The Alphabetical Explorer - Prevents Link Bloat */}
+                <ExplorerGrid
+                    items={topCities.map(city => ({
+                        label: city,
+                        slug: city.toLowerCase().trim().replace(/\s+/g, '-')
+                    }))}
+                    basePath="/city"
+                    title="City"
+                    itemIcon={<MapPin size={14} />}
+                />
+
+                {/* Rich SEO Content Section */}
+                <div className="mt-20 border-t pt-20">
+                    <div className="max-w-4xl mx-auto space-y-12">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl font-black font-outfit flex items-center gap-3">
+                                <Info className="text-brand-primary" />
+                                Comprehensive City Weather Guide
+                            </h2>
+                            {article.map((para, i) => (
+                                <p key={i} className="text-lg text-muted-foreground leading-relaxed text-justify">
+                                    {para}
+                                </p>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </main>
@@ -80,3 +116,4 @@ export default function CityHubPage() {
         </div>
     );
 }
+

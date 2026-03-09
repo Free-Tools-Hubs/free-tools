@@ -59,8 +59,10 @@ export function Footer() {
                     <h3 className="font-outfit font-bold mb-6 text-lg">Platform</h3>
                     <ul className="grid grid-cols-1 gap-3">
                         <li><Link href="/about" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">About Us</Link></li>
+                        <li><Link href="/contact" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">Contact Us</Link></li>
                         <li><Link href="/privacy" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">Privacy Policy</Link></li>
                         <li><Link href="/terms" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">Terms of Service</Link></li>
+                        <li><Link href="/disclaimer" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">Disclaimer</Link></li>
                         <li><Link href="/sitemap.xml" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">Sitemap</Link></li>
                     </ul>
                 </div>
