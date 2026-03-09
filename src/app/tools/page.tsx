@@ -9,6 +9,35 @@ import { ChevronRight, LayoutGrid, List } from 'lucide-react';
 export const metadata = {
     title: 'All Free Online Tools | FreeToolsHub',
     description: 'Browse our complete directory of 100+ free online tools for images, PDF, text, development, and more.',
+    keywords: 'free tools, online tools, image tools, pdf tools, text tools, development tools',
+    openGraph: {
+        title: 'All Free Online Tools | FreeToolsHub',
+        description: 'Browse our complete directory of 100+ free online tools for images, PDF, text, development, and more.',
+        type: 'website',
+        url: 'https://free-tools-steel.vercel.app/tools',
+        siteName: 'Free Tools',
+        images: [
+            {
+                url: 'https://free-tools-steel.vercel.app/tools.png',
+                width: 1200,
+                height: 630,
+                alt: 'All Free Online Tools | FreeToolsHub',
+            },
+        ],
+    },
+    twitter: {
+        title: 'All Free Online Tools | FreeToolsHub',
+        description: 'Browse our complete directory of 100+ free online tools for images, PDF, text, development, and more.',
+        card: 'summary_large_image',
+        images: [
+            {
+                url: 'https://free-tools-steel.vercel.app/tools.png',
+                width: 1200,
+                height: 630,
+                alt: 'All Free Online Tools | FreeToolsHub',
+            },
+        ],
+    },
 };
 
 export default function AllToolsPage() {
@@ -29,6 +58,32 @@ export default function AllToolsPage() {
                         Discover a curated collection of specialized utilities designed for modern workflows.
                         Search by category or use the shortcut <kbd className="px-1.5 py-0.5 rounded border bg-background text-xs mx-1">⌘K</kbd> to find anything.
                     </p>
+                </section>
+
+                {/* Discovery Highlights */}
+                <section className="mb-24 overflow-hidden">
+                    <div className="flex items-center gap-2 mb-8">
+                        <div className="w-2 h-2 rounded-full bg-brand-primary animate-pulse" />
+                        <h2 className="font-outfit text-sm font-black uppercase tracking-widest text-muted-foreground">Smart Discovery Utilities</h2>
+                    </div>
+                    <div className="flex gap-4 overflow-x-auto pb-6 scrollbar-hide">
+                        {tools.filter(t => t.category === 'discovery').map((tool) => {
+                            const Icon = (LucideIcons as any)[tool.icon] || LucideIcons.Zap;
+                            return (
+                                <Link
+                                    key={tool.id}
+                                    href={tool.customPath || '#'}
+                                    className="min-w-[280px] p-6 rounded-2xl border bg-gradient-to-br from-background to-surface-50 dark:to-surface-900 hover:border-brand-primary hover:shadow-xl transition-all group"
+                                >
+                                    <div className="w-12 h-12 rounded-xl bg-brand-primary/10 text-brand-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                        <Icon size={24} />
+                                    </div>
+                                    <h3 className="font-bold mb-2">{tool.title}</h3>
+                                    <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">{tool.description}</p>
+                                </Link>
+                            )
+                        })}
+                    </div>
                 </section>
 
                 <div className="space-y-24">
@@ -58,7 +113,7 @@ export default function AllToolsPage() {
                                         return (
                                             <Link
                                                 key={tool.id}
-                                                href={`/tools/${tool.category}/${tool.slug}`}
+                                                href={tool.customPath || `/tools/${tool.category}/${tool.slug}`}
                                                 className="flex items-center gap-4 p-4 rounded-2xl border bg-background hover:border-brand-primary hover:shadow-lg hover:scale-[1.02] transition-all group"
                                             >
                                                 <div className="w-10 h-10 rounded-xl bg-surface-50 dark:bg-surface-900 flex items-center justify-center shrink-0 group-hover:text-brand-primary transition-colors">

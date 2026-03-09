@@ -18,6 +18,35 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Free Tools Hub | 100+ Pro Online Tools",
   description: "Access a hub of 100+ free online tools for image processing, PDF management, development, and more. Fast, secure, and easy to use.",
+  keywords: 'free tools, online tools, image tools, pdf tools, text tools, development tools',
+  openGraph: {
+    title: 'Free Tools Hub | 100+ Pro Online Tools',
+    description: 'Access a hub of 100+ free online tools for image processing, PDF management, development, and more. Fast, secure, and easy to use.',
+    type: 'website',
+    url: 'https://free-tools-steel.vercel.app',
+    siteName: 'Free Tools',
+    images: [
+      {
+        url: 'https://free-tools-steel.vercel.app/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Free Tools Hub | 100+ Pro Online Tools',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Free Tools Hub | 100+ Pro Online Tools',
+    description: 'Access a hub of 100+ free online tools for image processing, PDF management, development, and more. Fast, secure, and easy to use.',
+    card: 'summary_large_image',
+    images: [
+      {
+        url: 'https://free-tools-steel.vercel.app/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Free Tools Hub | 100+ Pro Online Tools',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

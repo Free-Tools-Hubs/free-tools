@@ -112,12 +112,12 @@ export default function Home() {
           </div>
 
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-            {tools.map((tool) => {
+            {tools.slice(0, 8).map((tool) => {
               const Icon = (LucideIcons as any)[tool.icon] || LucideIcons.Zap;
               return (
                 <Link
                   key={tool.id}
-                  href={`/tools/${tool.category}/${tool.slug}`}
+                  href={tool.customPath || `/tools/${tool.category}/${tool.slug}`}
                   className="flex items-center gap-6 p-6 rounded-2xl border bg-background hover:border-brand-primary hover:shadow-lg transition-all"
                 >
                   <div className="w-12 h-12 rounded-xl bg-surface-100 dark:bg-surface-800 flex items-center justify-center shrink-0">

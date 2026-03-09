@@ -49,4 +49,10 @@ export const categories: CategoryDefinition[] = [
         description: 'Title and tag generators for creators.',
         icon: 'Share2Icon',
     },
+    {
+        id: 'discovery',
+        title: 'Smart Discovery Hubs',
+        description: 'Global weather, currency exchange, and dictionary tools.',
+        icon: 'Globe',
+    },
 ];

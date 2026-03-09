@@ -24,6 +24,35 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
         title: `Convert ${conversion.fromName} to ${conversion.toName} (${conversion.fromUnit} to ${conversion.toUnit})`,
         description: `Free online converter for ${conversion.fromName} to ${conversion.toName}. Accurate results for ${conversion.category} conversions.`,
+        keywords: `${conversion.fromName}, ${conversion.toName}, ${conversion.category} converter, online converter, free converter`,
+        openGraph: {
+            title: `Convert ${conversion.fromName} to ${conversion.toName} (${conversion.fromUnit} to ${conversion.toUnit})`,
+            description: `Free online converter for ${conversion.fromName} to ${conversion.toName}. Accurate results for ${conversion.category} conversions.`,
+            type: 'website',
+            url: `https://free-tools-steel.vercel.app/convert/${conversion.slug}`,
+            siteName: 'Free Tools',
+            images: [
+                {
+                    url: `https://free-tools-steel.vercel.app/convert/${conversion.slug}.png`,
+                    width: 1200,
+                    height: 630,
+                    alt: `Convert ${conversion.fromName} to ${conversion.toName} (${conversion.fromUnit} to ${conversion.toUnit})`,
+                },
+            ],
+        },
+        twitter: {
+            title: `Convert ${conversion.fromName} to ${conversion.toName} (${conversion.fromUnit} to ${conversion.toUnit})`,
+            description: `Free online converter for ${conversion.fromName} to ${conversion.toName}. Accurate results for ${conversion.category} conversions.`,
+            card: 'summary_large_image',
+            images: [
+                {
+                    url: `https://free-tools-steel.vercel.app/convert/${conversion.slug}.png`,
+                    width: 1200,
+                    height: 630,
+                    alt: `Convert ${conversion.fromName} to ${conversion.toName} (${conversion.fromUnit} to ${conversion.toUnit})`,
+                },
+            ],
+        },
     };
 }
 

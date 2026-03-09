@@ -6,7 +6,8 @@ export type ToolCategory =
     | 'calculators'
     | 'generators'
     | 'ai'
-    | 'social';
+    | 'social'
+    | 'discovery';
 
 export interface FAQ {
     question: string;
@@ -26,6 +27,7 @@ export interface ToolDefinition {
     usageExample: string;
     relatedToolIds: string[];
     lastUpdated: string;
+    customPath?: string; // For programmatic SEO pages with non-standard routes
 }
 
 export interface ToolComponentProps {

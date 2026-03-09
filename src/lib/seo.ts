@@ -16,7 +16,7 @@ export function generateToolSchema(tool: ToolDefinition) {
         featureList: tool.keywords.join(', '),
         softwareHelp: {
             '@type': 'CreativeWork',
-            url: `https://freetoolshub.com/tools/${tool.category}/${tool.slug}#faq`,
+            url: `https://free-tools-steel.vercel.app/tools/${tool.category}/${tool.slug}#faq`,
         },
     };
 }
