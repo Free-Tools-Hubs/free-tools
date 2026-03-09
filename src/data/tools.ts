@@ -1117,4 +1117,107 @@ export const tools: ToolDefinition[] = [
         relatedToolIds: ['random-text-generator', 'word-counter'],
         lastUpdated: '2026-03-08'
     },
+    // Discovery Hubs
+    {
+        id: 'city-weather',
+        title: 'Global City Weather',
+        description: 'Real-time weather forecast for any city worldwide.',
+        longDescription: 'Access current weather conditions, temperature, humidity, and wind speed for thousands of cities globally. Our data is updated every 30 minutes to ensure accuracy.',
+        category: 'discovery',
+        slug: 'city-weather',
+        icon: 'CloudSun',
+        keywords: ['weather forecast', 'city weather', 'global weather', 'live temperature'],
+        faqs: [
+            { question: 'How accurate is the weather data?', answer: 'We use professional meteorological APIs with 30-minute refresh cycles.' }
+        ],
+        usageExample: 'Search for any city name on the hub page.',
+        relatedToolIds: ['country-facts', 'world-time'],
+        lastUpdated: '2026-03-09',
+        customPath: '/city'
+    },
+    {
+        id: 'country-facts',
+        title: 'Country Information',
+        description: 'Detailed facts and statistics for every nation.',
+        longDescription: 'Explore essential data for countries around the world, including population, capitals, languages, and geographic regions. Perfect for students and researchers.',
+        category: 'discovery',
+        slug: 'country-facts',
+        icon: 'Globe2',
+        keywords: ['country information', 'world statistics', 'nation facts', 'demographics'],
+        faqs: [
+            { question: 'Where is the data sourced from?', answer: 'Data is aggregated from reliable global census and geographic monitoring services.' }
+        ],
+        usageExample: 'Select a country to view its full profile.',
+        relatedToolIds: ['city-weather', 'currency-converter'],
+        lastUpdated: '2026-03-09',
+        customPath: '/country'
+    },
+    {
+        id: 'dictionary-hub',
+        title: 'English Dictionary',
+        description: 'Quick definitions and phonetic pronunciations.',
+        longDescription: 'A comprehensive dictionary tool providing meanings, examples, and audio-style phonetics for common and advanced English vocabulary.',
+        category: 'discovery',
+        slug: 'dictionary-hub',
+        icon: 'Library',
+        keywords: ['dictionary', 'word meaning', 'definitions', 'vocabulary builder'],
+        faqs: [
+            { question: 'Does it include synonyms?', answer: 'Most entries include related terms and detailed usage examples.' }
+        ],
+        usageExample: 'Type a word to get its definition instantly.',
+        relatedToolIds: ['word-counter', 'case-converter'],
+        lastUpdated: '2026-03-09',
+        customPath: '/define'
+    },
+    {
+        id: 'currency-hub',
+        title: 'Live Currency Converter',
+        description: 'Real-time global exchange rates and conversions.',
+        longDescription: 'Track and convert over 150 global currencies with live market rates. Our converter provides precise calculations for personal and professional use.',
+        category: 'discovery',
+        slug: 'currency-hub',
+        icon: 'Coins',
+        keywords: ['currency converter', 'exchange rates', 'forex', 'money conversion'],
+        faqs: [
+            { question: 'How often are the rates updated?', answer: 'Currency rates are refreshed periodically during market hours.' }
+        ],
+        usageExample: 'Choose your from and to currencies to see the conversion.',
+        relatedToolIds: ['unit-converter', 'percentage-calculator'],
+        lastUpdated: '2026-03-09',
+        customPath: '/currency'
+    },
+    {
+        id: 'unit-converter-hub',
+        title: 'Universal Unit Converter',
+        description: 'Convert between any measurement unit.',
+        longDescription: 'Convert length, weight, volume, and more across metric and imperial systems. The all-in-one hub for engineers and students.',
+        category: 'discovery',
+        slug: 'unit-converter-hub',
+        icon: 'Scaling',
+        keywords: ['unit converter', 'metric conversion', 'measurements', 'scale'],
+        faqs: [
+            { question: 'Does it support scientific units?', answer: 'Yes, it covers common scientific and industrial measurements.' }
+        ],
+        usageExample: 'Select the categories and units to perform conversion.',
+        relatedToolIds: ['currency-converter', 'binary-converter'],
+        lastUpdated: '2026-03-09',
+        customPath: '/convert'
+    },
+    {
+        id: 'world-time',
+        title: 'Global Time Hub',
+        description: 'Check time across all world time zones.',
+        longDescription: 'Stay on schedule with our universal time hub. Compare timezones and convert hours between cities for global meetings.',
+        category: 'discovery',
+        slug: 'world-time',
+        icon: 'Watch',
+        keywords: ['timezone converter', 'world clock', 'global time', 'meeting planner'],
+        faqs: [
+            { question: 'Does it handle daylight savings?', answer: 'Yes, all conversions automatically account for local DST changes.' }
+        ],
+        usageExample: 'Search for any city to see its current local time.',
+        relatedToolIds: ['city-weather', 'countdown-hub'],
+        lastUpdated: '2026-03-09',
+        customPath: '/time'
+    },
 ];

@@ -29,6 +29,35 @@ export async function generateMetadata({ params }: PageProps) {
     return {
         title: `${category.title} | FreeToolsHub`,
         description: category.description,
+        keywords: `${category.title}, ${category.icon}`,
+        openGraph: {
+            title: `${category.title} | FreeToolsHub`,
+            description: category.description,
+            type: 'website',
+            url: `https://free-tools-steel.vercel.app/tools/${categoryId}`,
+            siteName: 'Free Tools',
+            images: [
+                {
+                    url: `https://free-tools-steel.vercel.app/tools/${categoryId}.png`,
+                    width: 1200,
+                    height: 630,
+                    alt: `${category.title} | FreeToolsHub`,
+                },
+            ],
+        },
+        twitter: {
+            title: `${category.title} | FreeToolsHub`,
+            description: category.description,
+            card: 'summary_large_image',
+            images: [
+                {
+                    url: `https://free-tools-steel.vercel.app/tools/${categoryId}.png`,
+                    width: 1200,
+                    height: 630,
+                    alt: `${category.title} | FreeToolsHub`,
+                },
+            ],
+        },
     };
 }
 
@@ -74,7 +103,7 @@ export default async function CategoryPage({ params }: PageProps) {
                         return (
                             <Link
                                 key={tool.id}
-                                href={`/tools/${tool.category}/${tool.slug}`}
+                                href={tool.customPath || `/tools/${tool.category}/${tool.slug}`}
                                 className="glass-card p-8 group hover:translate-y-[-4px]"
                             >
                                 <div className="w-10 h-10 rounded-xl bg-surface-100 dark:bg-surface-800 flex items-center justify-center mb-6 group-hover:text-brand-primary transition-colors">

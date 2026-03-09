@@ -32,6 +32,29 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title: tool.title,
             description: tool.description,
             type: 'website',
+            url: `https://free-tools-steel.vercel.app/tools/${tool.category}/${slug}`,
+            siteName: 'Free Tools',
+            images: [
+                {
+                    url: `https://free-tools-steel.vercel.app/tools/${tool.category}/${slug}.png`,
+                    width: 1200,
+                    height: 630,
+                    alt: tool.title,
+                },
+            ],
+        },
+        twitter: {
+            title: tool.title,
+            description: tool.description,
+            card: 'summary_large_image',
+            images: [
+                {
+                    url: `https://free-tools-steel.vercel.app/tools/${tool.category}/${slug}.png`,
+                    width: 1200,
+                    height: 630,
+                    alt: tool.title,
+                },
+            ],
         },
     };
 }
