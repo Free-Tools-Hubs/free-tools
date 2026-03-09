@@ -9,24 +9,16 @@ import randoms from '@/data/randoms';
 import { commonCurrencyPairs } from '@/data/currencies';
 import { topCities, topWords } from '@/lib/data-dictionaries';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://free-tools-steel.vercel.app';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://freetoolshubs.com';
 
-    // Core pages
+export const dynamic = 'force-static';
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+    // 1. Core routes
     const routes = [
-        '',
-        '/tools',
-        '/about',
-        '/privacy',
-        '/terms',
-        '/city',
-        '/country',
-        '/define',
-        '/currency',
-        '/convert',
-        '/random',
-        '/time',
-        '/countdown'
+        '', '/tools', '/about', '/privacy', '/terms',
+        '/city', '/country', '/define', '/currency',
+        '/convert', '/random', '/time', '/countdown'
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
@@ -34,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 1.0,
     }));
 
-    // Category pages
+    // 2. Category routes
     const categoryRoutes = categories.map((cat) => ({
         url: `${baseUrl}/tools/${cat.id}`,
         lastModified: new Date(),
@@ -42,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.8,
     }));
 
-    // Tool pages
+    // 3. Tool routes
     const toolRoutes = tools.map((tool) => ({
         url: `${baseUrl}/tools/${tool.category}/${tool.slug}`,
         lastModified: new Date(),
@@ -50,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.9,
     }));
 
-    // Programmatic SEO Pages
+    // 4. Programmatic Tool routes (Conversions, Time, Countdowns)
     const conversionRoutes = conversions.map((c) => ({
         url: `${baseUrl}/convert/${c.slug}`,
         lastModified: new Date(),
@@ -72,6 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
     }));
 
+    // 5. Data Hubs (Countries, Randoms, Currencies)
     const countryRoutes = countries.map((c) => ({
         url: `${baseUrl}/country/${c.slug}`,
         lastModified: new Date(),
@@ -93,6 +86,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.8,
     }));
 
+    // 6. Dictionary routes
     const dictionaryRoutes = topWords.map((word) => ({
         url: `${baseUrl}/define/${word.toLowerCase()}`,
         lastModified: new Date(),
@@ -100,6 +94,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.5,
     }));
 
+    // 7. City routes
     const cityRoutes = topCities.map((city) => ({
         url: `${baseUrl}/city/${city.toLowerCase().replace(/ /g, '-')}`,
         lastModified: new Date(),
