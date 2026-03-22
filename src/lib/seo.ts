@@ -1,4 +1,5 @@
 import { ToolDefinition } from '@/types/tool';
+import { SITE_URL } from './config';
 
 export function generateToolSchema(tool: ToolDefinition) {
     return {
@@ -16,7 +17,7 @@ export function generateToolSchema(tool: ToolDefinition) {
         featureList: tool.keywords.join(', '),
         softwareHelp: {
             '@type': 'CreativeWork',
-            url: `https://free-tools-steel.vercel.app/tools/${tool.category}/${tool.slug}#faq`,
+            url: `${SITE_URL}/tools/${tool.category}/${tool.slug}#faq`,
         },
     };
 }

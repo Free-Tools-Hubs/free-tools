@@ -66,6 +66,31 @@ const UsernameGeneratorTool = dynamic(() => import('@/tools/generators/UsernameG
 const RandomTextGeneratorTool = dynamic(() => import('@/tools/generators/RandomTextGeneratorTool'), { ssr: false });
 const LoremIpsumGeneratorTool = dynamic(() => import('@/tools/generators/LoremIpsumGeneratorTool'), { ssr: false });
 
+// Data Conversion Tools (Serverless)
+const JsonToCsvTool = dynamic(() => import('@/tools/developer/JsonToCsvTool'), { ssr: false });
+const CsvToJsonTool = dynamic(() => import('@/tools/developer/CsvToJsonTool'), { ssr: false });
+const YamlToJsonTool = dynamic(() => import('@/tools/developer/YamlToJsonTool'), { ssr: false });
+const JsonToYamlTool = dynamic(() => import('@/tools/developer/JsonToYamlTool'), { ssr: false });
+const MarkdownToHtmlTool = dynamic(() => import('@/tools/text/MarkdownToHtmlTool'), { ssr: false });
+const HtmlToMarkdownTool = dynamic(() => import('@/tools/text/HtmlToMarkdownTool'), { ssr: false });
+
+// Additional Conversion Tools
+const JsonToXmlTool = dynamic(() => import('@/tools/developer/JsonToXmlTool'), { ssr: false });
+const XmlToJsonTool = dynamic(() => import('@/tools/developer/XmlToJsonTool'), { ssr: false });
+const ImageToBase64Tool = dynamic(() => import('@/tools/image/ImageToBase64Tool'), { ssr: false });
+const Base64ToImageTool = dynamic(() => import('@/tools/image/Base64ToImageTool'), { ssr: false });
+const YamlFormatterTool = dynamic(() => import('@/tools/developer/YamlFormatterTool'), { ssr: false });
+const HashGeneratorTool = dynamic(() => import('@/tools/developer/HashGeneratorTool'), { ssr: false });
+const UrlEncoderTool = dynamic(() => import('@/tools/developer/UrlEncoderTool'), { ssr: false });
+const UnicodeExplorerTool = dynamic(() => import('@/tools/text/UnicodeExplorerTool'), { ssr: false });
+const ColorHubTool = dynamic(() => import('@/tools/image/ColorHubTool'), { ssr: false });
+const FileEncyclopediaTool = dynamic(() => import('@/tools/discovery/FileEncyclopediaTool'), { ssr: false });
+const PromptOptimizerTool = dynamic(() => import('@/tools/ai/PromptOptimizerTool'), { ssr: false });
+const YoutubeMetadataTool = dynamic(() => import('@/tools/social/YoutubeMetadataTool'), { ssr: false });
+const SocialBioGeneratorTool = dynamic(() => import('@/tools/social/SocialBioGeneratorTool'), { ssr: false });
+const PrivacyPolicyGeneratorTool = dynamic(() => import('@/tools/business/PrivacyPolicyGeneratorTool'), { ssr: false });
+const TermsAndConditionsGeneratorTool = dynamic(() => import('@/tools/business/TermsAndConditionsGeneratorTool'), { ssr: false });
+
 interface ToolRendererProps {
     slug: string;
     toolTitle: string;
@@ -193,6 +218,52 @@ export function ToolRenderer({ slug, toolTitle }: ToolRendererProps) {
             return <RandomTextGeneratorTool />;
         case 'lorem-ipsum-generator':
             return <LoremIpsumGeneratorTool />;
+
+        // Serverless Conversion Tools
+        case 'json-to-csv':
+            return <JsonToCsvTool />;
+        case 'csv-to-json':
+            return <CsvToJsonTool />;
+        case 'yaml-to-json':
+            return <YamlToJsonTool />;
+        case 'json-to-yaml':
+            return <JsonToYamlTool />;
+        case 'markdown-to-html':
+            return <MarkdownToHtmlTool />;
+        case 'html-to-markdown':
+            return <HtmlToMarkdownTool />;
+
+        // JSON/XML/Base64 Tools
+        case 'json-to-xml':
+            return <JsonToXmlTool />;
+        case 'xml-to-json':
+            return <XmlToJsonTool />;
+        case 'image-to-base64':
+            return <ImageToBase64Tool />;
+        case 'base64-to-image':
+            return <Base64ToImageTool />;
+        case 'yaml-formatter':
+            return <YamlFormatterTool />;
+        case 'hash-generator':
+            return <HashGeneratorTool />;
+        case 'url-encoder':
+            return <UrlEncoderTool />;
+        case 'unicode-explorer':
+            return <UnicodeExplorerTool />;
+        case 'color-hub':
+            return <ColorHubTool />;
+        case 'file-encyclopedia':
+            return <FileEncyclopediaTool />;
+        case 'prompt-optimizer':
+            return <PromptOptimizerTool />;
+        case 'youtube-metadata':
+            return <YoutubeMetadataTool />;
+        case 'social-bio-generator':
+            return <SocialBioGeneratorTool />;
+        case 'privacy-policy-generator':
+            return <PrivacyPolicyGeneratorTool />;
+        case 'terms-conditions-generator':
+            return <TermsAndConditionsGeneratorTool />;
 
         default:
             return (

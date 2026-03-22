@@ -9,16 +9,24 @@ import randoms from '@/data/randoms';
 import { commonCurrencyPairs } from '@/data/currencies';
 import { topCities, topWords } from '@/lib/data-dictionaries';
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://freetoolshubs.com';
+import { namedColors } from '@/data/named-colors';
+import { normalizeHex } from '@/lib/color-utils';
+
+import { fileExtensions } from '@/data/file-extensions';
+
+import { unicodeSymbols } from '@/data/unicode-symbols';
+
+import { SITE_URL } from '@/lib/config';
 
 export const dynamic = 'force-static';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+    const baseUrl = SITE_URL;
     // 1. Core routes
     const routes = [
         '', '/tools', '/about', '/privacy', '/terms',
         '/city', '/country', '/define', '/currency',
-        '/convert', '/random', '/time', '/countdown'
+        '/convert', '/random', '/time', '/countdown', '/colors', '/file-extension', '/symbols'
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
@@ -42,7 +50,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.9,
     }));
 
-    // 4. Programmatic Tool routes (Conversions, Time, Countdowns)
+    // 4. Color Hub routes
+    const colorRoutes = namedColors.map((color) => ({
+        url: `${baseUrl}/colors/${normalizeHex(color.hex)}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+    }));
+
+    // 5. File Encyclopedia routes
+    const fileRoutes = fileExtensions.map((file) => ({
+        url: `${baseUrl}/file-extension/${file.ext}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+    }));
+
+    // 6. Symbol Hub routes
+    const symbolRoutes = unicodeSymbols.map((s) => ({
+        url: `${baseUrl}/symbols/${s.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+    }));
+
+    // 7. Programmatic Tool routes (Conversions, Time, Countdowns)
     const conversionRoutes = conversions.map((c) => ({
         url: `${baseUrl}/convert/${c.slug}`,
         lastModified: new Date(),
@@ -64,7 +96,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.6,
     }));
 
-    // 5. Data Hubs (Countries, Randoms, Currencies)
+    // 6. Data Hubs (Countries, Randoms, Currencies)
     const countryRoutes = countries.map((c) => ({
         url: `${baseUrl}/country/${c.slug}`,
         lastModified: new Date(),
@@ -86,7 +118,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
     }));
 
-    // 6. Dictionary routes
+    // 7. Dictionary routes
     const dictionaryRoutes = topWords.map((word) => ({
         url: `${baseUrl}/define/${word.toLowerCase()}`,
         lastModified: new Date(),
@@ -94,7 +126,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.5,
     }));
 
-    // 7. City routes
+    // 8. City routes
     const cityRoutes = topCities.map((city) => ({
         url: `${baseUrl}/city/${city.toLowerCase().replace(/ /g, '-')}`,
         lastModified: new Date(),
@@ -106,6 +138,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ...routes,
         ...categoryRoutes,
         ...toolRoutes,
+        ...colorRoutes,
+        ...fileRoutes,
+        ...symbolRoutes,
         ...conversionRoutes,
         ...timeRoutes,
         ...countdownRoutes,

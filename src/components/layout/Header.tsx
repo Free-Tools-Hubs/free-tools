@@ -67,6 +67,15 @@ export function Header() {
                         <Link href="/tools/developer" className="text-sm font-medium hover:text-brand-primary transition-colors">
                             Dev
                         </Link>
+                        <Link href="/colors" className="text-sm font-semibold premium-gradient-text hover:opacity-80 transition-opacity">
+                            Color Hub
+                        </Link>
+                         <Link href="/file-extension" className="text-sm font-medium hover:text-brand-primary transition-colors">
+                            Encyclopedia
+                        </Link>
+                        <Link href="/symbols" className="text-sm font-medium hover:text-brand-primary transition-colors">
+                            Symbols
+                        </Link>
                     </nav>
 
                     <div className="flex items-center gap-3">
@@ -108,6 +117,9 @@ export function Header() {
                         <Link href="/tools/image" className="text-lg font-medium py-2">File & Image Tools</Link>
                         <Link href="/tools/pdf" className="text-lg font-medium py-2">PDF Tools</Link>
                         <Link href="/tools/developer" className="text-lg font-medium py-2">Developer Tools</Link>
+                        <Link href="/colors" className="text-lg font-bold premium-gradient-text py-2">Color Hub</Link>
+                        <Link href="/file-extension" className="text-lg font-medium py-2">File Encyclopedia</Link>
+                        <Link href="/symbols" className="text-lg font-medium py-2">Symbol Hub</Link>
                         <div
                             onClick={() => {
                                 setIsMobileMenuOpen(false);

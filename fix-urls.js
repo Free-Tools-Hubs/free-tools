@@ -25,7 +25,7 @@ let changed = 0;
 files.forEach(file => {
     let content = fs.readFileSync(file, 'utf8');
     if (content.includes('https://free-tools.vercel.app')) {
-        let newContent = content.replace(/https:\/\/free-tools\.vercel\.app/g, 'https://free-tools-steel.vercel.app');
+        let newContent = content.replace(/https:\/\/free-tools\.vercel\.app/g, 'https://freetoolshubs.com');
         fs.writeFileSync(file, newContent, 'utf8');
         console.log('Updated ' + file);
         changed++;
