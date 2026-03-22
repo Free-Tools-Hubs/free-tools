@@ -55,4 +55,10 @@ export const categories: CategoryDefinition[] = [
         description: 'Global weather, currency exchange, and dictionary tools.',
         icon: 'Globe',
     },
+    {
+        id: 'business',
+        title: 'Business & Legal Tools',
+        description: 'Generate professional privacy policies and terms of service.',
+        icon: 'Briefcase',
+    },
 ];

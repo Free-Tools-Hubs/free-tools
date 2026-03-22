@@ -161,6 +161,22 @@ export const tools: ToolDefinition[] = [
         lastUpdated: '2026-03-08'
     },
     {
+        id: 'color-hub',
+        title: 'Color Hub',
+        description: 'Explore, generate, and convert colors and palettes.',
+        longDescription: 'The ultimate color tool for designers and developers. Generate random colors, create beautiful palettes, and convert between HEX, RGB, and HSL formats instantly.',
+        category: 'image',
+        slug: 'color-hub',
+        icon: 'Palette',
+        keywords: ['color palette generator', 'hex to rgb converter', 'random color maker', 'designer tools'],
+        faqs: [
+             { question: 'What formats are supported?', answer: 'We support HEX, RGB, and HSL formats with instant conversion and copy functionality.' }
+        ],
+        usageExample: 'Choose a base color or click random to generate an entire design palette.',
+        relatedToolIds: ['image-to-base64', 'favicon-generator'],
+        lastUpdated: '2026-03-22'
+    },
+    {
         id: 'webp-to-jpg',
         title: 'Convert WebP to JPG',
         description: 'Convert WebP images to JPG format for better compatibility.',
@@ -584,6 +600,22 @@ export const tools: ToolDefinition[] = [
         relatedToolIds: ['word-counter', 'remove-duplicate-lines'],
         lastUpdated: '2026-03-08'
     },
+    {
+        id: 'unicode-explorer',
+        title: 'Unicode Symbol Explorer',
+        description: 'Browse, search, and copy thousands of Unicode characters.',
+        longDescription: 'A complete library of Unicode symbols, arrows, emojis, and geometric shapes. Instantly find the code for any character and copy it with a single click.',
+        category: 'text',
+        slug: 'unicode-explorer',
+        icon: 'Sticker',
+        keywords: ['unicode symbols', 'emoji list', 'copy arrows', 'alt codes', 'special characters'],
+        faqs: [
+             { question: 'What is Unicode?', answer: 'Unicode is a universal character encoding standard that provides a unique number for every character, regardless of platform, device, application, or language.' }
+        ],
+        usageExample: 'Select a category or search by hex code to find the symbol you need.',
+        relatedToolIds: ['word-counter', 'character-counter'],
+        lastUpdated: '2026-03-22'
+    },
 
     // Developer Tools
     {
@@ -762,6 +794,38 @@ export const tools: ToolDefinition[] = [
         lastUpdated: '2026-03-08'
     },
     {
+        id: 'url-encoder',
+        title: 'URL Encoder / Decoder',
+        description: 'Safely encode or decode URLs and web parameters.',
+        longDescription: 'Ensures your URL strings follow all web protocols. Perfect for handling complex query parameters and special characters in links.',
+        category: 'developer',
+        slug: 'url-encoder',
+        icon: 'Link',
+        keywords: ['url encoder', 'url decoder online', 'encode web url', 'fix link syntax'],
+        faqs: [
+             { question: 'What does URL encoding do?', answer: 'It converts special characters into a format that is safe for transmission over the internet.' }
+        ],
+        usageExample: 'Enter your URL to get the properly encoded or decoded string.',
+        relatedToolIds: ['base64-encode-decode', 'hash-generator'],
+        lastUpdated: '2026-03-22'
+    },
+    {
+        id: 'hash-generator',
+        title: 'Hash Generator',
+        description: 'Generate secure SHA-256, SHA-512, and SHA-1 hashes.',
+        longDescription: 'Create cryptographic hashes for your text data instantly in your browser. This tool uses the native Web Crypto API to ensure your sensitive data never leaves your device.',
+        category: 'developer',
+        slug: 'hash-generator',
+        icon: 'ShieldCheck',
+        keywords: ['hash generator', 'sha256 online', 'sha512 generator', 'sha1 hash maker', 'crypto tool'],
+        faqs: [
+             { question: 'Is my data safe?', answer: 'Yes, hashing is performed locally in your browser using the native Web Crypto API. No data is sent to any server.' }
+        ],
+        usageExample: 'Enter your string and get multiple secure hash values instantly.',
+        relatedToolIds: ['password-generator', 'uuid-generator'],
+        lastUpdated: '2026-03-21'
+    },
+    {
         id: 'jwt-decoder',
         title: 'JWT Decoder',
         description: 'Decode and inspect JSON Web Tokens (JWT) instantly.',
@@ -783,6 +847,182 @@ export const tools: ToolDefinition[] = [
         usageExample: 'Paste your JWT string to see the header and payload data formatted clearly.',
         relatedToolIds: ['json-formatter', 'json-validator'],
         lastUpdated: '2026-03-08'
+    },
+    {
+        id: 'json-to-csv',
+        title: 'JSON to CSV Converter',
+        description: 'Convert JSON data into CSV format for spreadsheets.',
+        longDescription: 'Easily transform your JSON arrays and objects into clean, comma-separated values (CSV). Perfect for importing data into Excel or Google Sheets. All processing is done locally in your browser.',
+        category: 'developer',
+        slug: 'json-to-csv',
+        icon: 'FileJson',
+        keywords: ['json to csv', 'convert json to excel', 'json to spreadsheet', 'data converter online'],
+        faqs: [
+            { question: 'Does it handle nested objects?', answer: 'Yes, our converter automatically flattens nested objects into column headers for maximum compatibility.' }
+        ],
+        usageExample: 'Paste your JSON array and download the generated CSV file.',
+        relatedToolIds: ['csv-to-json', 'json-formatter'],
+        lastUpdated: '2026-03-21'
+    },
+    {
+        id: 'csv-to-json',
+        title: 'CSV to JSON Converter',
+        description: 'Convert CSV data into JSON format for developers.',
+        longDescription: 'Transform your spreadsheet data (CSV) into structured JSON objects. Ideal for developers who need to convert exported data for use in web applications or APIs.',
+        category: 'developer',
+        slug: 'csv-to-json',
+        icon: 'FileCode',
+        keywords: ['csv to json', 'excel to json converter', 'csv2json online', 'spreadsheet to json'],
+        faqs: [
+            { question: 'Can I choose the delimiter?', answer: 'Yes, you can toggle between commas, tabs, and semicolons.' }
+        ],
+        usageExample: 'Paste your CSV rows and copy the generated JSON array.',
+        relatedToolIds: ['json-to-csv', 'json-validator'],
+        lastUpdated: '2026-03-21'
+    },
+    {
+        id: 'yaml-to-json',
+        title: 'YAML to JSON Converter',
+        description: 'Convert YAML configuration files to JSON format.',
+        longDescription: 'Quickly translate YAML syntax into valid JSON. Essential for DevOps engineers and developers working with configuration files like Kubernetes manifests or CI/CD pipelines.',
+        category: 'developer',
+        slug: 'yaml-to-json',
+        icon: 'Braces',
+        keywords: ['yaml to json', 'yml to json converter', 'convert yaml online', 'devops tools'],
+        faqs: [
+            { question: 'Is YAML 1.2 supported?', answer: 'Yes, our converter follows the standard YAML specifications for accurate translation.' }
+        ],
+        usageExample: 'Paste your YAML and get the equivalent JSON object immediately.',
+        relatedToolIds: ['json-to-yaml', 'json-formatter'],
+        lastUpdated: '2026-03-21'
+    },
+    {
+        id: 'json-to-xml',
+        title: 'JSON to XML Converter',
+        description: 'Convert JSON data into XML format for legacy systems.',
+        longDescription: 'Easily transform your structured JSON into valid XML. This tool is useful for developers who need to integrate modern data formats with systems that still rely on XML.',
+        category: 'developer',
+        slug: 'json-to-xml',
+        icon: 'FileCode',
+        keywords: ['json to xml', 'convert json to xml online', 'json2xml converter'],
+        faqs: [
+             { question: 'Does it handle root elements?', answer: 'Yes, you can specify a custom root element name for the generated XML.' }
+        ],
+        usageExample: 'Paste your JSON and specify a root name to get the XML equivalent.',
+        relatedToolIds: ['xml-to-json', 'json-formatter'],
+        lastUpdated: '2026-03-21'
+    },
+    {
+        id: 'xml-to-json',
+        title: 'XML to JSON Converter',
+        description: 'Convert XML data into JSON format for modern apps.',
+        longDescription: 'Transform complex XML structures into easy-to-use JSON objects. This is a must-have tool for developers working with legacy APIs or SOAP services.',
+        category: 'developer',
+        slug: 'xml-to-json',
+        icon: 'Braces',
+        keywords: ['xml to json', 'convert xml to json online', 'xml2json converter'],
+        faqs: [
+             { question: 'Is nested XML supported?', answer: 'Yes, our converter accurately preserves the hierarchy of your XML data in the final JSON.' }
+        ],
+        usageExample: 'Paste your XML source and copy the structured JSON result.',
+        relatedToolIds: ['json-to-xml', 'json-validator'],
+        lastUpdated: '2026-03-21'
+    },
+    {
+        id: 'image-to-base64',
+        title: 'Image to Base64',
+        description: 'Convert images to Base64 data URIs for CSS and HTML.',
+        longDescription: 'Transform your image files into Base64 strings. This allows you to embed images directly into your HTML or CSS files, reducing the number of HTTP requests and making icons easier to manage.',
+        category: 'image',
+        slug: 'image-to-base64',
+        icon: 'Binary',
+        keywords: ['image to base64', 'binary to text converter', 'data uri generator', 'embed image in css'],
+        faqs: [
+             { question: 'Why use Base64 for images?', answer: 'It reduces latencies for small assets by eliminating the need for separate network requests.' }
+        ],
+        usageExample: 'Upload your image and copy the generated data URI string.',
+        relatedToolIds: ['base64-to-image', 'compress-image'],
+        lastUpdated: '2026-03-21'
+    },
+    {
+        id: 'base64-to-image',
+        title: 'Base64 to Image',
+        description: 'Convert Base64 data strings back into image files.',
+        longDescription: 'Easily preview and download images from Base64 data URIs. This tool is perfect for debugging data transmission issues or extracting images from code snippets.',
+        category: 'image',
+        slug: 'base64-to-image',
+        icon: 'Image',
+        keywords: ['base64 to image', 'decode base64 image', 'preview data uri', 'base64 decoder online'],
+        faqs: [
+             { question: 'Can I download the image?', answer: 'Yes, you can preview the image and download it as a PNG or JPG file.' }
+        ],
+        usageExample: 'Paste your Base64 string and download the reconstructed image.',
+        relatedToolIds: ['image-to-base64', 'base64-encode-decode'],
+        lastUpdated: '2026-03-21'
+    },
+    {
+        id: 'json-to-yaml',
+        title: 'JSON to YAML Converter',
+        description: 'Convert JSON data into clean YAML format.',
+        longDescription: 'Transform your structured JSON into human-readable YAML. YAML is often preferred for configuration files due to its clean and minimal syntax.',
+        category: 'developer',
+        slug: 'json-to-yaml',
+        icon: 'Braces',
+        keywords: ['json to yaml', 'json to yml converter', 'convert json to yaml free'],
+        faqs: [
+             { question: 'Why use YAML instead of JSON?', answer: 'YAML is easier for humans to read and write, and it supports features like comments and anchors.' }
+        ],
+        usageExample: 'Paste your JSON and get a clean YAML output with proper indentation.',
+        relatedToolIds: ['yaml-to-json', 'json-validator'],
+        lastUpdated: '2026-03-21'
+    },
+    {
+        id: 'yaml-formatter',
+        title: 'YAML Formatter',
+        description: 'Beautify and validate your YAML configuration files.',
+        longDescription: 'Clean up messy YAML data with proper indentation. This tool also validates your YAML syntax against industry standards, making it perfect for DevOps workflows.',
+        category: 'developer',
+        slug: 'yaml-formatter',
+        icon: 'Braces',
+        keywords: ['yaml formatter', 'beautify yaml', 'yaml validator', 'fix yaml indentation'],
+        faqs: [
+             { question: 'What indentation size is recommended?', answer: 'Most modern systems use 2 spaces for YAML, but we support both 2 and 4 spaces.' }
+        ],
+        usageExample: 'Paste your YAML and get a perfectly formatted version instantly.',
+        relatedToolIds: ['json-to-yaml', 'yaml-to-json'],
+        lastUpdated: '2026-03-21'
+    },
+    {
+        id: 'markdown-to-html',
+        title: 'Markdown to HTML',
+        description: 'Convert Markdown text to clean HTML code.',
+        longDescription: 'Transform your Markdown documents into production-ready HTML. Perfect for technical writers, bloggers, and developers who want to preview or publish their content.',
+        category: 'text',
+        slug: 'markdown-to-html',
+        icon: 'FileCode',
+        keywords: ['markdown to html', 'md to html converter', 'convert markdown online'],
+        faqs: [
+             { question: 'Does it support Github Flavored Markdown?', answer: 'Yes, our converter supports GFM features like tables, task lists, and strikethrough.' }
+        ],
+        usageExample: 'Enter your markdown and copy the rendered HTML or the raw code.',
+        relatedToolIds: ['html-to-markdown', 'word-counter'],
+        lastUpdated: '2026-03-21'
+    },
+    {
+        id: 'html-to-markdown',
+        title: 'HTML to Markdown',
+        description: 'Convert HTML code back into Markdown syntax.',
+        longDescription: 'Easily strip HTML tags and convert them into clean Markdown. This is ideal for migrating content from legacy websites or cleaning up rich text for repositories.',
+        category: 'text',
+        slug: 'html-to-markdown',
+        icon: 'FileCode',
+        keywords: ['html to markdown', 'html to md converter', 'clean html to text'],
+        faqs: [
+             { question: 'Will it preserve images and links?', answer: 'Yes, it accurately converts <a> and <img> tags into their respective Markdown equivalents.' }
+        ],
+        usageExample: 'Paste your HTML snippet and get the simplified Markdown version instantly.',
+        relatedToolIds: ['markdown-to-html', 'case-converter'],
+        lastUpdated: '2026-03-21'
     },
     // Calculators
     {
@@ -1117,6 +1357,89 @@ export const tools: ToolDefinition[] = [
         relatedToolIds: ['random-text-generator', 'word-counter'],
         lastUpdated: '2026-03-08'
     },
+    // AI Tools
+    {
+        id: 'prompt-optimizer',
+        title: 'AI Prompt Optimizer',
+        description: 'Transform basic ideas into high-quality AI prompts.',
+        longDescription: 'Engineering better prompts for ChatGPT, Midjourney, and Claude. Our tool injects professional personas and constraints to ensure you get the best possible results from AI models.',
+        category: 'ai',
+        slug: 'prompt-optimizer',
+        icon: 'Sparkles',
+        keywords: ['ai prompt generator', 'chatgpt prompt engineering', 'midjourney prompt maker', 'optimize ai commands'],
+        faqs: [
+             { question: 'Why use a prompt optimizer?', answer: 'AI models perform significantly better when given specific personas, context, and formatting constraints.' }
+        ],
+        usageExample: 'Enter your simple request and select a template to generate a professional engineering prompt.',
+        relatedToolIds: ['random-text-generator', 'slug-generator'],
+        lastUpdated: '2026-03-21'
+    },
+    // Social Media Tools
+    {
+        id: 'youtube-metadata',
+        title: 'YouTube Metadata Generator',
+        description: 'Generate SEO-friendly titles, tags, and descriptions.',
+        longDescription: 'Boost your video visibility with optimized metadata. Our tool helps you craft compelling titles and relevant tags to improve your ranking in YouTube search results.',
+        category: 'social',
+        slug: 'youtube-metadata',
+        icon: 'Youtube',
+        keywords: ['youtube tag generator', 'video seo tool', 'youtube title maker', 'increase video views'],
+        faqs: [
+             { question: 'Does it guarantee more views?', answer: 'While it improves search visibility, views also depend on content quality and thumbnail engagement.' }
+        ],
+        usageExample: 'Enter your video topic and target keywords to get a full set of metadata.',
+        relatedToolIds: ['slug-generator', 'prompt-optimizer'],
+        lastUpdated: '2026-03-21'
+    },
+    {
+        id: 'social-bio-generator',
+        title: 'Social Bio Generator',
+        description: 'Create professional bios for Instagram, Twitter, and LinkedIn.',
+        longDescription: 'Make a great first impression with a perfectly crafted bio. Our generator offers multiple styles from creative and emoji-rich for Instagram to professional and clean for LinkedIn.',
+        category: 'social',
+        slug: 'social-bio-generator',
+        icon: 'UserCircle',
+        keywords: ['instagram bio maker', 'twitter bio generator', 'linkedin summary tool', 'professional bio writer'],
+        faqs: [
+             { question: 'Which platforms are supported?', answer: 'We currently support Instagram, Twitter (X), and LinkedIn with tailored templates for each.' }
+        ],
+        usageExample: 'Enter your name and expertise to get a variety of bio options optimized for your chosen platform.',
+        relatedToolIds: ['youtube-metadata', 'slug-generator'],
+        lastUpdated: '2026-03-21'
+    },
+    // Business & Compliance Tools
+    {
+        id: 'privacy-policy-generator',
+        title: 'Privacy Policy Generator',
+        description: 'Create professional privacy policies for your website.',
+        longDescription: 'Ensure your website stays compliant with GDPR, CCPA, and other global regulations. Our generator provides tailored policies based on your specific tracking and advertisement usage.',
+        category: 'business',
+        slug: 'privacy-policy-generator',
+        icon: 'ShieldCheck',
+        keywords: ['privacy policy generator', 'free privacy policy', 'gdpr compliance', 'website legal pages'],
+        faqs: [
+             { question: 'Is this policy legally binding?', answer: 'Our templates follow global standard practices, but for specific legal advice, you should consult with a professional attorney.' }
+        ],
+        usageExample: 'Fill in your website details and click Generate to get a professional policy template.',
+        relatedToolIds: ['terms-generator', 'youtube-metadata'],
+        lastUpdated: '2026-03-21'
+    },
+    {
+        id: 'terms-conditions-generator',
+        title: 'Terms & Conditions Generator',
+        description: 'Generate standard terms and conditions for any website.',
+        longDescription: 'Protect your business with professional terms of service. Our generator covers intellectual property, liability limitations, and governing laws to ensure clear agreements with your users.',
+        category: 'business',
+        slug: 'terms-conditions-generator',
+        icon: 'Scale',
+        keywords: ['terms and conditions generator', 'tos maker', 'website legal contract', 'terms of service generator'],
+        faqs: [
+             { question: 'Why do I need T&C?', answer: 'Terms and Conditions establish the rules for using your service and protect you from legal liabilities.' }
+        ],
+        usageExample: 'Enter your business name and website address to generate a custom-tailored agreement.',
+        relatedToolIds: ['privacy-policy-generator', 'social-bio-generator'],
+        lastUpdated: '2026-03-21'
+    },
     // Discovery Hubs
     {
         id: 'city-weather',
@@ -1220,4 +1543,21 @@ export const tools: ToolDefinition[] = [
         lastUpdated: '2026-03-09',
         customPath: '/time'
     },
+    {
+        id: 'file-encyclopedia',
+        title: 'File Encyclopedia',
+        description: 'Comprehensive guide to file extensions and MIME types.',
+        longDescription: 'Explore thousands of file formats with detailed technical metadata. Learn about file histories, parent organizations, and recommended opening software.',
+        category: 'discovery',
+        slug: 'file-encyclopedia',
+        icon: 'Search',
+        keywords: ['file extension guide', 'mime type list', 'what is this file', 'open unknown files'],
+        faqs: [
+             { question: 'What is a MIME type?', answer: 'A MIME type is a label used to identify a type of data. It is used by browsers and operating systems to determine how to process a file.' }
+        ],
+        usageExample: 'Search for any extension or format name to see its full profile.',
+        relatedToolIds: ['word-counter', 'json-formatter'],
+        lastUpdated: '2026-03-22',
+        customPath: '/formats'
+    }
 ];
