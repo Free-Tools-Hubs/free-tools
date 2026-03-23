@@ -4,17 +4,28 @@ import { normalizeHex } from '@/lib/color-utils';
 import Link from 'next/link';
 import ColorPickerHome from './ColorPickerHome';
 
+import { SITE_URL, SITE_NAME } from '@/lib/config';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+
 export const metadata: Metadata = {
-    title: 'Color Hub | Explore HEX, RGB, HSL & CMYK Details | Free Tools Hub',
+    title: `Color Hub | Explore HEX, RGB, HSL & CMYK Details | ${SITE_NAME}`,
     description: 'Discover thousands of colors, their harmonies, accessibility, and mathematical representations. Search any hex code or explore curated color palettes.',
     keywords: ['color hub', 'hex codes', 'html color names', 'color harmonies', 'rgb to hex', 'hsl values'],
+    alternates: { canonical: '/colors' },
+    openGraph: {
+        title: `Color Hub | Explore HEX, RGB, HSL & CMYK Details | ${SITE_NAME}`,
+        description: 'Discover thousands of colors, their harmonies, accessibility, and mathematical representations. Search any hex code or explore curated color palettes.',
+        type: 'website',
+        url: `${SITE_URL}/colors`,
+        siteName: SITE_NAME,
+    }
 };
 
 export default function ColorsHub() {
     // Group colors by category (rough logic)
     const categorized = namedColors.reduce((acc, color) => {
         const h = hexToHue(color.hex);
-        const cat = getColorCategory(h);
+        const cat = getColorCategory(h || 0);
         if (!acc[cat]) acc[cat] = [];
         acc[cat].push(color);
         return acc;
@@ -23,7 +34,10 @@ export default function ColorsHub() {
     const order = ['Red', 'Orange', 'Yellow', 'Green', 'Cyan', 'Blue', 'Purple', 'Magenta', 'Neutral'];
 
     return (
-        <div className="max-w-7xl mx-auto px-4 py-20 pb-40">
+        <div className="max-w-7xl mx-auto px-4 py-20 pb-40 pt-32">
+            <Breadcrumbs 
+                items={[{ label: 'Color Hub', href: '/colors' }]} 
+            />
             {/* Hero */}
             <div className="text-center mb-16">
                 <h1 className="text-5xl lg:text-7xl font-black mb-6 tracking-tight bg-gradient-to-br from-zinc-900 to-zinc-500 dark:from-white dark:to-zinc-500 bg-clip-text text-transparent italic">

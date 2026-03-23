@@ -21,22 +21,20 @@ interface DictionaryTemplateProps {
     }>;
 }
 
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+
 export function DictionaryTemplate({ word, phonetic, meanings }: DictionaryTemplateProps) {
     return (
         <div className="min-h-screen flex flex-col bg-surface-50 dark:bg-surface-950">
             <Header />
 
             <main className="flex-grow pt-28 md:pt-32 pb-20 container mx-auto px-4 md:px-8 max-w-7xl">
-                {/* Breadcrumbs */}
-                <nav className="flex items-center gap-2 text-xs font-medium text-muted-foreground mb-8">
-                    <Link href="/" className="hover:text-brand-primary transition-colors">Home</Link>
-                    <ChevronRight size={12} />
-                    <Link href="/tools" className="hover:text-brand-primary transition-colors">Tools</Link>
-                    <ChevronRight size={12} />
-                    <span className="capitalize">Definitions</span>
-                    <ChevronRight size={12} />
-                    <span className="text-foreground capitalize">{word}</span>
-                </nav>
+                <Breadcrumbs 
+                    items={[
+                        { label: 'Dictionary', href: '/define' },
+                        { label: word, href: `/define/${word.toLowerCase()}` }
+                    ]} 
+                />
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     <div className="lg:col-span-8 space-y-8">
@@ -126,9 +124,9 @@ export function DictionaryTemplate({ word, phonetic, meanings }: DictionaryTempl
                                 </div>
                                 Understanding &quot;{word}&quot;
                             </h2>
-                            <div className="space-y-4">
+                            <div className="space-y-6">
                                 {generateDictionaryArticle(word, meanings[0]?.partOfSpeech || 'word', phonetic || '').map((paragraph: string, idx: number) => (
-                                    <p key={idx} className="text-muted-foreground leading-relaxed">
+                                    <p key={idx} className={`text-muted-foreground leading-relaxed ${idx === 0 ? 'text-lg text-foreground font-medium p-6 bg-brand-primary/5 rounded-2xl border-l-4 border-brand-primary italic' : ''}`}>
                                         {paragraph}
                                     </p>
                                 ))}

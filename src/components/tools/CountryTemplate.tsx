@@ -8,22 +8,20 @@ import { ChevronRight, Globe, MapPin, Users, Coins, MessageSquare, Phone, HelpCi
 import type { Country } from '@/data/countries';
 import { generateCountryArticle } from '@/lib/seo-generator';
 
-export function CountryTemplate({ name, capital, region, population, currency, languages, callingCode, description }: Country) {
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+
+export function CountryTemplate({ name, capital, region, population, currency, languages, callingCode, description, slug }: Country) {
     return (
         <div className="min-h-screen flex flex-col bg-surface-50 dark:bg-surface-950">
             <Header />
 
             <main className="flex-grow pt-28 md:pt-32 pb-20 container mx-auto px-4 md:px-8 max-w-7xl">
-                {/* Breadcrumbs */}
-                <nav className="flex items-center gap-2 text-xs font-medium text-muted-foreground mb-8">
-                    <Link href="/" className="hover:text-brand-primary transition-colors">Home</Link>
-                    <ChevronRight size={12} />
-                    <Link href="/tools" className="hover:text-brand-primary transition-colors">Tools</Link>
-                    <ChevronRight size={12} />
-                    <span className="capitalize">Country Info</span>
-                    <ChevronRight size={12} />
-                    <span className="text-foreground">{name}</span>
-                </nav>
+                <Breadcrumbs 
+                    items={[
+                        { label: 'Countries', href: '/country' },
+                        { label: name, href: `/country/${slug}` }
+                    ]} 
+                />
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     <div className="lg:col-span-8 space-y-8">
@@ -101,9 +99,9 @@ export function CountryTemplate({ name, capital, region, population, currency, l
                                 </div>
                                 Complete Guide to {name}
                             </h2>
-                            <div className="space-y-4">
+                            <div className="space-y-6">
                                 {generateCountryArticle(name, capital, region, population.toString(), currency, languages.join(', ')).map((paragraph: string, idx: number) => (
-                                    <p key={idx} className="text-muted-foreground leading-relaxed">
+                                    <p key={idx} className={`text-muted-foreground leading-relaxed text-left ${idx === 0 ? 'text-lg text-foreground font-medium p-6 bg-brand-primary/5 rounded-2xl border-l-4 border-brand-primary italic' : ''}`}>
                                         {paragraph}
                                     </p>
                                 ))}

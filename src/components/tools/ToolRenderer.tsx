@@ -91,6 +91,15 @@ const SocialBioGeneratorTool = dynamic(() => import('@/tools/social/SocialBioGen
 const PrivacyPolicyGeneratorTool = dynamic(() => import('@/tools/business/PrivacyPolicyGeneratorTool'), { ssr: false });
 const TermsAndConditionsGeneratorTool = dynamic(() => import('@/tools/business/TermsAndConditionsGeneratorTool'), { ssr: false });
 
+// SEO Tools
+const SitemapUrlCounter = dynamic(() => import('@/tools/seo/SitemapUrlCounter'), { ssr: false });
+const SitemapToUrlList = dynamic(() => import('@/tools/seo/SitemapToUrlList'), { ssr: false });
+const SitemapValidator = dynamic(() => import('@/tools/seo/SitemapValidator'), { ssr: false });
+const SitemapFormatter = dynamic(() => import('@/tools/seo/SitemapFormatter'), { ssr: false });
+const SitemapGenerator = dynamic(() => import('@/tools/seo/SitemapGenerator'), { ssr: false });
+const IndexNowGenerator = dynamic(() => import('@/tools/seo/IndexNowGenerator'), { ssr: false });
+
+
 interface ToolRendererProps {
     slug: string;
     toolTitle: string;
@@ -264,6 +273,20 @@ export function ToolRenderer({ slug, toolTitle }: ToolRendererProps) {
             return <PrivacyPolicyGeneratorTool />;
         case 'terms-conditions-generator':
             return <TermsAndConditionsGeneratorTool />;
+
+        // SEO Tools
+        case 'sitemap-url-counter':
+            return <SitemapUrlCounter />;
+        case 'sitemap-to-url-list':
+            return <SitemapToUrlList />;
+        case 'sitemap-validator':
+            return <SitemapValidator />;
+        case 'sitemap-formatter':
+            return <SitemapFormatter />;
+        case 'sitemap-generator':
+            return <SitemapGenerator />;
+        case 'indexnow-generator':
+            return <IndexNowGenerator />;
 
         default:
             return (

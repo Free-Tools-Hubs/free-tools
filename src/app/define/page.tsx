@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { topWords } from '@/lib/data-dictionaries';
 import { BookOpen, Languages, Sparkles, MessageSquare, Info } from 'lucide-react';
 import { ClientSearch } from '@/components/tools/ClientSearch';
@@ -8,19 +9,22 @@ import { generateDictionaryHubArticle } from '@/lib/seo-generator';
 
 import { JsonLd } from '@/components/seo/JsonLd';
 
+import { SITE_URL, SITE_NAME } from '@/lib/config';
+
 export const metadata = {
-    title: 'Free Online Dictionary - Definitions, Phonetics & Usage | FreeToolsHub',
+    title: `Free Online Dictionary - Definitions, Phonetics & Usage | ${SITE_NAME}`,
     description: 'Quickly find reliable definitions, phonetic pronunciations, and usage examples for thousands of English words. A clean, fast, and free online dictionary.',
     keywords: ['online dictionary', 'word definitions', 'english dictionary', 'meaning of words', 'vocabulary tool', 'linguistic resource'],
+    alternates: { canonical: '/define' },
     openGraph: {
-        title: 'Free Online Dictionary - Definitions, Phonetics & Usage | FreeToolsHub',
+        title: `Free Online Dictionary - Definitions, Phonetics & Usage | ${SITE_NAME}`,
         description: 'Quickly find reliable definitions, phonetic pronunciations, and usage examples for thousands of English words. A clean, fast, and free online dictionary.',
         type: 'website',
-        url: 'https://free-tools-steel.vercel.app/define',
-        siteName: 'Free Tools Hub',
+        url: `${SITE_URL}/define`,
+        siteName: SITE_NAME,
     },
     twitter: {
-        title: 'Free Online Dictionary - Definitions, Phonetics & Usage | FreeToolsHub',
+        title: `Free Online Dictionary - Definitions, Phonetics & Usage | ${SITE_NAME}`,
         description: 'Quickly find reliable definitions, phonetic pronunciations, and usage examples for thousands of English words. A clean, fast, and free online dictionary.',
     }
 };
@@ -33,9 +37,9 @@ export default function DictionaryHubPage() {
             <JsonLd data={{
                 "@context": "https://schema.org",
                 "@type": "WebSite",
-                "name": "English Dictionary Hub | FreeToolsHub",
+                "name": `English Dictionary Hub | ${SITE_NAME}`,
                 "description": "Free online resource for word definitions and English vocabulary.",
-                "url": "https://free-tools-steel.vercel.app/define"
+                "url": `${SITE_URL}/define`
             }} />
             <Header />
 
@@ -85,15 +89,17 @@ export default function DictionaryHubPage() {
                 </div>
 
                 {/* The Alphabetical Explorer */}
-                <ExplorerGrid
-                    items={topWords.map(word => ({
-                        label: word,
-                        slug: word.toLowerCase().trim().replace(/\s+/g, '-')
-                    }))}
-                    basePath="/define"
-                    title="Vocabulary"
-                    itemIcon={<BookOpen size={14} />}
-                />
+                <Suspense fallback={<div className="h-64 animate-pulse bg-muted rounded-xl" />}>
+                    <ExplorerGrid
+                        items={topWords.map(word => ({
+                            label: word,
+                            slug: word.toLowerCase().trim().replace(/\s+/g, '-')
+                        }))}
+                        basePath="/define"
+                        title="Vocabulary"
+                        itemIcon={<BookOpen size={14} />}
+                    />
+                </Suspense>
 
                 {/* Rich SEO Content Section */}
                 <div className="mt-20 border-t pt-20">

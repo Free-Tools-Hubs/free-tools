@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { topCities } from '@/lib/data-dictionaries';
 import { MapPin, Info, CloudSun, Wind, Thermometer } from 'lucide-react';
 import { ClientSearch } from '@/components/tools/ClientSearch';
@@ -8,19 +9,23 @@ import { generateCityHubArticle } from '@/lib/seo-generator';
 
 import { JsonLd } from '@/components/seo/JsonLd';
 
+import { SITE_URL, SITE_NAME } from '@/lib/config';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+
 export const metadata = {
-    title: 'City Weather Hub - Real-Time Forecasts for 2000+ Cities',
+    title: `City Weather Hub - Real-Time Forecasts for 2000+ Cities | ${SITE_NAME}`,
     description: 'Get accurate, real-time weather forecasts, humidity, wind speed, and daylight information for cities worldwide. Search any city for instant weather data.',
     keywords: ['city weather', 'weather forecast', 'real-time weather', 'global weather hub', 'weather tracker', 'world cities weather'],
+    alternates: { canonical: '/city' },
     openGraph: {
-        title: 'City Weather Hub - Real-Time Forecasts for 2000+ Cities',
+        title: `City Weather Hub - Real-Time Forecasts for 2000+ Cities | ${SITE_NAME}`,
         description: 'Get accurate, real-time weather forecasts, humidity, wind speed, and daylight information for cities worldwide. Search any city for instant weather data.',
         type: 'website',
-        url: 'https://free-tools-steel.vercel.app/city',
-        siteName: 'Free Tools Hub',
+        url: `${SITE_URL}/city`,
+        siteName: SITE_NAME,
     },
     twitter: {
-        title: 'City Weather Hub - Real-Time Forecasts for 2000+ Cities',
+        title: `City Weather Hub - Real-Time Forecasts for 2000+ Cities | ${SITE_NAME}`,
         description: 'Get accurate, real-time weather forecasts, humidity, wind speed, and daylight information for cities worldwide. Search any city for instant weather data.',
     }
 };
@@ -33,13 +38,16 @@ export default function CityHubPage() {
             <JsonLd data={{
                 "@context": "https://schema.org",
                 "@type": "WebSite",
-                "name": "City Weather Hub | FreeToolsHub",
+                "name": `City Weather Hub | ${SITE_NAME}`,
                 "description": "Find real-time weather information for any city in the world.",
-                "url": "https://free-tools-steel.vercel.app/city"
+                "url": `${SITE_URL}/city`
             }} />
             <Header />
 
             <main className="flex-grow pt-32 pb-20 container mx-auto px-4 max-w-6xl">
+                <Breadcrumbs 
+                    items={[{ label: 'City Weather Hub', href: '/city' }]} 
+                />
                 {/* Hero Section */}
                 <div className="text-center mb-16 max-w-3xl mx-auto">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary font-bold text-sm mb-6 border border-brand-primary/20 animate-fade-in">
@@ -85,15 +93,17 @@ export default function CityHubPage() {
                 </div>
 
                 {/* The Alphabetical Explorer - Prevents Link Bloat */}
-                <ExplorerGrid
-                    items={topCities.map(city => ({
-                        label: city,
-                        slug: city.toLowerCase().trim().replace(/\s+/g, '-')
-                    }))}
-                    basePath="/city"
-                    title="City"
-                    itemIcon={<MapPin size={14} />}
-                />
+                <Suspense fallback={<div className="h-64 animate-pulse bg-muted rounded-xl" />}>
+                    <ExplorerGrid
+                        items={topCities.map(city => ({
+                            label: city,
+                            slug: city.toLowerCase().trim().replace(/\s+/g, '-')
+                        }))}
+                        basePath="/city"
+                        title="City"
+                        itemIcon={<MapPin size={14} />}
+                    />
+                </Suspense>
 
                 {/* Rich SEO Content Section */}
                 <div className="mt-20 border-t pt-20">

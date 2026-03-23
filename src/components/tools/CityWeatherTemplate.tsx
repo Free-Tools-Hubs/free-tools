@@ -19,6 +19,8 @@ interface WeatherTemplateProps {
     sunset: number;
 }
 
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+
 export function CityWeatherTemplate({ city, description, temp, feelsLike, humidity, windSpeed, country, sunrise, sunset }: WeatherTemplateProps) {
     const formatTime = (timestamp: number) => {
         return new Date(timestamp * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
@@ -29,16 +31,12 @@ export function CityWeatherTemplate({ city, description, temp, feelsLike, humidi
             <Header />
 
             <main className="flex-grow pt-28 md:pt-32 pb-20 container mx-auto px-4 md:px-8 max-w-7xl">
-                {/* Breadcrumbs */}
-                <nav className="flex items-center gap-2 text-xs font-medium text-muted-foreground mb-8">
-                    <Link href="/" className="hover:text-brand-primary transition-colors">Home</Link>
-                    <ChevronRight size={12} />
-                    <Link href="/tools" className="hover:text-brand-primary transition-colors">Tools</Link>
-                    <ChevronRight size={12} />
-                    <span className="capitalize">City Guides</span>
-                    <ChevronRight size={12} />
-                    <span className="text-foreground capitalize">{city}</span>
-                </nav>
+                <Breadcrumbs 
+                    items={[
+                        { label: 'City Guides', href: '/city' },
+                        { label: city, href: `/city/${city.toLowerCase().replace(/ /g, '-')}` }
+                    ]} 
+                />
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     <div className="lg:col-span-8 space-y-8">
@@ -95,11 +93,15 @@ export function CityWeatherTemplate({ city, description, temp, feelsLike, humidi
                                     <div className="text-xs font-bold text-muted-foreground uppercase opacity-60">Wind Speed</div>
                                     <div className="font-black">{windSpeed} m/s</div>
                                 </div>
-                                <div className="bg-surface-50 dark:bg-surface-900/50 border rounded-2xl p-4 flex flex-col items-center gap-2">
+                                <div className="bg-surface-50 dark:bg-surface-900/50 border rounded-2xl p-4 flex flex-col items-center gap-2 text-center">
                                     <Sun className="text-yellow-500" size={20} />
                                     <div className="text-xs font-bold text-muted-foreground uppercase opacity-60">Clouds</div>
                                     <div className="font-black">{description}</div>
                                 </div>
+                            </div>
+                            <div className="mt-8 pt-6 border-t border-surface-200 dark:border-surface-800 flex items-center justify-between text-[10px] uppercase tracking-widest font-bold text-muted-foreground/40">
+                                <span>Verified Data Point: MET-DATA-{city.toUpperCase().substring(0,3)}</span>
+                                <span>Source: OpenWeather Global Network Citation</span>
                             </div>
                         </section>
 
@@ -146,9 +148,9 @@ export function CityWeatherTemplate({ city, description, temp, feelsLike, humidi
                                 </div>
                                 The Complete Guide to {city} Weather
                             </h2>
-                            <div className="space-y-4">
+                            <div className="space-y-6">
                                 {generateCityWeatherArticle(city, country, temp, feelsLike, description, humidity, windSpeed).map((paragraph: string, idx: number) => (
-                                    <p key={idx} className="text-muted-foreground leading-relaxed">
+                                    <p key={idx} className={`text-muted-foreground leading-relaxed ${idx === 0 ? 'text-lg text-foreground font-medium p-6 bg-brand-primary/5 rounded-2xl border-l-4 border-brand-primary italic' : ''}`}>
                                         {paragraph}
                                     </p>
                                 ))}

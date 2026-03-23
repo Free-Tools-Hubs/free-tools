@@ -6,7 +6,9 @@ import { AdPlaceholder } from '@/components/layout/AdPlaceholder';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import * as LucideIcons from 'lucide-react';
-import { ChevronRight, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+import { Metadata } from 'next';
 
 interface PageProps {
     params: Promise<{
@@ -20,43 +22,41 @@ export async function generateStaticParams() {
     }));
 }
 
-export async function generateMetadata({ params }: PageProps) {
+import { SITE_URL, SITE_NAME } from '@/lib/config';
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { category: categoryId } = await params;
     const category = categories.find((c) => c.id === categoryId);
 
     if (!category) return { title: 'Category Not Found' };
 
+    const canonical = `/tools/${categoryId}`;
+
     return {
-        title: `${category.title} | FreeToolsHub`,
+        title: `${category.title} Tools | ${SITE_NAME}`,
         description: category.description,
-        keywords: `${category.title}, ${category.icon}`,
+        keywords: `${category.title}, free tools, online tools`,
+        alternates: { canonical },
         openGraph: {
-            title: `${category.title} | FreeToolsHub`,
+            title: `${category.title} Tools | ${SITE_NAME}`,
             description: category.description,
             type: 'website',
-            url: `https://free-tools-steel.vercel.app/tools/${categoryId}`,
-            siteName: 'Free Tools',
+            url: `${SITE_URL}${canonical}`,
+            siteName: SITE_NAME,
             images: [
                 {
-                    url: `https://free-tools-steel.vercel.app/tools/${categoryId}.png`,
+                    url: `${SITE_URL}/og-api?title=${encodeURIComponent(category.title)}`,
                     width: 1200,
                     height: 630,
-                    alt: `${category.title} | FreeToolsHub`,
+                    alt: `${category.title} Tools`,
                 },
             ],
         },
         twitter: {
-            title: `${category.title} | FreeToolsHub`,
+            title: `${category.title} Tools | ${SITE_NAME}`,
             description: category.description,
             card: 'summary_large_image',
-            images: [
-                {
-                    url: `https://free-tools-steel.vercel.app/tools/${categoryId}.png`,
-                    width: 1200,
-                    height: 630,
-                    alt: `${category.title} | FreeToolsHub`,
-                },
-            ],
+            images: [`${SITE_URL}/og-api?title=${encodeURIComponent(category.title)}`],
         },
     };
 }
@@ -75,13 +75,12 @@ export default async function CategoryPage({ params }: PageProps) {
             <Header />
 
             <main className="flex-grow pt-28 md:pt-32 pb-20 container mx-auto px-4 md:px-8 max-w-7xl">
-                <nav className="flex items-center gap-2 text-xs font-medium text-muted-foreground mb-8">
-                    <Link href="/" className="hover:text-brand-primary transition-colors">Home</Link>
-                    <ChevronRight size={12} />
-                    <Link href="/tools" className="hover:text-brand-primary transition-colors">Tools</Link>
-                    <ChevronRight size={12} />
-                    <span className="text-foreground">{category.title}</span>
-                </nav>
+                <Breadcrumbs 
+                    items={[
+                        { label: 'Tools', href: '/tools' },
+                        { label: category.title, href: `/tools/${categoryId}` }
+                    ]} 
+                />
 
                 <section className="mb-12">
                     <div className="flex items-center gap-4 mb-6">

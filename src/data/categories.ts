@@ -61,4 +61,10 @@ export const categories: CategoryDefinition[] = [
         description: 'Generate professional privacy policies and terms of service.',
         icon: 'Briefcase',
     },
+    {
+        id: 'seo',
+        title: 'SEO Tools',
+        description: 'Sitemap generators, URL checkers, and search optimization tools.',
+        icon: 'Search',
+    },
 ];
