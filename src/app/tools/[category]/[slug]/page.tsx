@@ -18,25 +18,30 @@ export async function generateStaticParams() {
     }));
 }
 
+import { SITE_URL, SITE_NAME } from '@/lib/config';
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-    const { slug } = await params;
+    const { slug, category } = await params;
     const tool = tools.find((t) => t.slug === slug);
 
     if (!tool) return { title: 'Tool Not Found' };
 
+    const canonical = `/tools/${category}/${slug}`;
+
     return {
-        title: `${tool.title} | FreeToolsHub`,
+        title: `${tool.title} | ${SITE_NAME}`,
         description: tool.description,
         keywords: tool.keywords.join(', '),
+        alternates: { canonical },
         openGraph: {
             title: tool.title,
             description: tool.description,
             type: 'website',
-            url: `https://free-tools-steel.vercel.app/tools/${tool.category}/${slug}`,
-            siteName: 'Free Tools',
+            url: `${SITE_URL}${canonical}`,
+            siteName: SITE_NAME,
             images: [
                 {
-                    url: `https://free-tools-steel.vercel.app/tools/${tool.category}/${slug}.png`,
+                    url: `${SITE_URL}/og-api?title=${encodeURIComponent(tool.title)}`,
                     width: 1200,
                     height: 630,
                     alt: tool.title,
@@ -47,14 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title: tool.title,
             description: tool.description,
             card: 'summary_large_image',
-            images: [
-                {
-                    url: `https://free-tools-steel.vercel.app/tools/${tool.category}/${slug}.png`,
-                    width: 1200,
-                    height: 630,
-                    alt: tool.title,
-                },
-            ],
+            images: [`${SITE_URL}/og-api?title=${encodeURIComponent(tool.title)}`],
         },
     };
 }

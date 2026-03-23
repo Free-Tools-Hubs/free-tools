@@ -11,6 +11,7 @@ import {
 } from '@/lib/color-utils';
 import { namedColors } from '@/data/named-colors';
 import Link from 'next/link';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 
 interface Props {
     params: Promise<{ hex: string }>;
@@ -40,6 +41,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             description: `Detailed information about the color #${cleanHex}. Get RGB, HSL, CMYK values, complementary colors, and WCAG contrast ratios.`,
             url: `${SITE_URL}${canonical}`,
             siteName: SITE_NAME,
+            images: [
+                {
+                    url: `${SITE_URL}/og-api?title=${encodeURIComponent(namedColor?.name || `#${cleanHex}`)}`,
+                    width: 1200,
+                    height: 630,
+                    alt: title,
+                },
+            ],
+        },
+        twitter: {
+            title,
+            description: `Detailed information about the color #${cleanHex}. Get RGB, HSL, CMYK values, complementary colors, and WCAG contrast ratios.`,
+            card: 'summary_large_image',
+            images: [`${SITE_URL}/og-api?title=${encodeURIComponent(namedColor?.name || `#${cleanHex}`)}`],
         }
     };
 }
@@ -72,7 +87,13 @@ export default async function ColorPage({ params }: Props) {
     };
 
     return (
-        <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="max-w-7xl mx-auto px-4 py-12 pt-32">
+            <Breadcrumbs 
+                items={[
+                    { label: 'Color Hub', href: '/tools/colors' },
+                    { label: namedColor?.name || `#${cleanHex}`, href: `/colors/${cleanHex}` }
+                ]} 
+            />
             {/* Hero Section */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
                 <div 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Search } from 'lucide-react';
 
@@ -17,7 +17,8 @@ interface ExplorerGridProps {
 }
 
 export function ExplorerGrid({ items, basePath, itemIcon, title }: ExplorerGridProps) {
-    const [activeLetter, setActiveLetter] = useState<string | null>(null);
+    const searchParams = useSearchParams();
+    const activeLetter = searchParams.get('letter')?.toUpperCase() || null;
 
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
@@ -26,7 +27,7 @@ export function ExplorerGrid({ items, basePath, itemIcon, title }: ExplorerGridP
 
     const filteredItems = activeLetter
         ? sortedItems.filter(item => item.label.trim().toUpperCase().startsWith(activeLetter))
-        : sortedItems.slice(0, 30); // Show top 30 by default if no letter selected
+        : sortedItems.slice(0, 50); // Show top 50 by default if no letter selected
 
     return (
         <div className="space-y-8">
@@ -35,31 +36,32 @@ export function ExplorerGrid({ items, basePath, itemIcon, title }: ExplorerGridP
                     <h2 className="text-2xl font-bold font-outfit">{title} Explorer</h2>
 
                     <div className="flex flex-wrap gap-2 justify-center">
-                        <button
-                            onClick={() => setActiveLetter(null)}
+                        <Link
+                            href={basePath}
+                            scroll={false}
                             className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold transition-all border ${activeLetter === null
                                     ? 'bg-brand-primary text-white border-brand-primary shadow-lg shadow-brand-primary/20'
                                     : 'bg-surface-50 dark:bg-surface-900 hover:border-brand-primary'
                                 }`}
                         >
                             All
-                        </button>
+                        </Link>
                         {alphabet.map(letter => {
                             const hasItems = sortedItems.some(item => item.label.trim().toUpperCase().startsWith(letter));
                             return (
-                                <button
+                                <Link
                                     key={letter}
-                                    disabled={!hasItems}
-                                    onClick={() => setActiveLetter(letter)}
+                                    href={hasItems ? `${basePath}?letter=${letter}` : '#'}
+                                    scroll={false}
                                     className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold transition-all border ${activeLetter === letter
                                             ? 'bg-brand-primary text-white border-brand-primary shadow-lg shadow-brand-primary/20'
                                             : hasItems
                                                 ? 'bg-surface-50 dark:bg-surface-900 hover:border-brand-primary'
-                                                : 'opacity-20 cursor-not-allowed'
+                                                : 'opacity-20 cursor-not-allowed pointer-events-none'
                                         }`}
                                 >
                                     {letter}
-                                </button>
+                                </Link>
                             );
                         })}
                     </div>

@@ -8,6 +8,7 @@ import { tools } from '@/data/tools';
 import * as LucideIcons from 'lucide-react';
 import { ChevronRight, Share2, Info, HelpCircle, Star, Sparkles } from 'lucide-react';
 import { generateToolSchema, generateFAQSchema } from '@/lib/seo';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 
 interface ToolPageLayoutProps {
     tool: ToolDefinition;
@@ -34,18 +35,13 @@ export function ToolPageLayout({ tool, children }: ToolPageLayoutProps) {
             <Header />
 
             <main className="flex-grow pt-28 md:pt-32 pb-20 container mx-auto px-4 md:px-8 max-w-7xl">
-                {/* Breadcrumbs */}
-                <nav className="flex items-center gap-2 text-xs font-medium text-muted-foreground mb-8">
-                    <Link href="/" className="hover:text-brand-primary transition-colors">Home</Link>
-                    <ChevronRight size={12} />
-                    <Link href="/tools" className="hover:text-brand-primary transition-colors">Tools</Link>
-                    <ChevronRight size={12} />
-                    <Link href={`/tools/${tool.category}`} className="capitalize hover:text-brand-primary transition-colors">
-                        {tool.category}
-                    </Link>
-                    <ChevronRight size={12} />
-                    <span className="text-foreground">{tool.title}</span>
-                </nav>
+                <Breadcrumbs 
+                    items={[
+                        { label: 'Tools', href: '/tools' },
+                        { label: tool.category, href: `/tools/${tool.category}` },
+                        { label: tool.title, href: `/tools/${tool.category}/${tool.slug}` }
+                    ]} 
+                />
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     {/* Main Content Area */}

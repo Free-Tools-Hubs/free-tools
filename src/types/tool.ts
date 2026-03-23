@@ -8,7 +8,8 @@ export type ToolCategory =
     | 'ai'
     | 'social'
     | 'discovery'
-    | 'business';
+    | 'business'
+    | 'seo';
 
 export interface FAQ {
     question: string;

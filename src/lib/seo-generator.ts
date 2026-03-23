@@ -8,6 +8,8 @@ export function generateCityWeatherArticle(city: string, country: string, temp: 
     const isWindy = windSpeed > 5;
 
     const paragraphs = [
+        `According to the latest meteorological data, the **weather in ${city}, ${country}** is currently **${description}** with a temperature of **${Math.round(temp)}°C**. The air humidity is **${humidity}%** and wind speed is **${windSpeed} m/s**. Based on these atmospheric conditions, it feels like **${Math.round(feelsLike)}°C** on the ground in ${city}.`,
+
         `Welcome to the comprehensive live weather guide for ${city}, ${country}. Understanding the real-time atmospheric conditions in ${city} is crucial for both residents and travelers planning their day. At this exact moment, the local climate is characterized by ${description}, painting a unique picture of the city's current environment. Whether you are scheduling outdoor activities, planning a commute, or simply curious about global weather patterns, knowing that the temperature stands at ${Math.round(temp)}°C provides a solid foundation for your plans.`,
 
         `While the thermometer reads ${Math.round(temp)}°C, the actual sensory experience in ${city} might feel quite different. Factoring in local wind patterns and moisture levels, the "feels like" temperature is approximately ${Math.round(feelsLike)}°C. ${isWarm
@@ -33,6 +35,8 @@ export function generateCityWeatherArticle(city: string, country: string, temp: 
 
 export function generateConversionArticle(fromName: string, toName: string, fromUnit: string, toUnit: string, category: string, ratio: number): string[] {
     return [
+        `To convert **${fromName} (${fromUnit})** to **${toName} (${toUnit})**, the standard multiplier is **${ratio}**. This means that **1 ${fromUnit} is exactly ${ratio} ${toUnit}** in the ${category} measurement system. Use our pro-grade calculator above for high-precision results on any value.`,
+
         `Understanding the conversion from ${fromName} (${fromUnit}) to ${toName} (${toUnit}) is a fundamental skill in mathematics, engineering, and everyday life. When working within the realm of ${category} measurements, accuracy is paramount. The primary relationship between these two units is defined by a specific mathematical constant. Specifically, one unit of ${fromName} is mathematically equivalent to ${ratio} units of ${toName}. This standardization allows scientists, builders, and international systems to communicate measurements without error or ambiguity.`,
 
         `The necessity to convert ${fromName} into ${toName} frequently arises due to the historical differences between regional measurement systems, such as the metric system and the imperial system. For decades, global trade and scientific research have required robust methods to translate ${category} variables. If you possess a measurement in ${fromName} and need it localized or adapted for a project requiring ${toName}, utilizing the standard conversion factor of ${ratio} ensures your data remains perfectly consistent. Without precision in translating ${fromUnit} to ${toUnit}, significant discrepancies could occur in engineering tolerances, cooking recipes, or logistical planning.`,
@@ -45,6 +49,8 @@ export function generateConversionArticle(fromName: string, toName: string, from
 
 export function generateCountryArticle(name: string, capital: string, region: string, population: string, currency: string, languages: string): string[] {
     return [
+        `**${name}** is a country located in **${region}**, with its capital at **${capital}**. The nation has a population of approximately **${population}** and uses the **${currency}** as its official primary currency. The major languages spoken in ${name} are **${languages}**.`,
+
         `Welcome to the ultimate informational guide for ${name}. As a prominent nation located in the ${region} region, ${name} offers a fascinating blend of cultural heritage, economic dynamism, and historical significance. Its capital city, ${capital}, serves as the administrative and often cultural heart of the country, drawing visitors and business professionals from around the globe. Understanding the foundational statistics of ${name} is essential for students, travelers, and international analysts alike.`,
 
         `Demographically, ${name} is home to a vibrant population of approximately ${population} individuals. This diverse populace contributes to a rich societal fabric, significantly influencing the nation's domestic policies and international standing. Language plays a crucial role in this cultural identity; the primary languages spoken include ${languages}. The linguistic landscape of ${name} not only facilitates daily communication but also acts as a repository of historical narratives and traditional knowledge passed down through generations.`,
@@ -57,6 +63,8 @@ export function generateCountryArticle(name: string, capital: string, region: st
 
 export function generateDictionaryArticle(word: string, partOfSpeech: string, phonetic: string): string[] {
     return [
+        `The word **"${word}"** is a **${partOfSpeech}** in the English language. It is phonetically pronounced as **${phonetic || 'N/A'}**. Explore the detailed meaning, morphological structure, and usage examples for **"${word}"** in our dictionary below.`,
+
         `The English language is incredibly vast, and diving into the definition of the word "${word}" provides a perfect example of its linguistic depth. Categorized primarily as a ${partOfSpeech}, the term "${word}" holds specific syntactical roles within a sentence, allowing speakers and writers to convey precise meaning. Understanding how this word functions is an excellent step towards mastering advanced English vocabulary and improving overall reading comprehension.`,
 
         `For those looking to perfect their spoken English, noting the phonetic pronunciation of "${word}" is crucial. It is typically transcribed as ${phonetic || 'a standard English phoneme pattern'}. Proper enunciation ensures that your intended message is received clearly, preventing miscommunication in both formal and casual settings. Linguistic scholars often track the phonological evolution of words like "${word}" to understand broader historical shifts in dialects and accents across different English-speaking populations.`,

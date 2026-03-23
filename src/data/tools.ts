@@ -1559,5 +1559,132 @@ export const tools: ToolDefinition[] = [
         relatedToolIds: ['word-counter', 'json-formatter'],
         lastUpdated: '2026-03-22',
         customPath: '/formats'
+    },
+    // SEO Tools
+    {
+        id: 'sitemap-url-counter',
+        title: 'Sitemap URL Counter',
+        description: 'Count total URLs and see breakdown in single or index sitemaps.',
+        longDescription: 'Our Sitemap URL Counter allows you to quickly analyze any XML sitemap. It counts the total number of <loc> tags, identifies if it is a Sitemap Index, and provides a breakdown of all nested sitemaps. Perfect for staying within Google\'s 50,000 URL limit per sitemap file.',
+        category: 'seo',
+        slug: 'sitemap-url-counter',
+        icon: 'Hash',
+        keywords: ['sitemap counter', 'count urls in sitemap', 'xml sitemap analyzer', 'sitemap limit checker'],
+        faqs: [
+            {
+                question: 'What is the maximum URL limit for a sitemap?',
+                answer: 'Google and other search engines traditionally limit sitemaps to 50,000 URLs or 50MB (uncompressed) per file.'
+            },
+            {
+                question: 'Does it support Sitemap Index files?',
+                answer: 'Yes, it can parse index files and fetch child sitemaps to give you a consolidated count.'
+            }
+        ],
+        usageExample: 'Enter your sitemap URL or paste the XML content to get an instant count.',
+        relatedToolIds: ['sitemap-to-url-list', 'sitemap-validator'],
+        lastUpdated: '2026-03-22'
+    },
+    {
+        id: 'sitemap-to-url-list',
+        title: 'Sitemap to URL List',
+        description: 'Convert any XML sitemap into a clean list of plain URLs.',
+        longDescription: 'Easily extract all URLs from an XML sitemap into a simple text list. This is extremely useful for bulk checking status codes, uploading to crawling tools, or auditing your site\'s architecture.',
+        category: 'seo',
+        slug: 'sitemap-to-url-list',
+        icon: 'List',
+        keywords: ['sitemap extractor', 'xml to url list', 'extract urls from sitemap', 'sitemap to txt'],
+        faqs: [
+            {
+                question: 'Can I export the list?',
+                answer: 'Yes, you can copy the entire list to your clipboard or download it as a .txt file.'
+            }
+        ],
+        usageExample: 'Paste your sitemap XML and get a clean list of unique URLs instantly.',
+        relatedToolIds: ['sitemap-url-counter', 'remove-duplicate-lines'],
+        lastUpdated: '2026-03-22'
+    },
+    {
+        id: 'sitemap-validator',
+        title: 'Sitemap Validator',
+        description: 'Check if your XML sitemap follows standard protocols and schemas.',
+        longDescription: 'Validate your sitemaps against the official sitemaps.org protocol. This tool checks for structural errors, missing required tags like <loc>, and ensures proper date formats in <lastmod>.',
+        category: 'seo',
+        slug: 'sitemap-validator',
+        icon: 'ShieldCheck',
+        keywords: ['sitemap validator', 'check sitemap errors', 'xml sitemap tester', 'seo sitemap audit'],
+        faqs: [
+            {
+                question: 'Why should I validate my sitemap?',
+                answer: 'Incorrectly formatted sitemaps can prevent search engines from discovering your pages or lead to crawling errors in Search Console.'
+            }
+        ],
+        usageExample: 'Paste your sitemap code and let our validator scan for common mistakes and protocol violations.',
+        relatedToolIds: ['sitemap-url-counter', 'json-validator'],
+        lastUpdated: '2026-03-22'
+    },
+    {
+        id: 'sitemap-formatter',
+        title: 'Sitemap Formatter',
+        description: 'Beautify and minify your XML sitemap for better readability or performance.',
+        longDescription: 'Format your messy sitemap XML into a clean, human-readable structure with proper indentation. Alternatively, you can minify it for production use to save a few kilobytes.',
+        category: 'seo',
+        slug: 'sitemap-formatter',
+        icon: 'FileCode',
+        keywords: ['sitemap formatter', 'beautify xml sitemap', 'minify sitemap', 'clean sitemap xml'],
+        faqs: [
+            {
+                question: 'Does formatting affect SEO?',
+                answer: 'No, search engines can read both minified and formatted XML. Formatting is mainly for developer debugging and human auditing.'
+            }
+        ],
+        usageExample: 'Paste your raw XML and choose "Beautify" to make it readable.',
+        relatedToolIds: ['sitemap-validator', 'html-minifier'],
+        lastUpdated: '2026-03-22'
+    },
+    {
+        id: 'sitemap-generator',
+        title: 'Sitemap XML Generator',
+        description: 'Convert a list of URLs into a valid XML sitemap instantly.',
+        longDescription: 'Our Sitemap XML Generator helps you create a valid, search-engine-ready sitemap from a simple list of URLs. It automatically handles XML escaping, adds essential metadata like <lastmod> and <changefreq>, and ensures your file is perfectly formatted for submission to Google Search Console and Bing Webmaster Tools.',
+        category: 'seo',
+        slug: 'sitemap-generator',
+        icon: 'Zap',
+        keywords: ['build sitemap', 'url to sitemap xml', 'create sitemap online', 'sitemap builder for seo'],
+        faqs: [
+            {
+                question: 'How many URLs can I add?',
+                answer: 'You can add up to 50,000 URLs, which is the standard limit for a single XML sitemap file.'
+            },
+            {
+                question: 'Does it follow sitemaps.org protocol?',
+                answer: 'Yes, the generated XML is fully compliant with the sitemaps.org schema used by all major search engines.'
+            }
+        ],
+        usageExample: 'Paste your URLs (one per line) and click "Build Sitemap XML" to generate your file.',
+        relatedToolIds: ['sitemap-validator', 'sitemap-url-counter'],
+        lastUpdated: '2026-03-22'
+    },
+    {
+        id: 'indexnow-generator',
+        title: 'IndexNow Request Builder',
+        description: 'Generate JSON payloads for Bing and Yandex IndexNow API from your sitemap.',
+        longDescription: 'IndexNow is a protocol that allows website owners to instantly notify search engines about recent content changes. This tool helps you build the exact JSON request payload needed to ping API endpoints like api.indexnow.org. You can extract URLs from a sitemap and add your own API keys to create a valid submission package.',
+        category: 'seo',
+        slug: 'indexnow-generator',
+        icon: 'Send',
+        keywords: ['indexnow payload builder', 'bing indexing api', 'yandex indexing', 'ping search engines', 'indexnow json generator'],
+        faqs: [
+            {
+                question: 'What is IndexNow?',
+                answer: 'IndexNow is a simple way for websites to inform search engines in real-time about URL additions, updates, and deletions.'
+            },
+            {
+                question: 'Where do I get my API key?',
+                answer: 'You can generate a host-key and host it on your root directory as a .txt file. Most CMS platforms like WordPress generate this for you.'
+            }
+        ],
+        usageExample: 'Enter your host, key, and sitemap URL or list of pages to generate the IndexNow JSON payload.',
+        relatedToolIds: ['sitemap-url-counter', 'sitemap-to-url-list'],
+        lastUpdated: '2026-03-22'
     }
 ];

@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import countries from '@/data/countries';
 import { Globe, Map, Users, Coins, Info } from 'lucide-react';
 import { ClientSearch } from '@/components/tools/ClientSearch';
@@ -8,19 +9,23 @@ import { generateCountryHubArticle } from '@/lib/seo-generator';
 
 import { JsonLd } from '@/components/seo/JsonLd';
 
+import { SITE_URL, SITE_NAME } from '@/lib/config';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+
 export const metadata = {
-    title: 'Country Facts & Information Hub - Global Database | FreeToolsHub',
+    title: `Country Facts & Information Hub - Global Database | ${SITE_NAME}`,
     description: 'Explore comprehensive data about every country: population, currency, languages, capital cities, and regional info. Your go-to guide for global information.',
     keywords: ['country facts', 'national information', 'global country database', 'world geography', 'country statistics', 'population data'],
+    alternates: { canonical: '/country' },
     openGraph: {
-        title: 'Country Facts & Information Hub - Global Database | FreeToolsHub',
+        title: `Country Facts & Information Hub - Global Database | ${SITE_NAME}`,
         description: 'Explore comprehensive data about every country: population, currency, languages, capital cities, and regional info. Your go-to guide for global information.',
         type: 'website',
-        url: 'https://free-tools-steel.vercel.app/country',
-        siteName: 'Free Tools Hub',
+        url: `${SITE_URL}/country`,
+        siteName: SITE_NAME,
     },
     twitter: {
-        title: 'Country Facts & Information Hub - Global Database | FreeToolsHub',
+        title: `Country Facts & Information Hub - Global Database | ${SITE_NAME}`,
         description: 'Explore comprehensive data about every country: population, currency, languages, capital cities, and regional info. Your go-to guide for global information.',
     }
 };
@@ -34,13 +39,16 @@ export default function CountryHubPage() {
             <JsonLd data={{
                 "@context": "https://schema.org",
                 "@type": "WebSite",
-                "name": "Country Information Hub | FreeToolsHub",
+                "name": `Country Information Hub | ${SITE_NAME}`,
                 "description": "Comprehensive database of country facts and national information.",
-                "url": "https://free-tools-steel.vercel.app/country"
+                "url": `${SITE_URL}/country`
             }} />
             <Header />
 
             <main className="flex-grow pt-32 pb-20 container mx-auto px-4 max-w-6xl">
+                <Breadcrumbs 
+                    items={[{ label: 'Country Hub', href: '/country' }]} 
+                />
                 {/* Hero Section */}
                 <div className="text-center mb-16 max-w-3xl mx-auto">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary font-bold text-sm mb-6 border border-brand-primary/20">
@@ -86,15 +94,17 @@ export default function CountryHubPage() {
                 </div>
 
                 {/* The Alphabetical Explorer */}
-                <ExplorerGrid
-                    items={countries.map(c => ({
-                        label: c.name,
-                        slug: c.slug
-                    }))}
-                    basePath="/country"
-                    title="Country"
-                    itemIcon={<Globe size={14} />}
-                />
+                <Suspense fallback={<div className="h-64 animate-pulse bg-muted rounded-xl" />}>
+                    <ExplorerGrid
+                        items={countries.map(c => ({
+                            label: c.name,
+                            slug: c.slug
+                        }))}
+                        basePath="/country"
+                        title="Country"
+                        itemIcon={<Globe size={14} />}
+                    />
+                </Suspense>
 
                 {/* Rich SEO Content Section */}
                 <div className="mt-20 border-t pt-20">

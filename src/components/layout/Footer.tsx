@@ -4,8 +4,8 @@ import { categories } from '@/data/categories';
 
 export function Footer() {
     return (
-        <footer className="bg-surface-50 dark:bg-surface-950 border-t pt-20 pb-10 px-4 md:px-8">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <footer className="bg-surface-50 dark:bg-surface-950 border-t pt-20 pb-10 px-4 md:px-8 text-foreground">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
                 <div className="flex flex-col gap-6">
                     <Link href="/" className="flex items-center gap-2 group">
                         <div className="w-10 h-10 premium-gradient rounded-xl flex items-center justify-center text-white shadow-lg">
@@ -19,13 +19,13 @@ export function Footer() {
                         The ultimate hub for high-performance online tools. 100% free, secure, and privacy-focused toolsets for developers and creators.
                     </p>
                     <div className="flex items-center gap-4">
-                        <Link href="#" className="w-9 h-9 rounded-full bg-surface-100 dark:bg-surface-800 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
+                        <Link href="https://x.com/Talnovaofficial" className="w-9 h-9 rounded-full bg-surface-100 dark:bg-surface-800 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
                             <Twitter size={18} />
                         </Link>
-                        <Link href="#" className="w-9 h-9 rounded-full bg-surface-100 dark:bg-surface-800 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
+                        <Link href="https://github.com/kavicastelo/" className="w-9 h-9 rounded-full bg-surface-100 dark:bg-surface-800 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
                             <Github size={18} />
                         </Link>
-                        <Link href="#" className="w-9 h-9 rounded-full bg-surface-100 dark:bg-surface-800 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
+                        <Link href="mailto:info@talnova.io" className="w-9 h-9 rounded-full bg-surface-100 dark:bg-surface-800 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all">
                             <Mail size={18} />
                         </Link>
                     </div>
@@ -64,6 +64,16 @@ export function Footer() {
                         <li><Link href="/terms" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">Terms of Service</Link></li>
                         <li><Link href="/disclaimer" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">Disclaimer</Link></li>
                         <li><Link href="/sitemap.xml" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">Sitemap</Link></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 className="font-outfit font-bold mb-6 text-lg">Hubs</h3>
+                    <ul className="grid grid-cols-1 gap-3">
+                        <li><Link href="/define" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors italic">English Dictionary</Link></li>
+                        <li><Link href="/city" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors italic">City Weather Hub</Link></li>
+                        <li><Link href="/country" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors italic">Country Facts Guide</Link></li>
+                        <li><Link href="/colors" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors italic">Color Value Explorer</Link></li>
                     </ul>
                 </div>
             </div>

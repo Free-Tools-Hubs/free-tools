@@ -19,6 +19,8 @@ export async function generateStaticParams() {
     }));
 }
 
+import { SITE_URL, SITE_NAME } from '@/lib/config';
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { name } = await params;
     const weather = await fetchWeatherData(name);
@@ -26,20 +28,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     if (!weather) return { title: 'Weather Information Not Found' };
 
     const cityName = weather.name;
+    const canonical = `/city/${name}`;
 
     return {
         title: `Weather in ${cityName}: Current Forecast & Information`,
         description: `Everything about the weather in ${cityName} right now. Current temperature is ${Math.round(weather.main?.temp)}°C, with ${weather.weather?.[0]?.description}.`,
         keywords: `${cityName}, weather, forecast, ${weather.weather?.[0]?.description}, ${weather.main?.temp}°C, ${weather.main?.humidity}%, ${weather.wind?.speed} m/s`,
+        alternates: { canonical },
         openGraph: {
             title: `Weather in ${cityName}: Current Forecast & Information`,
             description: `Everything about the weather in ${cityName} right now. Current temperature is ${Math.round(weather.main?.temp)}°C, with ${weather.weather?.[0]?.description}.`,
             type: 'website',
-            url: `https://free-tools-steel.vercel.app/city/${name}`,
-            siteName: 'Free Tools',
+            url: `${SITE_URL}${canonical}`,
+            siteName: SITE_NAME,
             images: [
                 {
-                    url: `https://free-tools-steel.vercel.app/city/${name}.png`,
+                    url: `${SITE_URL}/og-api?title=${encodeURIComponent(`Weather in ${cityName}`)}`,
                     width: 1200,
                     height: 630,
                     alt: `Weather in ${cityName}: Current Forecast & Information`,
@@ -50,14 +54,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title: `Weather in ${cityName}: Current Forecast & Information`,
             description: `Everything about the weather in ${cityName} right now. Current temperature is ${Math.round(weather.main?.temp)}°C, with ${weather.weather?.[0]?.description}.`,
             card: 'summary_large_image',
-            images: [
-                {
-                    url: `https://free-tools-steel.vercel.app/city/${name}.png`,
-                    width: 1200,
-                    height: 630,
-                    alt: `Weather in ${cityName}: Current Forecast & Information`,
-                },
-            ],
+            images: [`${SITE_URL}/og-api?title=${encodeURIComponent(`Weather in ${cityName}`)}`],
         },
     };
 }
