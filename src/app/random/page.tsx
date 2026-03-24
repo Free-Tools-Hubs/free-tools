@@ -14,11 +14,11 @@ export const metadata = {
         title: 'Free Online Generators - Random Numbers, Colors, & More',
         description: 'A comprehensive collection of free online random generators. Generate random numbers, hex colors, countries, movies, and strings instantly.',
         type: 'website',
-        url: 'https://free-tools-steel.vercel.app/random',
+        url: 'https://freetoolshubs.com/random',
         siteName: 'Free Tools',
         images: [
             {
-                url: 'https://free-tools-steel.vercel.app/random.png',
+                url: 'https://freetoolshubs.com/random.png',
                 width: 1200,
                 height: 630,
                 alt: 'Free Online Generators - Random Numbers, Colors, & More',
@@ -31,7 +31,7 @@ export const metadata = {
         card: 'summary_large_image',
         images: [
             {
-                url: 'https://free-tools-steel.vercel.app/random.png',
+                url: 'https://freetoolshubs.com/random.png',
                 width: 1200,
                 height: 630,
                 alt: 'Free Online Generators - Random Numbers, Colors, & More',
@@ -48,7 +48,7 @@ export default function RandomHubPage() {
                 "@type": "WebPage",
                 "name": "Random Generators Hub",
                 "description": "Library of free online random generation tools.",
-                "url": "https://free-tools-steel.vercel.app/random"
+                "url": "https://freetoolshubs.com/random"
             }} />
             <Header />
             <main className="flex-grow pt-32 pb-20 container mx-auto px-4 max-w-5xl">

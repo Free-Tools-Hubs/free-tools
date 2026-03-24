@@ -5,7 +5,7 @@ import { QrCode, Download, Settings, RefreshCcw } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 
 export default function QrCodeGeneratorTool() {
-    const [value, setValue] = useState('https://free-tools-steel.vercel.app');
+    const [value, setValue] = useState('https://freetoolshubs.com');
     const [size, setSize] = useState(256);
     const [fgColor, setFgColor] = useState('#000000');
     const [bgColor, setBgColor] = useState('#ffffff');
@@ -43,7 +43,7 @@ export default function QrCodeGeneratorTool() {
     };
 
     const reset = () => {
-        setValue('https://free-tools-steel.vercel.app');
+        setValue('https://freetoolshubs.com');
         setSize(256);
         setFgColor('#000000');
         setBgColor('#ffffff');

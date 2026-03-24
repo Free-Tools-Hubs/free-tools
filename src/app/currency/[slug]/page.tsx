@@ -39,11 +39,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title: `Convert ${fromCurrency.name} (${fromCode}) to ${toCurrency.name} (${toCode}) | Live Rates`,
             description: `Get real-time exchange rates for ${fromCurrency.name} to ${toCurrency.name}. Accurate ${fromCode} to ${toCode} converter for personal and educational use.`,
             type: 'website',
-            url: `https://free-tools-steel.vercel.app/currency/${slug}`,
+            url: `https://freetoolshubs.com/currency/${slug}`,
             siteName: 'Free Tools',
             images: [
                 {
-                    url: `https://free-tools-steel.vercel.app/currency/${slug}.png`,
+                    url: `https://freetoolshubs.com/currency/${slug}.png`,
                     width: 1200,
                     height: 630,
                     alt: `Convert ${fromCurrency.name} (${fromCode}) to ${toCurrency.name} (${toCode}) | Live Rates`,
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             card: 'summary_large_image',
             images: [
                 {
-                    url: `https://free-tools-steel.vercel.app/currency/${slug}.png`,
+                    url: `https://freetoolshubs.com/currency/${slug}.png`,
                     width: 1200,
                     height: 630,
                     alt: `Convert ${fromCurrency.name} (${fromCode}) to ${toCurrency.name} (${toCode}) | Live Rates`,

@@ -14,11 +14,11 @@ export const metadata = {
         title: 'Live Currency Exchange Rates - Global Forex Hub',
         description: 'Get real-time exchange rates for USD, EUR, GBP, INR, and other world currencies. Accurate currency converter for international exchange data.',
         type: 'website',
-        url: 'https://free-tools-steel.vercel.app/currency',
+        url: 'https://freetoolshubs.com/currency',
         siteName: 'Free Tools',
         images: [
             {
-                url: 'https://free-tools-steel.vercel.app/currency.png',
+                url: 'https://freetoolshubs.com/currency.png',
                 width: 1200,
                 height: 630,
                 alt: 'Live Currency Exchange Rates - Global Forex Hub',
@@ -31,7 +31,7 @@ export const metadata = {
         card: 'summary_large_image',
         images: [
             {
-                url: 'https://free-tools-steel.vercel.app/currency.png',
+                url: 'https://freetoolshubs.com/currency.png',
                 width: 1200,
                 height: 630,
                 alt: 'Live Currency Exchange Rates - Global Forex Hub',
@@ -48,7 +48,7 @@ export default function CurrencyHubPage() {
                 "@type": "WebPage",
                 "name": "Currency Exchange Hub",
                 "description": "Real-time global currency exchange rates and converter.",
-                "url": "https://free-tools-steel.vercel.app/currency"
+                "url": "https://freetoolshubs.com/currency"
             }} />
             <Header />
             <main className="flex-grow pt-32 pb-20 container mx-auto px-4 max-w-5xl">

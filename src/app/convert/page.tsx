@@ -14,11 +14,11 @@ export const metadata = {
         title: 'Free Unit Converter - Instant Weight, Length & Unit Conversion',
         description: 'Accurately convert weights (kg to lb), lengths (meters to feet), and other measurements with our free online unit converter. Fast, simple, and precise.',
         type: 'website',
-        url: 'https://free-tools-steel.vercel.app/convert',
+        url: 'https://freetoolshubs.com/convert',
         siteName: 'Free Tools',
         images: [
             {
-                url: 'https://free-tools-steel.vercel.app/convert.png',
+                url: 'https://freetoolshubs.com/convert.png',
                 width: 1200,
                 height: 630,
                 alt: 'Free Unit Converter - Instant Weight, Length & Unit Conversion',
@@ -31,7 +31,7 @@ export const metadata = {
         card: 'summary_large_image',
         images: [
             {
-                url: 'https://free-tools-steel.vercel.app/convert.png',
+                url: 'https://freetoolshubs.com/convert.png',
                 width: 1200,
                 height: 630,
                 alt: 'Free Unit Converter - Instant Weight, Length & Unit Conversion',
@@ -48,7 +48,7 @@ export default function ConversionHubPage() {
                 "@type": "WebPage",
                 "name": "Unit Conversion Hub",
                 "description": "Accurate online unit and measurement converter.",
-                "url": "https://free-tools-steel.vercel.app/convert"
+                "url": "https://freetoolshubs.com/convert"
             }} />
             <Header />
             <main className="flex-grow pt-32 pb-20 container mx-auto px-4 max-w-5xl">

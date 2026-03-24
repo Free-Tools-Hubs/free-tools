@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             siteName: SITE_NAME,
             images: [
                 {
-                    url: `${SITE_URL}/og-api?title=${encodeURIComponent(`Weather in ${cityName}`)}`,
+                    url: `/og.png`,
                     width: 1200,
                     height: 630,
                     alt: `Weather in ${cityName}: Current Forecast & Information`,
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title: `Weather in ${cityName}: Current Forecast & Information`,
             description: `Everything about the weather in ${cityName} right now. Current temperature is ${Math.round(weather.main?.temp)}°C, with ${weather.weather?.[0]?.description}.`,
             card: 'summary_large_image',
-            images: [`${SITE_URL}/og-api?title=${encodeURIComponent(`Weather in ${cityName}`)}`],
+            images: [`/og.png`],
         },
     };
 }

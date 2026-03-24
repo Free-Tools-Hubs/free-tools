@@ -29,11 +29,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title: `Countdown to ${countdown.eventName} | Live Timer`,
             description: countdown.description,
             type: 'website',
-            url: `https://free-tools-steel.vercel.app/countdown/${slug}`,
+            url: `https://freetoolshubs.com/countdown/${slug}`,
             siteName: 'Free Tools',
             images: [
                 {
-                    url: `https://free-tools-steel.vercel.app/countdown/${slug}.png`,
+                    url: `https://freetoolshubs.com/countdown/${slug}.png`,
                     width: 1200,
                     height: 630,
                     alt: `Countdown to ${countdown.eventName} | Live Timer`,
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             card: 'summary_large_image',
             images: [
                 {
-                    url: `https://free-tools-steel.vercel.app/countdown/${slug}.png`,
+                    url: `https://freetoolshubs.com/countdown/${slug}.png`,
                     width: 1200,
                     height: 630,
                     alt: `Countdown to ${countdown.eventName} | Live Timer`,

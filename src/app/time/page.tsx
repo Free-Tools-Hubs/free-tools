@@ -14,11 +14,11 @@ export const metadata = {
         title: 'World Time Converter - Live Global Timezone Conversion',
         description: 'Convert time between PST, IST, EST, GMT, and other global timezones. Accurate world clock and timezone comparison tool for international scheduling.',
         type: 'website',
-        url: 'https://free-tools-steel.vercel.app/time',
+        url: 'https://freetoolshubs.com/time',
         siteName: 'Free Tools',
         images: [
             {
-                url: 'https://free-tools-steel.vercel.app/time.png',
+                url: 'https://freetoolshubs.com/time.png',
                 width: 1200,
                 height: 630,
                 alt: 'World Time Converter - Live Global Timezone Conversion',
@@ -31,7 +31,7 @@ export const metadata = {
         card: 'summary_large_image',
         images: [
             {
-                url: 'https://free-tools-steel.vercel.app/time.png',
+                url: 'https://freetoolshubs.com/time.png',
                 width: 1200,
                 height: 630,
                 alt: 'World Time Converter - Live Global Timezone Conversion',
@@ -48,7 +48,7 @@ export default function TimeHubPage() {
                 "@type": "WebPage",
                 "name": "World Time Converter Hub",
                 "description": "Professional tool for global timezone and time conversions.",
-                "url": "https://free-tools-steel.vercel.app/time"
+                "url": "https://freetoolshubs.com/time"
             }} />
             <Header />
             <main className="flex-grow pt-32 pb-20 container mx-auto px-4 max-w-5xl">

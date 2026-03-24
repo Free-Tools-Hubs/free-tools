@@ -118,6 +118,7 @@ export default function Home() {
                 <Link
                   key={tool.id}
                   href={tool.customPath || `/tools/${tool.category}/${tool.slug}`}
+                  prefetch={false}
                   className="flex items-center gap-6 p-6 rounded-2xl border bg-background hover:border-brand-primary hover:shadow-lg transition-all"
                 >
                   <div className="w-12 h-12 rounded-xl bg-surface-100 dark:bg-surface-800 flex items-center justify-center shrink-0">

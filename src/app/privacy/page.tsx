@@ -5,19 +5,19 @@ import { Shield, Eye, Database, GlobeLock, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Privacy Policy - Data Protection & Security | FreeToolsHub',
-    description: 'Our comprehensive Privacy Policy explains how FreeToolsHub collects, utilizes, and protects your personal information and browsing data.',
-    keywords: ['privacy policy', 'data protection', 'security', 'privacy policy free tools hub', 'privacy policy free-tools-steel'],
+    title: 'Privacy Policy - Data Protection & Security | FreeToolsHubs',
+    description: 'Our comprehensive Privacy Policy explains how FreeToolsHubs collects, utilizes, and protects your personal information and browsing data.',
+    keywords: ['privacy policy', 'data protection', 'security', 'privacy policy free tools hubs', 'privacy policy free-tools-steel'],
     openGraph: {
-        title: 'Privacy Policy - Data Protection & Security | FreeToolsHub',
-        description: 'Our comprehensive Privacy Policy explains how FreeToolsHub collects, utilizes, and protects your personal information and browsing data.',
+        title: 'Privacy Policy - Data Protection & Security | FreeToolsHubs',
+        description: 'Our comprehensive Privacy Policy explains how FreeToolsHubs collects, utilizes, and protects your personal information and browsing data.',
         type: 'website',
-        url: 'https://free-tools-steel.vercel.app/privacy',
-        siteName: 'Free Tools Hub',
+        url: 'https://freetoolshubs.com/privacy',
+        siteName: 'Free Tools Hubs',
     },
     twitter: {
-        title: 'Privacy Policy - Data Protection & Security | FreeToolsHub',
-        description: 'Our comprehensive Privacy Policy explains how FreeToolsHub collects, utilizes, and protects your personal information and browsing data.',
+        title: 'Privacy Policy - Data Protection & Security | FreeToolsHubs',
+        description: 'Our comprehensive Privacy Policy explains how FreeToolsHubs collects, utilizes, and protects your personal information and browsing data.',
     }
 };
 
@@ -54,7 +54,7 @@ export default function PrivacyPage() {
                             1. Introduction and Scope
                         </h2>
                         <p>
-                            Welcome to FreeToolsHub (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We operate the <Link href="/" className="text-brand-primary hover:underline">FreeToolsHub</Link> website, providing a suite of online utilities ranging from format converters to programmatic generators. We respect your privacy and are committed to protecting it through compliance with this Privacy Policy.
+                            Welcome to FreeToolsHubs (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). We operate the <Link href="/" className="text-brand-primary hover:underline">FreeToolsHubs</Link> website, providing a suite of online utilities ranging from format converters to programmatic generators. We respect your privacy and are committed to protecting it through compliance with this Privacy Policy.
                         </p>
                         <p>
                             This policy applies to information we collect directly on this website, in email, text, and other electronic messages between you and this Website, and via any mobile and desktop applications you download from this Website.
@@ -69,7 +69,7 @@ export default function PrivacyPage() {
                         </h2>
                         <h3 className="text-lg font-bold text-foreground">A. Client-Side Processing Assurance</h3>
                         <p>
-                            We pride ourselves on an architecture that prioritizes your privacy. The vast majority of the tools available on FreeToolsHub (such as calculators, generators, formatters, and image converters) execute their functions entirely within your browser utilizing <strong className="text-foreground">client-side scripting</strong>.
+                            We pride ourselves on an architecture that prioritizes your privacy. The vast majority of the tools available on FreeToolsHubs (such as calculators, generators, formatters, and image converters) execute their functions entirely within your browser utilizing <strong className="text-foreground">client-side scripting</strong>.
                         </p>
                         <p>
                             When you upload an image to convert, type text into a box, or calculate a formula, <strong className="text-rose-500">that data is never transmitted to, stored on, or processed by our servers</strong>. It remains securely on your local device.
@@ -88,7 +88,7 @@ export default function PrivacyPage() {
                             3. Third-Party Services and Advertising
                         </h2>
                         <p>
-                            To keep FreeToolsHub completely free for global users, we rely on third-party advertising networks, such as Google AdSense.
+                            To keep FreeToolsHubs completely free for global users, we rely on third-party advertising networks, such as Google AdSense.
                         </p>
                         <ul className="list-disc pl-6 space-y-2 mt-4 text-sm font-medium">
                             <li><strong>Google Ads:</strong> Third-party vendors, including Google, use cookies to serve ads based on a user&apos;s prior visits to our website or other websites.</li>
@@ -107,7 +107,7 @@ export default function PrivacyPage() {
                             4. Use of Cookies and Tracking
                         </h2>
                         <p>
-                            Cookies are small data files stored on your local device by your web browser. FreeToolsHub utilizes cookies to:
+                            Cookies are small data files stored on your local device by your web browser. FreeToolsHubs utilizes cookies to:
                         </p>
                         <ul className="list-disc pl-6 space-y-2 text-sm font-medium">
                             <li>Remember your application state (e.g., maintaining Dark Mode vs Light Mode preference).</li>
@@ -138,7 +138,7 @@ export default function PrivacyPage() {
                             We reserve the right to continually update, modify, or amend this Privacy Policy at any time to reflect changing legal requirements or alterations to our network architecture. Any changes will be posted prominently on this page with an updated &quot;Last Updated&quot; timestamp.
                         </p>
                         <p>
-                            If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact us at <a href="mailto:privacy@freetoolshub.com" className="text-brand-primary font-bold hover:underline">privacy@freetoolshub.com</a>.
+                            If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please contact us at <a href="mailto:privacy@FreeToolsHubs.com" className="text-brand-primary font-bold hover:underline">privacy@FreeToolsHubs.com</a>.
                         </p>
                     </div>
 

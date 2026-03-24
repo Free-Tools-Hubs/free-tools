@@ -15,7 +15,11 @@ import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 export const metadata = {
     title: `Country Facts & Information Hub - Global Database | ${SITE_NAME}`,
     description: 'Explore comprehensive data about every country: population, currency, languages, capital cities, and regional info. Your go-to guide for global information.',
-    keywords: ['country facts', 'national information', 'global country database', 'world geography', 'country statistics', 'population data'],
+    keywords: [
+        'country facts', 'global demographic data', 'national statistics hub', 
+        'geographical country database', 'world nation profiles', 'population by country', 
+        'sovereign state information', 'regional currencies', 'country search'
+    ].join(', '),
     alternates: { canonical: '/country' },
     openGraph: {
         title: `Country Facts & Information Hub - Global Database | ${SITE_NAME}`,
@@ -23,10 +27,19 @@ export const metadata = {
         type: 'website',
         url: `${SITE_URL}/country`,
         siteName: SITE_NAME,
+        images: [
+            {
+                url: `/og.png`,
+                width: 1200,
+                height: 630,
+            },
+        ],
     },
     twitter: {
         title: `Country Facts & Information Hub - Global Database | ${SITE_NAME}`,
         description: 'Explore comprehensive data about every country: population, currency, languages, capital cities, and regional info. Your go-to guide for global information.',
+        card: 'summary_large_image',
+        images: [`/og.png`],
     }
 };
 

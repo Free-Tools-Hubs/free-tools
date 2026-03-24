@@ -8,16 +8,33 @@ import { SITE_URL, SITE_NAME } from '@/lib/config';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 
 export const metadata: Metadata = {
-    title: `Color Hub | Explore HEX, RGB, HSL & CMYK Details | ${SITE_NAME}`,
+    title: `Color Hub - Explore HEX, RGB, HSL & CMYK Details | ${SITE_NAME}`,
     description: 'Discover thousands of colors, their harmonies, accessibility, and mathematical representations. Search any hex code or explore curated color palettes.',
-    keywords: ['color hub', 'hex codes', 'html color names', 'color harmonies', 'rgb to hex', 'hsl values'],
+    keywords: [
+        'hex color search', 'rgb to hex converter', 'color harmonies generator', 
+        'accessible color palettes', 'html color names', 'design color hub', 
+        'cmyk color values', 'hsl adjustment tool', 'color encyclopedia'
+    ].join(', '),
     alternates: { canonical: '/colors' },
     openGraph: {
-        title: `Color Hub | Explore HEX, RGB, HSL & CMYK Details | ${SITE_NAME}`,
+        title: `Color Hub - Explore HEX, RGB, HSL & CMYK Details | ${SITE_NAME}`,
         description: 'Discover thousands of colors, their harmonies, accessibility, and mathematical representations. Search any hex code or explore curated color palettes.',
         type: 'website',
         url: `${SITE_URL}/colors`,
         siteName: SITE_NAME,
+        images: [
+            {
+                url: `/og.png`,
+                width: 1200,
+                height: 630,
+            },
+        ],
+    },
+    twitter: {
+        title: `Color Hub - Explore HEX, RGB, HSL & CMYK Details | ${SITE_NAME}`,
+        description: 'Discover thousands of colors, their harmonies, accessibility, and mathematical representations. Search any hex code or explore curated color palettes.',
+        card: 'summary_large_image',
+        images: [`/og.png`],
     }
 };
 

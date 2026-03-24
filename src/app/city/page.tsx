@@ -15,7 +15,11 @@ import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 export const metadata = {
     title: `City Weather Hub - Real-Time Forecasts for 2000+ Cities | ${SITE_NAME}`,
     description: 'Get accurate, real-time weather forecasts, humidity, wind speed, and daylight information for cities worldwide. Search any city for instant weather data.',
-    keywords: ['city weather', 'weather forecast', 'real-time weather', 'global weather hub', 'weather tracker', 'world cities weather'],
+    keywords: [
+        'city weather tracker', 'global weather hub', 'weather forecast by city', 
+        'real-time meteorological data', 'world weather conditions', 'humidity by city', 
+        'wind speed data', 'national forecast search', 'weather for cities'
+    ].join(', '),
     alternates: { canonical: '/city' },
     openGraph: {
         title: `City Weather Hub - Real-Time Forecasts for 2000+ Cities | ${SITE_NAME}`,
@@ -23,10 +27,19 @@ export const metadata = {
         type: 'website',
         url: `${SITE_URL}/city`,
         siteName: SITE_NAME,
+        images: [
+            {
+                url: `/og.png`,
+                width: 1200,
+                height: 630,
+            },
+        ],
     },
     twitter: {
         title: `City Weather Hub - Real-Time Forecasts for 2000+ Cities | ${SITE_NAME}`,
         description: 'Get accurate, real-time weather forecasts, humidity, wind speed, and daylight information for cities worldwide. Search any city for instant weather data.',
+        card: 'summary_large_image',
+        images: [`/og.png`],
     }
 };
 

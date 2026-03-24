@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             siteName: SITE_NAME,
             images: [
                 {
-                    url: `${SITE_URL}/og-api?title=${encodeURIComponent(tool.title)}`,
+                    url: `/og.png`,
                     width: 1200,
                     height: 630,
                     alt: tool.title,
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title: tool.title,
             description: tool.description,
             card: 'summary_large_image',
-            images: [`${SITE_URL}/og-api?title=${encodeURIComponent(tool.title)}`],
+            images: [`/og.png`],
         },
     };
 }
