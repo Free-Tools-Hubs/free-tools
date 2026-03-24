@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             siteName: SITE_NAME,
             images: [
                 {
-                    url: `${SITE_URL}/og-api?title=${encodeURIComponent(namedColor?.name || `#${cleanHex}`)}`,
+                    url: `/og.png`,
                     width: 1200,
                     height: 630,
                     alt: title,
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             title,
             description: `Detailed information about the color #${cleanHex}. Get RGB, HSL, CMYK values, complementary colors, and WCAG contrast ratios.`,
             card: 'summary_large_image',
-            images: [`${SITE_URL}/og-api?title=${encodeURIComponent(namedColor?.name || `#${cleanHex}`)}`],
+            images: [`/og.png`],
         }
     };
 }

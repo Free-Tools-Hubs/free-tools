@@ -136,6 +136,7 @@ export function ToolPageLayout({ tool, children }: ToolPageLayoutProps) {
                                             <Link
                                                 key={t.id}
                                                 href={t.customPath || `/tools/${t.category}/${t.slug}`}
+                                                prefetch={false}
                                                 className="flex items-center gap-4 p-4 rounded-xl border bg-surface-50 dark:bg-surface-900/50 hover:border-brand-primary transition-all group"
                                             >
                                                 <div className="w-10 h-10 rounded-lg bg-background flex items-center justify-center group-hover:text-brand-primary transition-colors">

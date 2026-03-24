@@ -29,11 +29,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title: `${randomItem.name} Generator | Free Online Tool`,
             description: randomItem.description,
             type: 'website',
-            url: `https://free-tools-steel.vercel.app/random/${slug}`,
+            url: `https://freetoolshubs.com/random/${slug}`,
             siteName: 'Free Tools',
             images: [
                 {
-                    url: `https://free-tools-steel.vercel.app/random/${slug}.png`,
+                    url: `https://freetoolshubs.com/random/${slug}.png`,
                     width: 1200,
                     height: 630,
                     alt: `${randomItem.name} Generator | Free Online Tool`,
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             card: 'summary_large_image',
             images: [
                 {
-                    url: `https://free-tools-steel.vercel.app/random/${slug}.png`,
+                    url: `https://freetoolshubs.com/random/${slug}.png`,
                     width: 1200,
                     height: 630,
                     alt: `${randomItem.name} Generator | Free Online Tool`,

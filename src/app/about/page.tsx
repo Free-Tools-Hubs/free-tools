@@ -4,19 +4,19 @@ import { Metadata } from 'next';
 import { Shield, Target, Users, Code, Award, Globe } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'About Us - Our Mission & Vision | FreeToolsHub',
-    description: 'Learn about FreeToolsHub, our mission to democratize digital utilities, and the passionate team dedicated to building accessible, high-performance online tools.',
-    keywords: ['about free tools hub', 'free tools hub mission', 'free tools hub vision', 'about us', 'our story', 'our mission', 'our vision', 'free tools', 'online tools', 'digital utilities', 'privacy by design', 'modern architecture', 'accuracy first', 'commitment to users', 'open accessibility', 'web development', 'tech company', 'startup', 'team', 'values', 'principles', 'free tools hub', 'free-tools-steel'],
+    title: 'About Us - Our Mission & Vision | FreeToolsHubs',
+    description: 'Learn about FreeToolsHubs, our mission to democratize digital utilities, and the passionate team dedicated to building accessible, high-performance online tools.',
+    keywords: ['about free tools hubs', 'free tools hubs mission', 'free tools hubs vision', 'about us', 'our story', 'our mission', 'our vision', 'free tools', 'online tools', 'digital utilities', 'privacy by design', 'modern architecture', 'accuracy first', 'commitment to users', 'open accessibility', 'web development', 'tech company', 'startup', 'team', 'values', 'principles', 'free tools hub', 'free-tools-steel'],
     openGraph: {
-        title: 'About Us - Our Mission & Vision | FreeToolsHub',
-        description: 'Learn about FreeToolsHub, our mission to democratize digital utilities, and the passionate team dedicated to building accessible, high-performance online tools.',
+        title: 'About Us - Our Mission & Vision | FreeToolsHubs',
+        description: 'Learn about FreeToolsHubs, our mission to democratize digital utilities, and the passionate team dedicated to building accessible, high-performance online tools.',
         type: 'website',
-        url: 'https://free-tools-steel.vercel.app/about',
-        siteName: 'Free Tools Hub',
+        url: 'https://freetoolshubs.com/about',
+        siteName: 'Free Tools Hubs',
     },
     twitter: {
-        title: 'About Us - Our Mission & Vision | FreeToolsHub',
-        description: 'Learn about FreeToolsHub, our mission to democratize digital utilities, and the passionate team dedicated to building accessible, high-performance online tools.',
+        title: 'About Us - Our Mission & Vision | FreeToolsHubs',
+        description: 'Learn about FreeToolsHubs, our mission to democratize digital utilities, and the passionate team dedicated to building accessible, high-performance online tools.',
     }
 };
 
@@ -36,7 +36,7 @@ export default function AboutPage() {
                         Empowering Your Digital Workflow
                     </h1>
                     <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                        We believe that essential digital utilities should be seamlessly accessible, incredibly fast, and entirely free. FreeToolsHub was built to solve everyday problems without the friction of paywalls or cluttered interfaces.
+                        We believe that essential digital utilities should be seamlessly accessible, incredibly fast, and entirely free. FreeToolsHubs was built to solve everyday problems without the friction of paywalls or cluttered interfaces.
                     </p>
                 </section>
 
@@ -48,7 +48,7 @@ export default function AboutPage() {
                     </h2>
                     <div className="space-y-4 text-muted-foreground leading-relaxed">
                         <p>
-                            FreeToolsHub began as a passion project born out of frustration. As web developers and digital professionals, we found ourselves constantly jumping between dozens of different websites just to perform simple, everyday tasks: converting an image format, double-checking a CSS gradient, calculating a time zone difference, or finding a quick hex code.
+                            FreeToolsHubs began as a passion project born out of frustration. As web developers and digital professionals, we found ourselves constantly jumping between dozens of different websites just to perform simple, everyday tasks: converting an image format, double-checking a CSS gradient, calculating a time zone difference, or finding a quick hex code.
                         </p>
                         <p>
                             The existing tools on the market were often plagued by intrusive advertisements, slow loading times, confusing interfaces, or unexpected paywalls just when you needed the result most. We realized there had to be a better way—a unified platform where the user experience is the primary focus.
@@ -106,7 +106,7 @@ export default function AboutPage() {
                             By remaining free to use, we hope to support students, educators, developers, designers, and everyday internet users in their pursuit of efficiency. We sustain this platform through unobtrusive, highly vetted advertising partnerships that respect your browsing experience and privacy.
                         </p>
                         <p>
-                            If you have a suggestion, a feature request, or just want to say hello, we encourage you to reach out. Thank you for making FreeToolsHub your preferred digital utility provider.
+                            If you have a suggestion, a feature request, or just want to say hello, we encourage you to reach out. Thank you for making FreeToolsHubs your preferred digital utility provider.
                         </p>
                     </div>
                 </section>

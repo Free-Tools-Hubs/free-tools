@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             siteName: SITE_NAME,
             images: [
                 {
-                    url: `${SITE_URL}/og-api?title=${encodeURIComponent(`What is ${word}?`)}&desc=${encodeURIComponent(firstDef.slice(0, 80))}`,
+                    url: `/og.png`,
                     width: 1200,
                     height: 630,
                     alt: `What is the meaning of ${word}? - English Definition & Examples`,
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title: `What is the meaning of ${word}? - English Definition & Examples`,
             description: `Explore the meaning, pronunciation, and examples of the word "${word}". ${firstDef.slice(0, 100)}...`,
             card: 'summary_large_image',
-            images: [`${SITE_URL}/og-api?title=${encodeURIComponent(`What is ${word}?`)}`],
+            images: [`/og.png`],
         },
     };
 }

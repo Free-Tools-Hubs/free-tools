@@ -33,12 +33,12 @@ export default function IndexNowGenerator() {
             setOutput(json);
 
             // Generate Bash Curl command
-            const bashCurl = `curl -X POST "https://api.indexnow.org/indexnow" \\
+            const bashCurl = `curl -i -X POST "https://api.indexnow.org/indexnow" \\
 -H "Content-Type: application/json; charset=utf-8" \\
 -d '${JSON.stringify(payload)}'`;
 
             // Generate Windows CMD Curl command
-            const winCurl = `curl -X POST "https://api.indexnow.org/indexnow" ^
+            const winCurl = `curl -i -X POST "https://api.indexnow.org/indexnow" ^
 -H "Content-Type: application/json; charset=utf-8" ^
 -d @indexnow_payload.json`;
 
@@ -201,14 +201,14 @@ export default function IndexNowGenerator() {
                                 JSON Payload
                             </h3>
                             <div className="flex items-center gap-3">
-                                <button 
+                                <button
                                     onClick={handleDownloadJson}
                                     className="flex items-center gap-2 px-4 py-2 bg-brand-primary text-white rounded-xl text-xs font-bold hover:scale-105 active:scale-95 transition-all shadow-lg"
                                 >
                                     <FileJson size={14} />
                                     Download JSON
                                 </button>
-                                <button 
+                                <button
                                     onClick={() => handleCopy(output, 'json')}
                                     className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${copied === 'json' ? 'bg-emerald-500 text-white' : 'bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700'
                                         }`}
@@ -222,7 +222,7 @@ export default function IndexNowGenerator() {
                             <pre className="bg-zinc-50 dark:bg-zinc-950 p-6 rounded-2xl text-[11px] font-mono leading-relaxed overflow-x-auto h-80 shadow-inner border border-zinc-100 dark:border-zinc-800">
                                 {output}
                             </pre>
-                             <p className="mt-4 text-[10px] text-zinc-500 font-bold uppercase tracking-widest text-center">
+                            <p className="mt-4 text-[10px] text-zinc-500 font-bold uppercase tracking-widest text-center">
                                 Save this as <strong>indexnow_payload.json</strong> to use with the Win CMD command.
                             </p>
                         </div>
@@ -236,13 +236,13 @@ export default function IndexNowGenerator() {
                                     cURL Command
                                 </h3>
                                 <div className="flex bg-white/10 p-1 rounded-xl shrink-0">
-                                    <button 
+                                    <button
                                         onClick={() => setShell('bash')}
                                         className={`px-3 py-1 rounded-lg text-[10px] font-black uppercase transition-all ${shell === 'bash' ? 'bg-white text-zinc-950 shadow-lg' : 'text-white/40 hover:text-white'}`}
                                     >
                                         Bash
                                     </button>
-                                    <button 
+                                    <button
                                         onClick={() => setShell('cmd')}
                                         className={`px-3 py-1 rounded-lg text-[10px] font-black uppercase transition-all ${shell === 'cmd' ? 'bg-white text-zinc-950 shadow-lg' : 'text-white/40 hover:text-white'}`}
                                     >
@@ -250,7 +250,7 @@ export default function IndexNowGenerator() {
                                     </button>
                                 </div>
                             </div>
-                            <button 
+                            <button
                                 onClick={() => handleCopy(shell === 'bash' ? curlOutput : winCurlOutput, 'curl')}
                                 className={`flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${copied === 'curl' ? 'bg-emerald-500 text-white' : 'bg-white/10 text-white hover:bg-brand-primary'
                                     }`}

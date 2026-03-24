@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             siteName: SITE_NAME,
             images: [
                 {
-                    url: `${SITE_URL}/og-api?title=${encodeURIComponent(country.name)}`,
+                    url: `/og.png`,
                     width: 1200,
                     height: 630,
                     alt: `${country.name} - Country Profile, Facts & Information`,
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title: `${country.name} - Country Profile, Facts & Information`,
             description: `Explore facts about ${country.name}: capital (${country.capital}), population (${country.population}), currency (${country.currency}), calling code, and more.`,
             card: 'summary_large_image',
-            images: [`${SITE_URL}/og-api?title=${encodeURIComponent(country.name)}`],
+            images: [`/og.png`],
         },
     };
 }

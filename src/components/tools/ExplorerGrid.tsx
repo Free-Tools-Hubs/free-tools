@@ -39,6 +39,7 @@ export function ExplorerGrid({ items, basePath, itemIcon, title }: ExplorerGridP
                         <Link
                             href={basePath}
                             scroll={false}
+                            prefetch={false}
                             className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold transition-all border ${activeLetter === null
                                     ? 'bg-brand-primary text-white border-brand-primary shadow-lg shadow-brand-primary/20'
                                     : 'bg-surface-50 dark:bg-surface-900 hover:border-brand-primary'
@@ -53,6 +54,7 @@ export function ExplorerGrid({ items, basePath, itemIcon, title }: ExplorerGridP
                                     key={letter}
                                     href={hasItems ? `${basePath}?letter=${letter}` : '#'}
                                     scroll={false}
+                                    prefetch={false}
                                     className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold transition-all border ${activeLetter === letter
                                             ? 'bg-brand-primary text-white border-brand-primary shadow-lg shadow-brand-primary/20'
                                             : hasItems
@@ -74,6 +76,7 @@ export function ExplorerGrid({ items, basePath, itemIcon, title }: ExplorerGridP
                                 <Link
                                     key={`${item.slug}-${idx}`}
                                     href={`${basePath}/${item.slug}`}
+                                    prefetch={false}
                                     className="flex items-center gap-2 px-4 py-3 rounded-xl border bg-background hover:bg-surface-50 dark:hover:bg-surface-900 !border-border hover:!border-brand-primary transition-all group shadow-sm active:scale-95"
                                 >
                                     <div className="text-brand-primary group-hover:scale-110 transition-transform flex-shrink-0">

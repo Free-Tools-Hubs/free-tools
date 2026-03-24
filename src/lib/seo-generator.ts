@@ -77,7 +77,7 @@ export function generateDictionaryArticle(word: string, partOfSpeech: string, ph
 
 export function generateCityHubArticle(): string[] {
     return [
-        "In our increasingly hyper-connected world, having immediate access to accurate atmospheric data for any global coordinates is no longer just a luxury—it's a necessity. The FreeToolsHub City Weather Hub serves as a centralized gateway to real-time meteorological insights for over a thousand international destinations. From the bustling metropolis of Tokyo to the humid urban sprawls of Lagos, our platform aggregates critical data points including temperature, humidity, and wind dynamics to help you navigate your global day with precision.",
+        "In our increasingly hyper-connected world, having immediate access to accurate atmospheric data for any global coordinates is no longer just a luxury—it's a necessity. The FreeToolsHubs City Weather Hub serves as a centralized gateway to real-time meteorological insights for over a thousand international destinations. From the bustling metropolis of Tokyo to the humid urban sprawls of Lagos, our platform aggregates critical data points including temperature, humidity, and wind dynamics to help you navigate your global day with precision.",
 
         "Weather patterns are complex, non-linear systems influenced by topography, urban heat islands, and seasonal shifts. By utilizing our comprehensive search and discovery engine, users can instantly retrieve current conditions that impact everything from international flight schedules to local agriculture. We leverage high-frequency data feeds from global satellite networks to ensure that whether you are planning a corporate trip or just checking the local forecast, the information you receive is both reliable and actionable.",
 
@@ -97,7 +97,7 @@ export function generateCountryHubArticle(): string[] {
 
 export function generateDictionaryHubArticle(): string[] {
     return [
-        "Precision in communication is the cornerstone of professional success and academic achievement. The FreeToolsHub English Dictionary & Vocabulary Hub is more than just a simple list of definitions—it's a comprehensive linguistic resource designed to elevate the way you interact with the English language. With thousands of entries ranging from common daily vernacular to complex technical terminology, we provide the tools necessary to expand your active vocabulary and expressive range.",
+        "Precision in communication is the cornerstone of professional success and academic achievement. The FreeToolsHubs English Dictionary & Vocabulary Hub is more than just a simple list of definitions—it's a comprehensive linguistic resource designed to elevate the way you interact with the English language. With thousands of entries ranging from common daily vernacular to complex technical terminology, we provide the tools necessary to expand your active vocabulary and expressive range.",
 
         "Understanding a word requires more than just knowing its basic meaning. Our programmatic dictionary modules dive into the structural nuances of language, identifying parts of speech, providing standard phonetic transcriptions for perfect enunciation, and offering context-rich usage examples. This holistic approach ensures that when you learn a word like 'resilience' or 'innovative,' you understand not just what it means, but precisely how to deploy it in a sentence to maximize your clarity and impact.",
 

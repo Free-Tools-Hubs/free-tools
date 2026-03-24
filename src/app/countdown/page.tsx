@@ -14,11 +14,11 @@ export const metadata = {
         title: 'Live Countdown Timers - Days Until Holidays & Events',
         description: 'Track time remaining until Christmas, New Year, Halloween, and other major events. Accurate live countdown timers for holidays and milestones.',
         type: 'website',
-        url: 'https://free-tools-steel.vercel.app/countdown',
+        url: 'https://freetoolshubs.com/countdown',
         siteName: 'Free Tools',
         images: [
             {
-                url: 'https://free-tools-steel.vercel.app/countdown.png',
+                url: 'https://freetoolshubs.com/countdown.png',
                 width: 1200,
                 height: 630,
                 alt: 'Live Countdown Timers - Days Until Holidays & Events',
@@ -31,7 +31,7 @@ export const metadata = {
         card: 'summary_large_image',
         images: [
             {
-                url: 'https://free-tools-steel.vercel.app/countdown.png',
+                url: 'https://freetoolshubs.com/countdown.png',
                 width: 1200,
                 height: 630,
                 alt: 'Live Countdown Timers - Days Until Holidays & Events',
@@ -48,7 +48,7 @@ export default function CountdownHubPage() {
                 "@type": "WebPage",
                 "name": "Countdown Timers Hub",
                 "description": "Live countdown timers for world events and holidays.",
-                "url": "https://free-tools-steel.vercel.app/countdown"
+                "url": "https://freetoolshubs.com/countdown"
             }} />
             <Header />
             <main className="flex-grow pt-32 pb-20 container mx-auto px-4 max-w-5xl">

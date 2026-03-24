@@ -4,8 +4,8 @@ import { Metadata } from 'next';
 import { Mail, MessageSquare, Send, MapPin, Clock } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Contact Us - Get in Touch | FreeToolsHub',
-    description: 'Have a question, feedback, or a feature request? Reach out to the FreeToolsHub team. We are always happy to help and improve our toolsets.',
+    title: 'Contact Us - Get in Touch | FreeToolsHubs',
+    description: 'Have a question, feedback, or a feature request? Reach out to the FreeToolsHubs team. We are always happy to help and improve our toolsets.',
 };
 
 export default function ContactPage() {
@@ -32,8 +32,8 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <h3 className="font-bold text-lg mb-1">Email Us</h3>
-                                <p className="text-sm text-muted-foreground">support@freetoolshub.com</p>
-                                <p className="text-sm text-muted-foreground">hello@freetoolshub.com</p>
+                                <p className="text-sm text-muted-foreground">support@FreeToolsHubs.com</p>
+                                <p className="text-sm text-muted-foreground">hello@FreeToolsHubs.com</p>
                             </div>
                         </div>
 

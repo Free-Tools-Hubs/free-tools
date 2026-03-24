@@ -29,11 +29,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title: `Convert ${conversion.fromName} to ${conversion.toName} (${conversion.fromUnit} to ${conversion.toUnit})`,
             description: `Free online converter for ${conversion.fromName} to ${conversion.toName}. Accurate results for ${conversion.category} conversions.`,
             type: 'website',
-            url: `https://free-tools-steel.vercel.app/convert/${conversion.slug}`,
+            url: `https://freetoolshubs.com/convert/${conversion.slug}`,
             siteName: 'Free Tools',
             images: [
                 {
-                    url: `https://free-tools-steel.vercel.app/convert/${conversion.slug}.png`,
+                    url: `https://freetoolshubs.com/convert/${conversion.slug}.png`,
                     width: 1200,
                     height: 630,
                     alt: `Convert ${conversion.fromName} to ${conversion.toName} (${conversion.fromUnit} to ${conversion.toUnit})`,
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             card: 'summary_large_image',
             images: [
                 {
-                    url: `https://free-tools-steel.vercel.app/convert/${conversion.slug}.png`,
+                    url: `https://freetoolshubs.com/convert/${conversion.slug}.png`,
                     width: 1200,
                     height: 630,
                     alt: `Convert ${conversion.fromName} to ${conversion.toName} (${conversion.fromUnit} to ${conversion.toUnit})`,

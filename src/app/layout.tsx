@@ -19,7 +19,13 @@ import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/config";
 export const metadata: Metadata = {
   title: `${SITE_NAME} | 100+ Professional Online Tools`,
   description: SITE_DESCRIPTION,
-  keywords: 'free tools, online tools, image editor, pdf tools, text utilities, developer tools, unit converter, currency converter, timezone calculator',
+  keywords: [
+    'online tools', 'free web utilities', 'professional micro tools', 'image editor online', 
+    'pdf management tool', 'text formatting utility', 'developer toolbox', 'unit conversion online',
+    'currency calculation', 'time zone world clock', 'batch image conversion', 'merge pdf files', 
+    'json formatter', 'word counter', 'secure file tools', 'no registration web tools',
+    'productivity hub', 'webmaster utilities', 'developer resources'
+  ].join(', '),
   metadataBase: new URL(SITE_URL),
   openGraph: {
     title: `${SITE_NAME} | 100+ Professional Online Tools`,
@@ -29,18 +35,18 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     images: [
       {
-        url: '/logo.png',
+        url: '/og.png',
         width: 1200,
         height: 630,
-        alt: 'Free Tools Hub',
+        alt: SITE_NAME,
       },
     ],
   },
   twitter: {
-    title: 'Free Tools Hub | 100+ Professional Online Tools',
-    description: 'Access a hub of 100+ free online tools for image processing, PDF management, development, and more. Fast, secure, and easy to use.',
+    title: `${SITE_NAME} | 100+ Professional Online Tools`,
+    description: SITE_DESCRIPTION,
     card: 'summary_large_image',
-    images: ['/logo.png'],
+    images: ['/og.png'],
   },
   robots: {
     index: true,

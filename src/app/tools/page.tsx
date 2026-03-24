@@ -7,34 +7,34 @@ import * as LucideIcons from 'lucide-react';
 import { ChevronRight, LayoutGrid, List } from 'lucide-react';
 
 export const metadata = {
-    title: 'All Free Online Tools | FreeToolsHub',
+    title: 'All Free Online Tools | FreeToolsHubs',
     description: 'Browse our complete directory of 100+ free online tools for images, PDF, text, development, and more.',
     keywords: 'free tools, online tools, image tools, pdf tools, text tools, development tools',
     openGraph: {
-        title: 'All Free Online Tools | FreeToolsHub',
+        title: 'All Free Online Tools | FreeToolsHubs',
         description: 'Browse our complete directory of 100+ free online tools for images, PDF, text, development, and more.',
         type: 'website',
-        url: 'https://free-tools-steel.vercel.app/tools',
+        url: 'https://freetoolshubs.com/tools',
         siteName: 'Free Tools',
         images: [
             {
-                url: 'https://free-tools-steel.vercel.app/tools.png',
+                url: 'https://freetoolshubs.com/tools.png',
                 width: 1200,
                 height: 630,
-                alt: 'All Free Online Tools | FreeToolsHub',
+                alt: 'All Free Online Tools | FreeToolsHubs',
             },
         ],
     },
     twitter: {
-        title: 'All Free Online Tools | FreeToolsHub',
+        title: 'All Free Online Tools | FreeToolsHubs',
         description: 'Browse our complete directory of 100+ free online tools for images, PDF, text, development, and more.',
         card: 'summary_large_image',
         images: [
             {
-                url: 'https://free-tools-steel.vercel.app/tools.png',
+                url: 'https://freetoolshubs.com/tools.png',
                 width: 1200,
                 height: 630,
-                alt: 'All Free Online Tools | FreeToolsHub',
+                alt: 'All Free Online Tools | FreeToolsHubs',
             },
         ],
     },

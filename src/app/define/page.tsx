@@ -14,7 +14,11 @@ import { SITE_URL, SITE_NAME } from '@/lib/config';
 export const metadata = {
     title: `Free Online Dictionary - Definitions, Phonetics & Usage | ${SITE_NAME}`,
     description: 'Quickly find reliable definitions, phonetic pronunciations, and usage examples for thousands of English words. A clean, fast, and free online dictionary.',
-    keywords: ['online dictionary', 'word definitions', 'english dictionary', 'meaning of words', 'vocabulary tool', 'linguistic resource'],
+    keywords: [
+        'online dictionary', 'english word meanings', 'thesaurus online', 
+        'vocabulary builder', 'phonetic pronunciation guide', 'academic definitions', 
+        'linguistic reference hub', 'meaning of words', 'word usage examples'
+    ].join(', '),
     alternates: { canonical: '/define' },
     openGraph: {
         title: `Free Online Dictionary - Definitions, Phonetics & Usage | ${SITE_NAME}`,
@@ -22,10 +26,19 @@ export const metadata = {
         type: 'website',
         url: `${SITE_URL}/define`,
         siteName: SITE_NAME,
+        images: [
+            {
+                url: `/og.png`,
+                width: 1200,
+                height: 630,
+            },
+        ],
     },
     twitter: {
         title: `Free Online Dictionary - Definitions, Phonetics & Usage | ${SITE_NAME}`,
         description: 'Quickly find reliable definitions, phonetic pronunciations, and usage examples for thousands of English words. A clean, fast, and free online dictionary.',
+        card: 'summary_large_image',
+        images: [`/og.png`],
     }
 };
 

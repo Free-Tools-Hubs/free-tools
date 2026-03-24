@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             siteName: SITE_NAME,
             images: [
                 {
-                    url: `${SITE_URL}/og-api?title=${encodeURIComponent(category.title)}`,
+                    url: `/og.png`,
                     width: 1200,
                     height: 630,
                     alt: `${category.title} Tools`,
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             title: `${category.title} Tools | ${SITE_NAME}`,
             description: category.description,
             card: 'summary_large_image',
-            images: [`${SITE_URL}/og-api?title=${encodeURIComponent(category.title)}`],
+            images: [`/og.png`],
         },
     };
 }
@@ -75,11 +75,11 @@ export default async function CategoryPage({ params }: PageProps) {
             <Header />
 
             <main className="flex-grow pt-28 md:pt-32 pb-20 container mx-auto px-4 md:px-8 max-w-7xl">
-                <Breadcrumbs 
+                <Breadcrumbs
                     items={[
                         { label: 'Tools', href: '/tools' },
                         { label: category.title, href: `/tools/${categoryId}` }
-                    ]} 
+                    ]}
                 />
 
                 <section className="mb-12">
@@ -125,7 +125,7 @@ export default async function CategoryPage({ params }: PageProps) {
                     <h2 className="font-outfit text-3xl font-black mb-8 italic">About our {category.title}</h2>
                     <div className="prose dark:prose-invert max-w-none text-muted-foreground leading-relaxed space-y-6">
                         <p>
-                            FreeToolsHub provides professional-grade {category.title.toLowerCase()} that are 100% free to use.
+                            FreeToolsHubs provides professional-grade {category.title.toLowerCase()} that are 100% free to use.
                             Whether you are a developer, designer, or creator, our utilities are built to be fast, secure, and privacy-focused.
                         </p>
                         <p>
