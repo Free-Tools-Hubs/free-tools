@@ -18,6 +18,13 @@ export const metadata: Metadata = {
     twitter: {
         title: 'Terms of Service - Usage Guidelines | FreeToolsHubs',
         description: 'Review our Terms of Service to understand the rules, guidelines, legal liabilities, and user agreements for accessing and utilizing FreeToolsHubs and its related services.',
+    },
+    alternates: {
+        canonical: '/terms'
+    },
+    robots: {
+        index: false,
+        follow: true
     }
 };
 

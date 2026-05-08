@@ -38,6 +38,9 @@ export const metadata = {
             },
         ],
     },
+    alternates: {
+        canonical: '/tools'
+    }
 };
 
 export default function AllToolsPage() {

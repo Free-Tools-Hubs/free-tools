@@ -38,6 +38,9 @@ export const metadata = {
             },
         ],
     },
+    alternates: {
+        canonical: '/currency'
+    }
 };
 
 export default function CurrencyHubPage() {

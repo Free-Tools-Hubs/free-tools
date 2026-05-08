@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     twitter: {
         title: 'About Us - Our Mission & Vision | FreeToolsHubs',
         description: 'Learn about FreeToolsHubs, our mission to democratize digital utilities, and the passionate team dedicated to building accessible, high-performance online tools.',
+    },
+    alternates: {
+        canonical: '/about'
     }
 };
 

@@ -38,6 +38,9 @@ export const metadata = {
             },
         ],
     },
+    alternates: {
+        canonical: '/time'
+    }
 };
 
 export default function TimeHubPage() {

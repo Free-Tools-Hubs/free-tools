@@ -38,6 +38,9 @@ export const metadata = {
             },
         ],
     },
+    alternates: {
+        canonical: '/convert'
+    }
 };
 
 export default function ConversionHubPage() {

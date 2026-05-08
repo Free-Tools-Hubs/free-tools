@@ -49,6 +49,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title,
         description,
         keywords: [`.${file.ext}`, `${file.ext} file`, `how to open ${file.ext}`, `${file.name}`, 'file extension encyclopedia'],
+        alternates: {
+            canonical: `/file-extension/${ext}`
+        }
     };
 }
 

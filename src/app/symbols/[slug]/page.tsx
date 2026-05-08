@@ -22,6 +22,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title,
         description,
         keywords: [symbol.char, symbol.name, `unicode ${symbol.hex}`, `html code for ${symbol.char}`, 'css symbol code'],
+        alternates: {
+            canonical: `/symbols/${slug}`
+        }
     };
 }
 

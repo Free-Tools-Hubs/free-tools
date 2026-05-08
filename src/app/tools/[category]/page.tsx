@@ -68,6 +68,7 @@ export default async function CategoryPage({ params }: PageProps) {
     if (!category) notFound();
 
     const categoryTools = tools.filter((t) => t.category === categoryId);
+    if (categoryTools.length === 0) notFound();
     const Icon = (LucideIcons as any)[category.icon] || LucideIcons.Zap;
 
     return (

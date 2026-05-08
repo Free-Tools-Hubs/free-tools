@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     title: 'File Extension Encyclopedia | How to open any file | Free Tools Hubs',
     description: 'A comprehensive database of over 5000+ file extensions. Learn what each file type is, how to open it, and which software programs you need.',
     keywords: ['file extensions', 'how to open file', 'file encyclopedia', 'file types list', 'mime types'],
+    alternates: {
+        canonical: '/file-extension'
+    }
 };
 
 const CategoryIcon = ({ category, size = 20 }: { category: string, size?: number }) => {
