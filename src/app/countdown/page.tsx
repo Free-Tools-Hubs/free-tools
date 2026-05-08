@@ -38,6 +38,9 @@ export const metadata = {
             },
         ],
     },
+    alternates: {
+        canonical: '/countdown'
+    }
 };
 
 export default function CountdownHubPage() {

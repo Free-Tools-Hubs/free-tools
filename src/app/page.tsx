@@ -6,6 +6,13 @@ import { categories } from '@/data/categories';
 import { tools } from '@/data/tools';
 import * as LucideIcons from 'lucide-react';
 import { ArrowRight, Zap, Shield, Sparkles } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    alternates: {
+        canonical: '/'
+    }
+};
 
 export default function Home() {
   return (

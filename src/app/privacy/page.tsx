@@ -18,6 +18,13 @@ export const metadata: Metadata = {
     twitter: {
         title: 'Privacy Policy - Data Protection & Security | FreeToolsHubs',
         description: 'Our comprehensive Privacy Policy explains how FreeToolsHubs collects, utilizes, and protects your personal information and browsing data.',
+    },
+    alternates: {
+        canonical: '/privacy'
+    },
+    robots: {
+        index: false,
+        follow: true
     }
 };
 

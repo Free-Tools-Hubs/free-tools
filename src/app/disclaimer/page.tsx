@@ -6,6 +6,13 @@ import { AlertTriangle, ShieldCheck, FileText, Scale } from 'lucide-react';
 export const metadata: Metadata = {
     title: 'Disclaimer - Terms of Use & Liability | FreeToolsHubs',
     description: 'Read the FreeToolsHubs disclaimer regarding the accuracy of tools, liability limitations, and the nature of our free online services.',
+    alternates: {
+        canonical: '/disclaimer'
+    },
+    robots: {
+        index: false,
+        follow: true
+    }
 };
 
 export default function DisclaimerPage() {

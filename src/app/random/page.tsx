@@ -38,6 +38,9 @@ export const metadata = {
             },
         ],
     },
+    alternates: {
+        canonical: '/random'
+    }
 };
 
 export default function RandomHubPage() {

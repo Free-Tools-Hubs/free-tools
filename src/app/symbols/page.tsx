@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     title: 'Unicode Symbol Hub | Copy Symbols, Emojis & HTML Codes | Free Tools Hubs',
     description: 'Find and copy thousands of Unicode symbols, arrows, currency signs, and emojis. Get HTML entities, CSS codes, and technical details for any character.',
     keywords: ['unicode hub', 'copy symbols', 'html entity list', 'css codes for symbols', 'math symbols', 'emoji codes'],
+    alternates: {
+        canonical: '/symbols'
+    }
 };
 
 const iconMap: Record<string, LucideIcon> = {

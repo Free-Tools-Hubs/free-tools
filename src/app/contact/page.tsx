@@ -6,6 +6,13 @@ import { Mail, MessageSquare, Send, MapPin, Clock } from 'lucide-react';
 export const metadata: Metadata = {
     title: 'Contact Us - Get in Touch | FreeToolsHubs',
     description: 'Have a question, feedback, or a feature request? Reach out to the FreeToolsHubs team. We are always happy to help and improve our toolsets.',
+    alternates: {
+        canonical: '/contact'
+    },
+    robots: {
+        index: false,
+        follow: true
+    }
 };
 
 export default function ContactPage() {

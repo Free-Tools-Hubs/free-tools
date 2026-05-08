@@ -36,6 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         description: `Detailed information about the color #${cleanHex}. Get RGB, HSL, CMYK values, complementary colors, and WCAG contrast ratios.`,
         keywords: [`#${cleanHex}`, `color ${cleanHex}`, `rgb of ${cleanHex}`, `hsl of ${cleanHex}`, 'color hub', 'free tools'],
         alternates: { canonical },
+        ...(namedColor ? {} : { robots: { index: false, follow: true } }),
         openGraph: {
             title,
             description: `Detailed information about the color #${cleanHex}. Get RGB, HSL, CMYK values, complementary colors, and WCAG contrast ratios.`,
@@ -174,7 +175,7 @@ export default async function ColorPage({ params }: Props) {
                         <div className="space-y-4">
                             <div>
                                 <span className="text-xs text-zinc-500 mb-2 block">Complementary</span>
-                                <Link href={`/colors/${harmonies.complementary}`} className="block h-10 w-full rounded-md border border-zinc-200 dark:border-zinc-800 group relative" style={{ backgroundColor: `#${harmonies.complementary}` }}>
+                                <Link rel="nofollow" href={`/colors/${harmonies.complementary}`} className="block h-10 w-full rounded-md border border-zinc-200 dark:border-zinc-800 group relative" style={{ backgroundColor: `#${harmonies.complementary}` }}>
                                      <span className="opacity-0 group-hover:opacity-100 absolute inset-0 flex items-center justify-center bg-black/20 text-white text-[10px] font-mono transition-opacity">
                                         #{harmonies.complementary}
                                      </span>
@@ -184,7 +185,7 @@ export default async function ColorPage({ params }: Props) {
                                 <span className="text-xs text-zinc-500 mb-2 block">Analogous</span>
                                 <div className="flex gap-2">
                                     {harmonies.analogous.map(hex => (
-                                        <Link key={hex} href={`/colors/${hex}`} className="flex-1 h-10 rounded-md border border-zinc-200 dark:border-zinc-800 group relative" style={{ backgroundColor: `#${hex}` }}>
+                                        <Link rel="nofollow" key={hex} href={`/colors/${hex}`} className="flex-1 h-10 rounded-md border border-zinc-200 dark:border-zinc-800 group relative" style={{ backgroundColor: `#${hex}` }}>
                                             <span className="opacity-0 group-hover:opacity-100 absolute inset-0 flex items-center justify-center bg-black/20 text-white text-[10px] font-mono transition-opacity">
                                                 #{hex}
                                             </span>
@@ -196,7 +197,7 @@ export default async function ColorPage({ params }: Props) {
                                 <span className="text-xs text-zinc-500 mb-2 block">Triadic</span>
                                 <div className="flex gap-2">
                                     {harmonies.triadic.map(hex => (
-                                        <Link key={hex} href={`/colors/${hex}`} className="flex-1 h-10 rounded-md border border-zinc-200 dark:border-zinc-800 group relative" style={{ backgroundColor: `#${hex}` }}>
+                                        <Link rel="nofollow" key={hex} href={`/colors/${hex}`} className="flex-1 h-10 rounded-md border border-zinc-200 dark:border-zinc-800 group relative" style={{ backgroundColor: `#${hex}` }}>
                                             <span className="opacity-0 group-hover:opacity-100 absolute inset-0 flex items-center justify-center bg-black/20 text-white text-[10px] font-mono transition-opacity">
                                                 #{hex}
                                             </span>
