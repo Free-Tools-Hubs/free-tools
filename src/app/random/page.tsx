@@ -5,38 +5,32 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
 import { JsonLd } from '@/components/seo/JsonLd';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 
 export const metadata = {
-    title: 'Free Online Generators - Random Numbers, Colors, & More',
+    title: `Free Online Generators - Random Numbers, Colors, & More | ${SITE_NAME}`,
     description: 'A comprehensive collection of free online random generators. Generate random numbers, hex colors, countries, movies, and strings instantly.',
     keywords: ['random generators', 'random number generator', 'random color picker', 'random choice maker', 'online utilities'],
     openGraph: {
-        title: 'Free Online Generators - Random Numbers, Colors, & More',
+        title: `Free Online Generators - Random Numbers, Colors, & More | ${SITE_NAME}`,
         description: 'A comprehensive collection of free online random generators. Generate random numbers, hex colors, countries, movies, and strings instantly.',
         type: 'website',
-        url: 'https://freetoolshubs.com/random',
-        siteName: 'Free Tools',
+        url: `${SITE_URL}/random`,
+        siteName: SITE_NAME,
         images: [
             {
-                url: 'https://freetoolshubs.com/random.png',
+                url: '/og.png',
                 width: 1200,
                 height: 630,
-                alt: 'Free Online Generators - Random Numbers, Colors, & More',
+                alt: `Free Online Generators - Random Numbers, Colors, & More | ${SITE_NAME}`,
             },
         ],
     },
     twitter: {
-        title: 'Free Online Generators - Random Numbers, Colors, & More',
+        title: `Free Online Generators - Random Numbers, Colors, & More | ${SITE_NAME}`,
         description: 'A comprehensive collection of free online random generators. Generate random numbers, hex colors, countries, movies, and strings instantly.',
         card: 'summary_large_image',
-        images: [
-            {
-                url: 'https://freetoolshubs.com/random.png',
-                width: 1200,
-                height: 630,
-                alt: 'Free Online Generators - Random Numbers, Colors, & More',
-            },
-        ],
+        images: ['/og.png'],
     },
     alternates: {
         canonical: '/random'

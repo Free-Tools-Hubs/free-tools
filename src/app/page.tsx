@@ -8,6 +8,9 @@ import * as LucideIcons from 'lucide-react';
 import { ArrowRight, Zap, Shield, Sparkles } from 'lucide-react';
 import { Metadata } from 'next';
 
+import { JsonLd } from '@/components/seo/JsonLd';
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from '@/lib/config';
+
 export const metadata: Metadata = {
     alternates: {
         canonical: '/'
@@ -17,6 +20,38 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": `${SITE_URL}/#website`,
+            "url": SITE_URL,
+            "name": SITE_NAME,
+            "description": SITE_DESCRIPTION,
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": `${SITE_URL}/tools?q={search_term_string}`
+              },
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": `${SITE_URL}/#organization`,
+            "name": SITE_NAME,
+            "url": SITE_URL,
+            "logo": {
+              "@type": "ImageObject",
+              "url": `${SITE_URL}/og.png`,
+              "width": 1200,
+              "height": 630
+            }
+          }
+        ]
+      }} />
       <Header />
 
       <main className="flex-grow pt-32 pb-20">

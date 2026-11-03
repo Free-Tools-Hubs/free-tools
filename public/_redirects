@@ -1,1 +1,19 @@
-/* /index.html 200
+# Canonical redirects for moved or consolidated routes (forced with ! to override any static files)
+/formats                            /file-extension         301!
+/formats/*                          /file-extension/:splat  301!
+/tools/discovery/city-weather       /city                   301!
+/tools/discovery/country-facts      /country                301!
+/tools/discovery/dictionary-hub     /define                 301!
+/tools/discovery/currency-hub       /currency               301!
+/tools/discovery/unit-converter-hub /convert                301!
+/tools/discovery/world-time         /time                   301!
+/tools/discovery/file-encyclopedia  /file-extension         301!
+
+# City historical alias redirects (consolidating search equity to modern official names)
+/city/calcutta                      /city/kolkata           301!
+/city/kiev                          /city/kyiv              301!
+/city/rangoon                       /city/yangon            301!
+/city/n'djamena                     /city/ndjamena          301!
+
+# Netlify custom 404 handling for unmatched routes (ensures genuine HTTP 404)
+/*                                  /404.html               404

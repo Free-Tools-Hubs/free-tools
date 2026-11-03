@@ -68,12 +68,18 @@ export function Footer() {
                 </div>
 
                 <div>
-                    <h3 className="font-outfit font-bold mb-6 text-lg">Hubs</h3>
-                    <ul className="grid grid-cols-1 gap-3">
-                        <li><Link href="/define" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors italic">English Dictionary</Link></li>
-                        <li><Link href="/city" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors italic">City Weather Hub</Link></li>
-                        <li><Link href="/country" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors italic">Country Facts Guide</Link></li>
-                        <li><Link href="/colors" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors italic">Color Value Explorer</Link></li>
+                    <h3 className="font-outfit font-bold mb-6 text-lg">Discovery Hubs</h3>
+                    <ul className="grid grid-cols-1 gap-2.5">
+                        <li><Link href="/define" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">English Dictionary</Link></li>
+                        <li><Link href="/city" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">City Weather</Link></li>
+                        <li><Link href="/country" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">Country Profiles</Link></li>
+                        <li><Link href="/file-extension" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">File Encyclopedia</Link></li>
+                        <li><Link href="/convert" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">Unit Converters</Link></li>
+                        <li><Link href="/colors" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">Color Palettes</Link></li>
+                        <li><Link href="/time" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">World Time Clocks</Link></li>
+                        <li><Link href="/countdown" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">Live Countdowns</Link></li>
+                        <li><Link href="/random" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">Random Generators</Link></li>
+                        <li><Link href="/symbols" className="text-sm text-muted-foreground hover:text-brand-primary transition-colors">Unicode Symbols</Link></li>
                     </ul>
                 </div>
             </div>

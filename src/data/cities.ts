@@ -11,7 +11,7 @@ export const cities = [
     "Brisbane", "Brussels", "Bucharest", "Budapest", "Buenos Aires", "Bujumbura", "Bursa",
 
     // C cities
-    "Cairo", "Calcutta", "Calgary", "Canberra", "Cape Town", "Caracas", "Cardiff", "Casablanca", "Cebu City", "Charlotte",
+    "Cairo", "Calgary", "Canberra", "Cape Town", "Caracas", "Cardiff", "Casablanca", "Cebu City", "Charlotte",
     "Chengdu", "Chennai", "Chicago", "Chisinau", "Chittagong", "Chongqing", "Cincinnati", "Cleveland", "Colombo", "Conakry",
     "Copenhagen", "Cordoba", "Cotonou", "Cuiaba", "Curitiba",
 
@@ -20,10 +20,10 @@ export const cities = [
     "Dili", "Djibouti", "Doha", "Douala", "Dubai", "Dublin", "Durban", "Dushanbe", "Dusseldorf", "Dunedin",
 
     // E cities
-    "Edinburgh", "Edmonton", "Fortaleza", "Frankfurt", "Freetown", "Funafuti",
+    "Edinburgh", "Edmonton",
 
     // F cities
-    "Faisalabad", "Florence", "Fort Lauderdale", "Fort Worth", "Freetown", "Fukuoka", "Fuzhou",
+    "Faisalabad", "Florence", "Fort Lauderdale", "Fort Worth", "Fortaleza", "Frankfurt", "Freetown", "Fukuoka", "Funafuti", "Fuzhou",
 
     // G cities
     "Gaborone", "Geneva", "Genoa", "Georgetown", "Gibraltar", "Glasgow", "Guadalajara", "Guangzhou", "Guatemala City", "Guayaquil",
@@ -41,7 +41,7 @@ export const cities = [
 
     // K cities
     "Kabul", "Kampala", "Kano", "Kansas City", "Kaohsiung", "Karachi", "Kathmandu", "Kawasaki", "Kazan", "Khartoum",
-    "Khon Kaen", "Kiev", "Kingston", "Kinshasa", "Kobe", "Kolkata", "Kuala Lumpur", "Kuwait City", "Kyiv", "Kyoto",
+    "Khon Kaen", "Kingston", "Kinshasa", "Kobe", "Kolkata", "Kuala Lumpur", "Kuwait City", "Kyiv", "Kyoto",
 
     // L cities
     "La Paz", "Lagos", "Lahore", "Las Vegas", "Lima", "Lisbon", "Liverpool", "Lome", "London", "Los Angeles",
@@ -54,7 +54,7 @@ export const cities = [
     "Mumbai", "Munich", "Muscat",
 
     // N cities
-    "Nairobi", "Nassau", "N'Djamena", "New Delhi", "New Orleans", "New York", "Newcastle", "Niamey", "Nicosia", "Nouakchott",
+    "Nairobi", "Nassau", "Ndjamena", "New Delhi", "New Orleans", "New York", "Newcastle", "Niamey", "Nicosia", "Nouakchott",
     "Nuremberg", "Nuuk",
 
     // O cities
@@ -69,8 +69,8 @@ export const cities = [
     "Qingdao", "Qom", "Quebec City", "Queenstown", "Quezon City", "Quito",
 
     // R cities
-    "Rabat", "Raleigh", "Rangoon", "Rawalpindi", "Recife", "Reykjavik", "Riga", "Rio de Janeiro", "Riyadh", "Rome",
-    "Rosario", "Rotterdam", "Riyadh",
+    "Rabat", "Raleigh", "Rawalpindi", "Recife", "Reykjavik", "Riga", "Rio de Janeiro", "Riyadh", "Rome",
+    "Rosario", "Rotterdam",
 
     // S cities
     "Saipan", "Salvador", "San Antonio", "San Diego", "San Francisco", "San Jose", "San Juan", "San Salvador", "Sanaa", "Santa Cruz",
@@ -98,5 +98,5 @@ export const cities = [
     "Yamoussoukro", "Yangon", "Yaounde", "Yekaterinburg", "Yerevan", "Yokohama", "Yuzhno-Sakhalinsk",
 
     // Z cities
-    "Zagreb", "Zamboanga", "Zanzibar", "Zhengzhou", "Zibo", "Zürich"
+    "Zagreb", "Zamboanga", "Zanzibar", "Zhengzhou", "Zibo", "Zurich"
 ];

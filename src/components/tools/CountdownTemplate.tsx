@@ -4,36 +4,31 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { AdPlaceholder } from '@/components/layout/AdPlaceholder';
 import Link from 'next/link';
-import { ChevronRight, Clock, Calendar, HelpCircle } from 'lucide-react';
+import { ChevronRight, Clock, Calendar, HelpCircle, Sparkles, CheckCircle2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import type { Countdown } from '@/data/countdowns';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 
 interface CountdownTemplateProps extends Countdown { }
 
 export function CountdownTemplate({ slug, eventName, targetDateMethod, month, date, fixedDate, description }: CountdownTemplateProps) {
     const [timeLeft, setTimeLeft] = useState<{ days: number, hours: number, minutes: number, seconds: number } | null>(null);
-
-    // Compute target date once on mount to avoid hydration mismatch, or handle carefully
     const [target, setTarget] = useState<Date | null>(null);
 
     useEffect(() => {
         const now = new Date();
-        let calculatedTarget = new Date(); // Fallback
+        let calculatedTarget = new Date();
 
         if (targetDateMethod === 'fixed' && fixedDate) {
             calculatedTarget = new Date(fixedDate);
         } else if (targetDateMethod === 'current_year' && month !== undefined && date !== undefined) {
             calculatedTarget = new Date(now.getFullYear(), month, date);
-            // If the date has already passed this year, point to next year
             if (now.getTime() > calculatedTarget.getTime()) {
                 calculatedTarget.setFullYear(now.getFullYear() + 1);
             }
         } else if (targetDateMethod === 'next_year' && month !== undefined && date !== undefined) {
             calculatedTarget = new Date(now.getFullYear() + 1, month, date);
-            // If it's already past it this year, but we explicitly want 'next year'. 
-            // Often "New Year's" logic means it's Jan 1st of the next year.
             if (month === 0 && date === 1) {
-                // Next year always
                 calculatedTarget = new Date(now.getFullYear() + 1, 0, 1);
             }
         }
@@ -69,16 +64,12 @@ export function CountdownTemplate({ slug, eventName, targetDateMethod, month, da
             <Header />
 
             <main className="flex-grow pt-28 md:pt-32 pb-20 container mx-auto px-4 md:px-8 max-w-7xl">
-                {/* Breadcrumbs */}
-                <nav className="flex items-center gap-2 text-xs font-medium text-muted-foreground mb-8">
-                    <Link href="/" className="hover:text-brand-primary transition-colors">Home</Link>
-                    <ChevronRight size={12} />
-                    <Link href="/tools" className="hover:text-brand-primary transition-colors">Tools</Link>
-                    <ChevronRight size={12} />
-                    <span className="capitalize">Countdowns</span>
-                    <ChevronRight size={12} />
-                    <span className="text-foreground">{eventName}</span>
-                </nav>
+                <Breadcrumbs 
+                    items={[
+                        { label: 'Countdowns', href: '/countdown' },
+                        { label: eventName, href: `/countdown/${slug}` }
+                    ]} 
+                />
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     <div className="lg:col-span-8 space-y-8">
@@ -89,8 +80,8 @@ export function CountdownTemplate({ slug, eventName, targetDateMethod, month, da
                             <h1 className="font-outfit text-3xl md:text-5xl font-black mb-4 tracking-tight">
                                 Countdown to {eventName}
                             </h1>
-                            <p className="text-muted-foreground mb-12 font-medium">
-                                {description}
+                            <p className="text-muted-foreground mb-10 font-medium text-lg leading-relaxed">
+                                {description} Track the exact remaining time with millisecond precision as we count down to this anticipated milestone.
                             </p>
 
                             <div className="bg-surface-100 dark:bg-surface-900 rounded-3xl p-8 md:p-12 border shadow-inner">
@@ -122,8 +113,50 @@ export function CountdownTemplate({ slug, eventName, targetDateMethod, month, da
                             </div>
                         </section>
 
-                        {/* Ad */}
-                        <AdPlaceholder type="content" />
+                        {/* Cultural Significance & Origins */}
+                        <section className="glass-card p-8 md:p-12">
+                            <h2 className="font-outfit text-2xl font-bold mb-6 flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-lg bg-brand-primary/10 text-brand-primary flex items-center justify-center">
+                                    <Sparkles size={18} />
+                                </div>
+                                Celebration Traditions & Significance
+                            </h2>
+                            <div className="space-y-4 text-muted-foreground text-sm leading-relaxed">
+                                <p>
+                                    <strong>{eventName}</strong> represents a key temporal landmark celebrated worldwide by millions of people. Whether marking the transition into a new calendar cycle, welcoming a seasonal astronomical shift, or celebrating historic cultural traditions, events like this offer an opportunity to gather with friends, reflect on personal goals, and share memorable experiences.
+                                </p>
+                                <p>
+                                    Communities often mark the occasion with festivals, special gatherings, festive meals, and symbolic ceremonies that reflect centuries of shared heritage and modern festivities.
+                                </p>
+                            </div>
+                        </section>
+
+                        {/* Preparation Milestones */}
+                        <section className="glass-card p-8 md:p-12">
+                            <h2 className="font-outfit text-2xl font-bold mb-6 flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center">
+                                    <CheckCircle2 size={18} />
+                                </div>
+                                Countdown Milestones & Checklist
+                            </h2>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div className="p-4 rounded-2xl bg-surface-100 dark:bg-surface-900 border border-border">
+                                    <span className="text-xs font-bold text-brand-primary uppercase tracking-wider block mb-1">30 Days Out</span>
+                                    <h4 className="font-bold text-sm mb-2">Initial Planning</h4>
+                                    <p className="text-xs text-muted-foreground">Coordinate travel, send invitations, and establish key preparations well in advance.</p>
+                                </div>
+                                <div className="p-4 rounded-2xl bg-surface-100 dark:bg-surface-900 border border-border">
+                                    <span className="text-xs font-bold text-brand-primary uppercase tracking-wider block mb-1">7 Days Out</span>
+                                    <h4 className="font-bold text-sm mb-2">Final Logistics</h4>
+                                    <p className="text-xs text-muted-foreground">Confirm event itineraries, acquire supplies, and review countdown timing.</p>
+                                </div>
+                                <div className="p-4 rounded-2xl bg-surface-100 dark:bg-surface-900 border border-border">
+                                    <span className="text-xs font-bold text-brand-primary uppercase tracking-wider block mb-1">Final 24 Hours</span>
+                                    <h4 className="font-bold text-sm mb-2">The Celebration</h4>
+                                    <p className="text-xs text-muted-foreground">Track the final hours live and celebrate the momentous milestone with family and friends.</p>
+                                </div>
+                            </div>
+                        </section>
 
                         {/* FAQ */}
                         <section className="glass-card p-8 md:p-12">
@@ -131,13 +164,25 @@ export function CountdownTemplate({ slug, eventName, targetDateMethod, month, da
                                 <div className="w-8 h-8 rounded-lg bg-orange-500/10 text-orange-500 flex items-center justify-center">
                                     <HelpCircle size={18} />
                                 </div>
-                                About {eventName}
+                                Frequently Asked Questions
                             </h2>
                             <div className="space-y-6">
                                 <div>
                                     <h4 className="font-bold mb-2">When exactly is {eventName}?</h4>
                                     <p className="text-muted-foreground text-sm leading-relaxed">
-                                        {eventName} is on {target?.toLocaleDateString('en-US', { day: 'numeric', month: 'long' }) || '...'}. Our live countdown accurately calculates the days, hours, minutes, and seconds remaining until this event, adjusting automatically across timezones.
+                                        {eventName} is on {target?.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) || '...'}. Our live countdown accurately calculates the days, hours, minutes, and seconds remaining, adjusting automatically for your current local device time.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold mb-2">Does this countdown update automatically?</h4>
+                                    <p className="text-muted-foreground text-sm leading-relaxed">
+                                        Yes. The timer updates every 1,000 milliseconds (1 second) directly in your browser without requiring page refreshes or external server polling.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 className="font-bold mb-2">What happens when the countdown timer reaches zero?</h4>
+                                    <p className="text-muted-foreground text-sm leading-relaxed">
+                                        When the target moment arrives, the timer safely locks at 00:00:00, signaling that {eventName} has arrived and the celebration is underway.
                                     </p>
                                 </div>
                             </div>
@@ -147,16 +192,26 @@ export function CountdownTemplate({ slug, eventName, targetDateMethod, month, da
                     <aside className="lg:col-span-4 space-y-8">
                         <AdPlaceholder type="sidebar" />
                         <div className="glass-card p-8">
-                            <h3 className="font-outfit font-bold text-xl mb-6 italic">Popular Countdowns</h3>
+                            <h3 className="font-outfit font-bold text-xl mb-6 italic flex items-center gap-2">
+                                <Clock size={18} className="text-brand-primary" />
+                                Other Live Countdowns
+                            </h3>
                             <div className="space-y-3">
-                                <Link href="/countdown/christmas" className="block p-4 rounded-xl border bg-surface-50 dark:bg-surface-900/50 hover:border-brand-primary transition-all text-sm font-bold">
-                                    Countdown to Christmas
+                                <Link href="/countdown/new-year" className="block p-4 rounded-xl border bg-surface-50 dark:bg-surface-900/50 hover:border-brand-primary transition-all text-sm font-bold flex items-center justify-between group">
+                                    <span>New Year</span>
+                                    <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                                 </Link>
-                                <Link href="/countdown/new-year" className="block p-4 rounded-xl border bg-surface-50 dark:bg-surface-900/50 hover:border-brand-primary transition-all text-sm font-bold">
-                                    Countdown to New Year
+                                <Link href="/countdown/christmas" className="block p-4 rounded-xl border bg-surface-50 dark:bg-surface-900/50 hover:border-brand-primary transition-all text-sm font-bold flex items-center justify-between group">
+                                    <span>Christmas</span>
+                                    <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                                 </Link>
-                                <Link href="/countdown/halloween" className="block p-4 rounded-xl border bg-surface-50 dark:bg-surface-900/50 hover:border-brand-primary transition-all text-sm font-bold">
-                                    Countdown to Halloween
+                                <Link href="/countdown/halloween" className="block p-4 rounded-xl border bg-surface-50 dark:bg-surface-900/50 hover:border-brand-primary transition-all text-sm font-bold flex items-center justify-between group">
+                                    <span>Halloween</span>
+                                    <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                                </Link>
+                                <Link href="/countdown/valentines-day" className="block p-4 rounded-xl border bg-surface-50 dark:bg-surface-900/50 hover:border-brand-primary transition-all text-sm font-bold flex items-center justify-between group">
+                                    <span>Valentine's Day</span>
+                                    <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                                 </Link>
                             </div>
                         </div>

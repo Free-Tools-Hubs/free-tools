@@ -2,6 +2,7 @@ import { RandomTemplate } from '@/components/tools/RandomTemplate';
 import randoms from '@/data/randoms';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 
 interface PageProps {
     params: Promise<{
@@ -21,19 +22,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!randomItem) return { title: 'Not Found' };
 
+    const canonical = `/random/${slug}`;
+
     return {
-        title: `${randomItem.name} Generator | Free Online Tool`,
+        title: `${randomItem.name} Generator | Free Online Tool | ${SITE_NAME}`,
         description: randomItem.description,
         keywords: randomItem.name,
+        alternates: {
+            canonical,
+        },
         openGraph: {
-            title: `${randomItem.name} Generator | Free Online Tool`,
+            title: `${randomItem.name} Generator | Free Online Tool | ${SITE_NAME}`,
             description: randomItem.description,
             type: 'website',
-            url: `https://freetoolshubs.com/random/${slug}`,
-            siteName: 'Free Tools',
+            url: `${SITE_URL}${canonical}`,
+            siteName: SITE_NAME,
             images: [
                 {
-                    url: `https://freetoolshubs.com/random/${slug}.png`,
+                    url: '/og.png',
                     width: 1200,
                     height: 630,
                     alt: `${randomItem.name} Generator | Free Online Tool`,
@@ -41,21 +47,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             ],
         },
         twitter: {
-            title: `${randomItem.name} Generator | Free Online Tool`,
+            title: `${randomItem.name} Generator | Free Online Tool | ${SITE_NAME}`,
             description: randomItem.description,
             card: 'summary_large_image',
-            images: [
-                {
-                    url: `https://freetoolshubs.com/random/${slug}.png`,
-                    width: 1200,
-                    height: 630,
-                    alt: `${randomItem.name} Generator | Free Online Tool`,
-                },
-            ],
+            images: ['/og.png'],
         },
-        alternates: {
-            canonical: `/random/${slug}`
-        }
     };
 }
 

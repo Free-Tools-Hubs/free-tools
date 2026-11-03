@@ -25,7 +25,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const { name } = await params;
     const weather = await fetchWeatherData(name);
 
-    if (!weather) return { title: 'Weather Information Not Found' };
+    if (!weather) {
+        return {
+            title: 'Weather Information Not Found',
+            robots: { index: false, follow: false }
+        };
+    }
 
     const cityName = weather.name;
     const canonical = `/city/${name}`;

@@ -1,25 +1,54 @@
-export async function fetchWeatherData(city: string) {
-    try {
-        // Using a public endpoint that doesn't strictly require a private key for some basic queries
-        // or a mock-fallback for development if keys aren't provided yet.
-        // For production, the user should provide an OPENWEATHERMAP_API_KEY.
-        const apiKey = process.env.WEATHER_API_KEY || '5763f365b4263ba6bbc70affd7822d22'; // Sample key for demonstration
-        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`, {
-            next: { revalidate: 1800 } // Cache for 30 minutes
-        });
+import { cache } from 'react';
 
-        if (!res.ok) throw new Error(`Weather API failed: ${res.status}`);
+export interface WeatherData {
+    name: string;
+    weather: Array<{ description: string; icon?: string; main?: string }>;
+    main: { temp: number; feels_like: number; humidity: number };
+    wind: { speed: number };
+    sys: { country: string; sunrise: number; sunset: number };
+}
+
+/**
+ * Fetch live weather data for a city from OpenWeatherMap.
+ * Wrapped in React cache() to deduplicate requests across generateMetadata and Page execution.
+ * Returns null if the city is not found or if the API request fails (no fabricated mock data).
+ */
+export const fetchWeatherData = cache(async (city: string): Promise<WeatherData | null> => {
+    try {
+        const apiKey = process.env.WEATHER_API_KEY || '5763f365b4263ba6bbc70affd7822d22';
+        
+        // Convert slug hyphens to spaces (e.g., 'kansas-city' -> 'kansas city') for OpenWeather API
+        const queryCity = city.replace(/-/g, ' ').trim();
+        if (!queryCity) return null;
+
+        const encodedCity = encodeURIComponent(queryCity);
+        let res = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?q=${encodedCity}&units=metric&appid=${apiKey}`
+        );
+
+        // If not found with spaces, retry with original hyphenated query (e.g. Yuzhno-Sakhalinsk)
+        if (!res.ok && res.status === 404 && queryCity !== city) {
+            res = await fetch(
+                `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&units=metric&appid=${apiKey}`
+            );
+        }
+
+        if (!res.ok) {
+            if (res.status === 404) {
+                return null;
+            }
+            console.warn(`Weather API returned status ${res.status} for city "${queryCity}"`);
+            return null;
+        }
 
         const data = await res.json();
-        return data;
+        if (!data || !data.main || !data.weather || !data.weather.length) {
+            return null;
+        }
+
+        return data as WeatherData;
     } catch (error) {
-        // Mock fallback to prevent 404s when API key is missing or invalid
-        return {
-            name: city.charAt(0).toUpperCase() + city.slice(1),
-            weather: [{ description: 'partly cloudy, mock data' }],
-            main: { temp: 22, feels_like: 23, humidity: 60 },
-            wind: { speed: 5 },
-            sys: { country: 'MockCountry', sunrise: Date.now() / 1000 - 43200, sunset: Date.now() / 1000 + 43200 }
-        };
+        console.error(`Error fetching weather data for "${city}":`, error);
+        return null;
     }
-}
+});

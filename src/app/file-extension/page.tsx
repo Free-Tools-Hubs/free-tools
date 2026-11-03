@@ -37,11 +37,23 @@ const CategoryIcon = ({ category, size = 20 }: { category: string, size?: number
     }
 };
 
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { SITE_URL, SITE_NAME } from '@/lib/config';
+
 export default function FileEncyclopediaIndex() {
     const categories = Array.from(new Set(fileExtensions.map(f => f.category)));
 
     return (
         <div className="max-w-7xl mx-auto px-4 py-20 pb-40">
+            <JsonLd data={{
+                "@context": "https://schema.org",
+                "@type": "CollectionPage",
+                "name": `File Extension Encyclopedia | ${SITE_NAME}`,
+                "description": "Comprehensive reference database of file formats, MIME types, and software compatibility.",
+                "url": `${SITE_URL}/file-extension`
+            }} />
+            <Breadcrumbs items={[{ label: 'File Encyclopedia', href: '/file-extension' }]} />
             {/* Hero Section */}
             <div className="text-center mb-20">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 text-amber-600 rounded-full text-xs font-black uppercase tracking-widest mb-6">

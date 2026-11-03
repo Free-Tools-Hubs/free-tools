@@ -12,19 +12,26 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-    return tools.map((tool) => ({
-        category: tool.category,
-        slug: tool.slug,
-    }));
+    return tools
+        .filter((tool) => !tool.customPath)
+        .map((tool) => ({
+            category: tool.category,
+            slug: tool.slug,
+        }));
 }
 
 import { SITE_URL, SITE_NAME } from '@/lib/config';
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     const { slug, category } = await params;
-    const tool = tools.find((t) => t.slug === slug);
+    const tool = tools.find((t) => t.slug === slug && t.category === category && !t.customPath);
 
-    if (!tool) return { title: 'Tool Not Found' };
+    if (!tool) {
+        return {
+            title: 'Tool Not Found',
+            robots: { index: false, follow: false }
+        };
+    }
 
     const canonical = `/tools/${category}/${slug}`;
 
@@ -58,8 +65,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function ToolPage({ params }: PageProps) {
-    const { slug } = await params;
-    const tool = tools.find((t) => t.slug === slug);
+    const { slug, category } = await params;
+    const tool = tools.find((t) => t.slug === slug && t.category === category && !t.customPath);
 
     if (!tool) notFound();
 

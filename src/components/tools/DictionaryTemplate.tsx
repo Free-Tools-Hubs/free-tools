@@ -65,6 +65,30 @@ export function DictionaryTemplate({ word, phonetic, meanings }: DictionaryTempl
                             </p>
                         </section>
 
+                        {/* Navigation Funnel for /define/tool */}
+                        {word.toLowerCase() === 'tool' && (
+                            <section className="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-brand-primary/10 via-brand-secondary/5 to-brand-primary/10 border border-brand-primary/20 shadow-md">
+                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                    <div className="space-y-1">
+                                        <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">Looking for Free Online Utilities?</span>
+                                        <h3 className="text-xl md:text-2xl font-black text-foreground">
+                                            Explore 80+ Free Online Web Tools
+                                        </h3>
+                                        <p className="text-muted-foreground text-sm max-w-xl">
+                                            Beyond the definition, FreeToolsHubs provides over 80 fast, browser-based web tools for image conversion, PDF editing, text formatting, and developer workflows—100% free with zero file uploads.
+                                        </p>
+                                    </div>
+                                    <Link
+                                        href="/tools"
+                                        className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-brand-primary text-white font-bold text-sm shadow-lg hover:shadow-brand-primary/25 hover:opacity-95 transition-all shrink-0"
+                                    >
+                                        Browse Tools Directory
+                                        <ChevronRight size={16} />
+                                    </Link>
+                                </div>
+                            </section>
+                        )}
+
                         {/* Ad */}
                         <AdPlaceholder type="content" />
 
@@ -157,14 +181,14 @@ export function DictionaryTemplate({ word, phonetic, meanings }: DictionaryTempl
                         <div className="glass-card p-8">
                             <h3 className="font-outfit font-bold text-xl mb-6 italic">Trending Words</h3>
                             <div className="space-y-3">
-                                <Link href="/define/productivity" className="block p-4 rounded-xl border bg-surface-50 dark:bg-surface-900/50 hover:border-brand-primary transition-all text-sm font-bold">
-                                    Meaning of Productivity
+                                <Link href="/define/intelligence" className="block p-4 rounded-xl border bg-surface-50 dark:bg-surface-900/50 hover:border-brand-primary transition-all text-sm font-bold">
+                                    Meaning of Intelligence
                                 </Link>
-                                <Link href="/define/innovation" className="block p-4 rounded-xl border bg-surface-50 dark:bg-surface-900/50 hover:border-brand-primary transition-all text-sm font-bold">
-                                    Meaning of Innovation
+                                <Link href="/define/adventure" className="block p-4 rounded-xl border bg-surface-50 dark:bg-surface-900/50 hover:border-brand-primary transition-all text-sm font-bold">
+                                    Meaning of Adventure
                                 </Link>
-                                <Link href="/define/epiphany" className="block p-4 rounded-xl border bg-surface-50 dark:bg-surface-900/50 hover:border-brand-primary transition-all text-sm font-bold">
-                                    Meaning of Epiphany
+                                <Link href="/define/knowledge" className="block p-4 rounded-xl border bg-surface-50 dark:bg-surface-900/50 hover:border-brand-primary transition-all text-sm font-bold">
+                                    Meaning of Knowledge
                                 </Link>
                             </div>
                         </div>

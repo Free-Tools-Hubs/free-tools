@@ -6,37 +6,32 @@ import { Footer } from '@/components/layout/Footer';
 
 import { JsonLd } from '@/components/seo/JsonLd';
 
+import { SITE_NAME, SITE_URL } from '@/lib/config';
+
 export const metadata = {
-    title: 'Live Currency Exchange Rates - Global Forex Hub',
+    title: `Live Currency Exchange Rates - Global Forex Hub | ${SITE_NAME}`,
     description: 'Get real-time exchange rates for USD, EUR, GBP, INR, and other world currencies. Accurate currency converter for international exchange data.',
     keywords: ['currency exchange', 'live forex rates', 'usd to eur', 'currency converter', 'global money exchange'],
     openGraph: {
-        title: 'Live Currency Exchange Rates - Global Forex Hub',
+        title: `Live Currency Exchange Rates - Global Forex Hub | ${SITE_NAME}`,
         description: 'Get real-time exchange rates for USD, EUR, GBP, INR, and other world currencies. Accurate currency converter for international exchange data.',
         type: 'website',
-        url: 'https://freetoolshubs.com/currency',
-        siteName: 'Free Tools',
+        url: `${SITE_URL}/currency`,
+        siteName: SITE_NAME,
         images: [
             {
-                url: 'https://freetoolshubs.com/currency.png',
+                url: '/og.png',
                 width: 1200,
                 height: 630,
-                alt: 'Live Currency Exchange Rates - Global Forex Hub',
+                alt: `Live Currency Exchange Rates - Global Forex Hub | ${SITE_NAME}`,
             },
         ],
     },
     twitter: {
-        title: 'Live Currency Exchange Rates - Global Forex Hub',
+        title: `Live Currency Exchange Rates - Global Forex Hub | ${SITE_NAME}`,
         description: 'Get real-time exchange rates for USD, EUR, GBP, INR, and other world currencies. Accurate currency converter for international exchange data.',
         card: 'summary_large_image',
-        images: [
-            {
-                url: 'https://freetoolshubs.com/currency.png',
-                width: 1200,
-                height: 630,
-                alt: 'Live Currency Exchange Rates - Global Forex Hub',
-            },
-        ],
+        images: ['/og.png'],
     },
     alternates: {
         canonical: '/currency'

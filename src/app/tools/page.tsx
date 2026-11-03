@@ -6,37 +6,32 @@ import Link from 'next/link';
 import * as LucideIcons from 'lucide-react';
 import { ChevronRight, LayoutGrid, List } from 'lucide-react';
 
+import { SITE_NAME, SITE_URL } from '@/lib/config';
+
 export const metadata = {
-    title: 'All Free Online Tools | FreeToolsHubs',
-    description: 'Browse our complete directory of 100+ free online tools for images, PDF, text, development, and more.',
-    keywords: 'free tools, online tools, image tools, pdf tools, text tools, development tools',
+    title: `Free Online Tools Directory — 80+ Fast & Private Web Utilities | ${SITE_NAME}`,
+    description: 'Browse 80+ free browser-based tools for image conversion, PDF editing, text formatting, and developer utilities. 100% private with zero file uploads.',
+    keywords: 'free online tools, browser tools, free utilities, pdf tools, image converter, developer tools, text tools',
     openGraph: {
-        title: 'All Free Online Tools | FreeToolsHubs',
-        description: 'Browse our complete directory of 100+ free online tools for images, PDF, text, development, and more.',
+        title: `Free Online Tools Directory — 80+ Fast & Private Web Utilities | ${SITE_NAME}`,
+        description: 'Browse 80+ free browser-based tools for image conversion, PDF editing, text formatting, and developer utilities. 100% private with zero file uploads.',
         type: 'website',
-        url: 'https://freetoolshubs.com/tools',
-        siteName: 'Free Tools',
+        url: `${SITE_URL}/tools`,
+        siteName: SITE_NAME,
         images: [
             {
-                url: 'https://freetoolshubs.com/tools.png',
+                url: '/og.png',
                 width: 1200,
                 height: 630,
-                alt: 'All Free Online Tools | FreeToolsHubs',
+                alt: `Free Online Tools Directory | ${SITE_NAME}`,
             },
         ],
     },
     twitter: {
-        title: 'All Free Online Tools | FreeToolsHubs',
-        description: 'Browse our complete directory of 100+ free online tools for images, PDF, text, development, and more.',
+        title: `Free Online Tools Directory — 80+ Fast & Private Web Utilities | ${SITE_NAME}`,
+        description: 'Browse 80+ free browser-based tools for image conversion, PDF editing, text formatting, and developer utilities. 100% private with zero file uploads.',
         card: 'summary_large_image',
-        images: [
-            {
-                url: 'https://freetoolshubs.com/tools.png',
-                width: 1200,
-                height: 630,
-                alt: 'All Free Online Tools | FreeToolsHubs',
-            },
-        ],
+        images: ['/og.png'],
     },
     alternates: {
         canonical: '/tools'

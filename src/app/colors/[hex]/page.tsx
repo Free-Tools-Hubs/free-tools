@@ -24,17 +24,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!isValidHex(hex)) return { title: 'Invalid Color' };
 
     const cleanHex = normalizeHex(hex);
+    const displayHex = cleanHex.toUpperCase();
     const namedColor = namedColors.find(c => normalizeHex(c.hex) === cleanHex);
     const title = namedColor 
-        ? `${namedColor.name} Color | Hex #${cleanHex} | ${SITE_NAME}`
-        : `Hex #${cleanHex} Color Details | Color Hub | ${SITE_NAME}`;
+        ? `${namedColor.name} Color | Hex #${displayHex} | ${SITE_NAME}`
+        : `Hex #${displayHex} Color Details | Color Hub | ${SITE_NAME}`;
     
     const canonical = `/colors/${cleanHex}`;
 
     return {
         title,
-        description: `Detailed information about the color #${cleanHex}. Get RGB, HSL, CMYK values, complementary colors, and WCAG contrast ratios.`,
-        keywords: [`#${cleanHex}`, `color ${cleanHex}`, `rgb of ${cleanHex}`, `hsl of ${cleanHex}`, 'color hub', 'free tools'],
+        description: `Detailed information about the color #${displayHex}. Get RGB, HSL, CMYK values, complementary colors, and WCAG contrast ratios.`,
+        keywords: [`#${displayHex}`, `color ${displayHex}`, `rgb of ${displayHex}`, `hsl of ${displayHex}`, 'color hub', 'free tools'],
         alternates: { canonical },
         ...(namedColor ? {} : { robots: { index: false, follow: true } }),
         openGraph: {
@@ -61,8 +62,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export function generateStaticParams() {
-    return namedColors.map(color => ({
-        hex: normalizeHex(color.hex),
+    const uniqueHexes = Array.from(new Set(namedColors.map(color => normalizeHex(color.hex))));
+    return uniqueHexes.map(hex => ({
+        hex,
     }));
 }
 
@@ -71,6 +73,7 @@ export default async function ColorPage({ params }: Props) {
     if (!isValidHex(hex)) notFound();
 
     const cleanHex = normalizeHex(hex);
+    const displayHex = cleanHex.toUpperCase();
     const rgb = hexToRgb(cleanHex);
     const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
     const cmyk = rgbToCmyk(rgb.r, rgb.g, rgb.b);
@@ -91,8 +94,8 @@ export default async function ColorPage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 py-12 pt-32">
             <Breadcrumbs 
                 items={[
-                    { label: 'Color Hub', href: '/tools/colors' },
-                    { label: namedColor?.name || `#${cleanHex}`, href: `/colors/${cleanHex}` }
+                    { label: 'Color Hub', href: '/colors' },
+                    { label: namedColor?.name || `#${displayHex}`, href: `/colors/${cleanHex}` }
                 ]} 
             />
             {/* Hero Section */}
@@ -103,18 +106,18 @@ export default async function ColorPage({ params }: Props) {
                 />
                 <div className="flex flex-col justify-center">
                     <h1 className="text-4xl lg:text-6xl font-bold mb-4 flex items-center gap-4">
-                        {namedColor?.name || `#${cleanHex}`}
-                        <span className="text-xl font-mono text-zinc-500">#{cleanHex}</span>
+                        {namedColor?.name || `#${displayHex}`}
+                        <span className="text-xl font-mono text-zinc-500">#{displayHex}</span>
                     </h1>
                     <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-8 max-w-xl">
-                        Explore properties, harmonies, and accessibility data for the color <strong>#{cleanHex}</strong>. 
+                        Explore properties, harmonies, and accessibility data for the color <strong>#{displayHex}</strong>. 
                         This {hsl.l > 70 ? 'light' : hsl.l < 30 ? 'dark' : 'medium'} shade of {getColorCategory(hsl.h)} 
                         is widely used in modern design.
                     </p>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                         <div className="bg-zinc-50 dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
                             <span className="block text-xs uppercase tracking-widest text-zinc-500 mb-1">HEX</span>
-                            <span className="font-mono font-bold">#{cleanHex}</span>
+                            <span className="font-mono font-bold">#{displayHex}</span>
                         </div>
                         <div className="bg-zinc-50 dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
                             <span className="block text-xs uppercase tracking-widest text-zinc-500 mb-1">RGB</span>
@@ -175,21 +178,21 @@ export default async function ColorPage({ params }: Props) {
                         <div className="space-y-4">
                             <div>
                                 <span className="text-xs text-zinc-500 mb-2 block">Complementary</span>
-                                <Link rel="nofollow" href={`/colors/${harmonies.complementary}`} className="block h-10 w-full rounded-md border border-zinc-200 dark:border-zinc-800 group relative" style={{ backgroundColor: `#${harmonies.complementary}` }}>
+                                <div className="block h-10 w-full rounded-md border border-zinc-200 dark:border-zinc-800 group relative" style={{ backgroundColor: `#${harmonies.complementary}` }} title={`#${harmonies.complementary}`}>
                                      <span className="opacity-0 group-hover:opacity-100 absolute inset-0 flex items-center justify-center bg-black/20 text-white text-[10px] font-mono transition-opacity">
                                         #{harmonies.complementary}
                                      </span>
-                                </Link>
+                                </div>
                             </div>
                             <div>
                                 <span className="text-xs text-zinc-500 mb-2 block">Analogous</span>
                                 <div className="flex gap-2">
                                     {harmonies.analogous.map(hex => (
-                                        <Link rel="nofollow" key={hex} href={`/colors/${hex}`} className="flex-1 h-10 rounded-md border border-zinc-200 dark:border-zinc-800 group relative" style={{ backgroundColor: `#${hex}` }}>
+                                        <div key={hex} className="flex-1 h-10 rounded-md border border-zinc-200 dark:border-zinc-800 group relative" style={{ backgroundColor: `#${hex}` }} title={`#${hex}`}>
                                             <span className="opacity-0 group-hover:opacity-100 absolute inset-0 flex items-center justify-center bg-black/20 text-white text-[10px] font-mono transition-opacity">
                                                 #{hex}
                                             </span>
-                                        </Link>
+                                        </div>
                                     ))}
                                 </div>
                             </div>
@@ -197,11 +200,11 @@ export default async function ColorPage({ params }: Props) {
                                 <span className="text-xs text-zinc-500 mb-2 block">Triadic</span>
                                 <div className="flex gap-2">
                                     {harmonies.triadic.map(hex => (
-                                        <Link rel="nofollow" key={hex} href={`/colors/${hex}`} className="flex-1 h-10 rounded-md border border-zinc-200 dark:border-zinc-800 group relative" style={{ backgroundColor: `#${hex}` }}>
+                                        <div key={hex} className="flex-1 h-10 rounded-md border border-zinc-200 dark:border-zinc-800 group relative" style={{ backgroundColor: `#${hex}` }} title={`#${hex}`}>
                                             <span className="opacity-0 group-hover:opacity-100 absolute inset-0 flex items-center justify-center bg-black/20 text-white text-[10px] font-mono transition-opacity">
                                                 #{hex}
                                             </span>
-                                        </Link>
+                                        </div>
                                     ))}
                                 </div>
                             </div>

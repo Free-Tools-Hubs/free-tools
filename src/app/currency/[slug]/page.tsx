@@ -4,6 +4,7 @@ import { getExchangeRate } from '@/lib/currency-api';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 
 interface PageProps {
     params: Promise<{
@@ -31,19 +32,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!fromCurrency || !toCurrency) return { title: 'Not Found' };
 
+    const canonical = `/currency/${slug}`;
+
     return {
-        title: `Convert ${fromCurrency.name} (${fromCode}) to ${toCurrency.name} (${toCode}) | Live Rates`,
+        title: `Convert ${fromCurrency.name} (${fromCode}) to ${toCurrency.name} (${toCode}) | Live Rates | ${SITE_NAME}`,
         description: `Get real-time exchange rates for ${fromCurrency.name} to ${toCurrency.name}. Accurate ${fromCode} to ${toCode} converter for personal and educational use.`,
         keywords: `${fromCurrency.name}, ${toCurrency.name}, currency converter, exchange rate, ${fromCode}, ${toCode}`,
+        alternates: {
+            canonical,
+        },
         openGraph: {
-            title: `Convert ${fromCurrency.name} (${fromCode}) to ${toCurrency.name} (${toCode}) | Live Rates`,
+            title: `Convert ${fromCurrency.name} (${fromCode}) to ${toCurrency.name} (${toCode}) | Live Rates | ${SITE_NAME}`,
             description: `Get real-time exchange rates for ${fromCurrency.name} to ${toCurrency.name}. Accurate ${fromCode} to ${toCode} converter for personal and educational use.`,
             type: 'website',
-            url: `https://freetoolshubs.com/currency/${slug}`,
-            siteName: 'Free Tools',
+            url: `${SITE_URL}${canonical}`,
+            siteName: SITE_NAME,
             images: [
                 {
-                    url: `https://freetoolshubs.com/currency/${slug}.png`,
+                    url: '/og.png',
                     width: 1200,
                     height: 630,
                     alt: `Convert ${fromCurrency.name} (${fromCode}) to ${toCurrency.name} (${toCode}) | Live Rates`,
@@ -51,20 +57,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             ],
         },
         twitter: {
-            title: `Convert ${fromCurrency.name} (${fromCode}) to ${toCurrency.name} (${toCode}) | Live Rates`,
+            title: `Convert ${fromCurrency.name} (${fromCode}) to ${toCurrency.name} (${toCode}) | Live Rates | ${SITE_NAME}`,
             description: `Get real-time exchange rates for ${fromCurrency.name} to ${toCurrency.name}. Accurate ${fromCode} to ${toCode} converter for personal and educational use.`,
             card: 'summary_large_image',
-            images: [
-                {
-                    url: `https://freetoolshubs.com/currency/${slug}.png`,
-                    width: 1200,
-                    height: 630,
-                    alt: `Convert ${fromCurrency.name} (${fromCode}) to ${toCurrency.name} (${toCode}) | Live Rates`,
-                },
-            ],
-        },
-        alternates: {
-            canonical: `/currency/${slug}`
+            images: ['/og.png'],
         }
     };
 }
