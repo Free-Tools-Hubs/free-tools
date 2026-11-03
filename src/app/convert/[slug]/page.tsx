@@ -2,6 +2,7 @@ import { ConversionTemplate } from '@/components/tools/ConversionTemplate';
 import conversions from '@/data/conversions';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 
 interface PageProps {
     params: Promise<{
@@ -21,19 +22,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!conversion) return { title: 'Not Found' };
 
+    const canonical = `/convert/${slug}`;
+
     return {
-        title: `Convert ${conversion.fromName} to ${conversion.toName} (${conversion.fromUnit} to ${conversion.toUnit})`,
+        title: `Convert ${conversion.fromName} to ${conversion.toName} (${conversion.fromUnit} to ${conversion.toUnit}) | ${SITE_NAME}`,
         description: `Free online converter for ${conversion.fromName} to ${conversion.toName}. Accurate results for ${conversion.category} conversions.`,
         keywords: `${conversion.fromName}, ${conversion.toName}, ${conversion.category} converter, online converter, free converter`,
+        alternates: {
+            canonical,
+        },
         openGraph: {
-            title: `Convert ${conversion.fromName} to ${conversion.toName} (${conversion.fromUnit} to ${conversion.toUnit})`,
+            title: `Convert ${conversion.fromName} to ${conversion.toName} (${conversion.fromUnit} to ${conversion.toUnit}) | ${SITE_NAME}`,
             description: `Free online converter for ${conversion.fromName} to ${conversion.toName}. Accurate results for ${conversion.category} conversions.`,
             type: 'website',
-            url: `https://freetoolshubs.com/convert/${conversion.slug}`,
-            siteName: 'Free Tools',
+            url: `${SITE_URL}${canonical}`,
+            siteName: SITE_NAME,
             images: [
                 {
-                    url: `https://freetoolshubs.com/convert/${conversion.slug}.png`,
+                    url: '/og.png',
                     width: 1200,
                     height: 630,
                     alt: `Convert ${conversion.fromName} to ${conversion.toName} (${conversion.fromUnit} to ${conversion.toUnit})`,
@@ -41,21 +47,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             ],
         },
         twitter: {
-            title: `Convert ${conversion.fromName} to ${conversion.toName} (${conversion.fromUnit} to ${conversion.toUnit})`,
+            title: `Convert ${conversion.fromName} to ${conversion.toName} (${conversion.fromUnit} to ${conversion.toUnit}) | ${SITE_NAME}`,
             description: `Free online converter for ${conversion.fromName} to ${conversion.toName}. Accurate results for ${conversion.category} conversions.`,
             card: 'summary_large_image',
-            images: [
-                {
-                    url: `https://freetoolshubs.com/convert/${conversion.slug}.png`,
-                    width: 1200,
-                    height: 630,
-                    alt: `Convert ${conversion.fromName} to ${conversion.toName} (${conversion.fromUnit} to ${conversion.toUnit})`,
-                },
-            ],
+            images: ['/og.png'],
         },
-        alternates: {
-            canonical: `/convert/${slug}`
-        }
     };
 }
 

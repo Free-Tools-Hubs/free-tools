@@ -31,14 +31,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     if (!category) return { title: 'Category Not Found' };
 
     const canonical = `/tools/${categoryId}`;
+    const displayTitle = category.title.endsWith('Tools')
+        ? category.title
+        : category.id === 'calculators'
+            ? 'Free Online Calculators'
+            : category.id === 'generators'
+                ? 'Free Online Generators'
+                : category.id === 'discovery'
+                    ? 'Smart Discovery Hubs'
+                    : `${category.title} Tools`;
+
+    const title = `${displayTitle} | ${SITE_NAME}`;
 
     return {
-        title: `${category.title} Tools | ${SITE_NAME}`,
+        title,
         description: category.description,
         keywords: `${category.title}, free tools, online tools`,
         alternates: { canonical },
         openGraph: {
-            title: `${category.title} Tools | ${SITE_NAME}`,
+            title,
             description: category.description,
             type: 'website',
             url: `${SITE_URL}${canonical}`,
@@ -48,12 +59,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
                     url: `/og.png`,
                     width: 1200,
                     height: 630,
-                    alt: `${category.title} Tools`,
+                    alt: displayTitle,
                 },
             ],
         },
         twitter: {
-            title: `${category.title} Tools | ${SITE_NAME}`,
+            title,
             description: category.description,
             card: 'summary_large_image',
             images: [`/og.png`],

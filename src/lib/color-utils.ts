@@ -11,7 +11,7 @@ export function normalizeHex(hex: string): string {
     if (cleanHex.length === 3) {
         cleanHex = cleanHex.split('').map(char => char + char).join('');
     }
-    return cleanHex.toUpperCase();
+    return cleanHex.toLowerCase();
 }
 
 export function hexToRgb(hex: string): RGB {

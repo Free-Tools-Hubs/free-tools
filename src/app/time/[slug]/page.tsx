@@ -2,6 +2,7 @@ import { TimeConversionTemplate } from '@/components/tools/TimeConversionTemplat
 import times from '@/data/times';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 
 interface PageProps {
     params: Promise<{
@@ -21,19 +22,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!timeConversion) return { title: 'Not Found' };
 
+    const canonical = `/time/${slug}`;
+
     return {
-        title: `Convert ${timeConversion.fromName} to ${timeConversion.toName} Time`,
+        title: `Convert ${timeConversion.fromName} to ${timeConversion.toName} Time | ${SITE_NAME}`,
         description: `Free online time converter for ${timeConversion.fromName} (${timeConversion.fromZone}) to ${timeConversion.toName} (${timeConversion.toZone}).`,
         keywords: `${timeConversion.fromName}, ${timeConversion.toName}, time converter, ${timeConversion.fromZone}, ${timeConversion.toZone}`,
+        alternates: {
+            canonical,
+        },
         openGraph: {
-            title: `Convert ${timeConversion.fromName} to ${timeConversion.toName} Time`,
+            title: `Convert ${timeConversion.fromName} to ${timeConversion.toName} Time | ${SITE_NAME}`,
             description: `Free online time converter for ${timeConversion.fromName} (${timeConversion.fromZone}) to ${timeConversion.toName} (${timeConversion.toZone}).`,
             type: 'website',
-            url: `https://freetoolshubs.com/time/${slug}`,
-            siteName: 'Free Tools',
+            url: `${SITE_URL}${canonical}`,
+            siteName: SITE_NAME,
             images: [
                 {
-                    url: `https://freetoolshubs.com/time/${slug}.png`,
+                    url: '/og.png',
                     width: 1200,
                     height: 630,
                     alt: `Convert ${timeConversion.fromName} to ${timeConversion.toName} Time`,
@@ -41,21 +47,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             ],
         },
         twitter: {
-            title: `Convert ${timeConversion.fromName} to ${timeConversion.toName} Time`,
+            title: `Convert ${timeConversion.fromName} to ${timeConversion.toName} Time | ${SITE_NAME}`,
             description: `Free online time converter for ${timeConversion.fromName} (${timeConversion.fromZone}) to ${timeConversion.toName} (${timeConversion.toZone}).`,
             card: 'summary_large_image',
-            images: [
-                {
-                    url: `https://freetoolshubs.com/time/${slug}.png`,
-                    width: 1200,
-                    height: 630,
-                    alt: `Convert ${timeConversion.fromName} to ${timeConversion.toName} Time`,
-                },
-            ],
+            images: ['/og.png'],
         },
-        alternates: {
-            canonical: `/time/${slug}`
-        }
     };
 }
 

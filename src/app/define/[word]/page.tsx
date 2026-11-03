@@ -24,7 +24,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const { word } = await params;
     const wordData = await fetchWordData(word);
 
-    if (!wordData) return { title: 'Definition Not Found' };
+    if (!wordData) {
+        return {
+            title: 'Definition Not Found',
+            robots: { index: false, follow: false }
+        };
+    }
 
     // Get first definition text
     const firstDef = wordData.meanings[0]?.definitions[0]?.definition || '';

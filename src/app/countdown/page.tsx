@@ -5,38 +5,32 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
 import { JsonLd } from '@/components/seo/JsonLd';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 
 export const metadata = {
-    title: 'Live Countdown Timers - Days Until Holidays & Events',
+    title: `Live Countdown Timers - Days Until Holidays & Events | ${SITE_NAME}`,
     description: 'Track time remaining until Christmas, New Year, Halloween, and other major events. Accurate live countdown timers for holidays and milestones.',
     keywords: ['countdown timer', 'holiday countdown', 'days until christmas', 'live timer', 'event tracker'],
     openGraph: {
-        title: 'Live Countdown Timers - Days Until Holidays & Events',
+        title: `Live Countdown Timers - Days Until Holidays & Events | ${SITE_NAME}`,
         description: 'Track time remaining until Christmas, New Year, Halloween, and other major events. Accurate live countdown timers for holidays and milestones.',
         type: 'website',
-        url: 'https://freetoolshubs.com/countdown',
-        siteName: 'Free Tools',
+        url: `${SITE_URL}/countdown`,
+        siteName: SITE_NAME,
         images: [
             {
-                url: 'https://freetoolshubs.com/countdown.png',
+                url: '/og.png',
                 width: 1200,
                 height: 630,
-                alt: 'Live Countdown Timers - Days Until Holidays & Events',
+                alt: `Live Countdown Timers - Days Until Holidays & Events | ${SITE_NAME}`,
             },
         ],
     },
     twitter: {
-        title: 'Live Countdown Timers - Days Until Holidays & Events',
+        title: `Live Countdown Timers - Days Until Holidays & Events | ${SITE_NAME}`,
         description: 'Track time remaining until Christmas, New Year, Halloween, and other major events. Accurate live countdown timers for holidays and milestones.',
         card: 'summary_large_image',
-        images: [
-            {
-                url: 'https://freetoolshubs.com/countdown.png',
-                width: 1200,
-                height: 630,
-                alt: 'Live Countdown Timers - Days Until Holidays & Events',
-            },
-        ],
+        images: ['/og.png'],
     },
     alternates: {
         canonical: '/countdown'

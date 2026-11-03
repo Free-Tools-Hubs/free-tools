@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import countries from '@/data/countries';
 import { Globe, Map, Users, Coins, Info } from 'lucide-react';
 import { ClientSearch } from '@/components/tools/ClientSearch';
-import { ExplorerGrid } from '@/components/tools/ExplorerGrid';
+import { StaticDirectoryGrid } from '@/components/tools/StaticDirectoryGrid';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { generateCountryHubArticle } from '@/lib/seo-generator';
@@ -51,7 +51,7 @@ export default function CountryHubPage() {
         <div className="min-h-screen flex flex-col bg-surface-50 dark:bg-surface-950">
             <JsonLd data={{
                 "@context": "https://schema.org",
-                "@type": "WebSite",
+                "@type": "CollectionPage",
                 "name": `Country Information Hub | ${SITE_NAME}`,
                 "description": "Comprehensive database of country facts and national information.",
                 "url": `${SITE_URL}/country`
@@ -106,18 +106,17 @@ export default function CountryHubPage() {
                     </div>
                 </div>
 
-                {/* The Alphabetical Explorer */}
-                <Suspense fallback={<div className="h-64 animate-pulse bg-muted rounded-xl" />}>
-                    <ExplorerGrid
-                        items={countries.map(c => ({
-                            label: c.name,
-                            slug: c.slug
-                        }))}
-                        basePath="/country"
-                        title="Country"
-                        itemIcon={<Globe size={14} />}
-                    />
-                </Suspense>
+                {/* Server-Rendered Static Alphabetical Directory - 100% Crawlable Links */}
+                <StaticDirectoryGrid
+                    items={countries.map(c => ({
+                        label: c.name,
+                        slug: c.slug,
+                        subLabel: c.capital ? `Capital: ${c.capital}` : undefined
+                    }))}
+                    basePath="/country"
+                    title="Country"
+                    itemIcon={<Globe size={16} />}
+                />
 
                 {/* Rich SEO Content Section */}
                 <div className="mt-20 border-t pt-20">

@@ -1,31 +1,34 @@
-export async function getExchangeRate(from: string, to: string) {
-    try {
-        // Current free API that doesn't require key for some queries, 
-        // or provides a simple fallback.
-        // For production, ExchangeRate-API or OpenExchangeRates should be used.
-        const res = await fetch(`https://api.exchangerate-api.com/v4/latest/${from}`, {
-            next: { revalidate: 3600 } // Cache for 1 hour
-        });
+import { cache } from 'react';
 
-        if (!res.ok) throw new Error('Failed to fetch exchange rates');
+/**
+ * Fetch exchange rate between two currencies.
+ * Uses React cache() for request deduplication across metadata and page execution.
+ */
+export const getExchangeRate = cache(async (from: string, to: string): Promise<number | null> => {
+    try {
+        const cleanFrom = from.trim().toUpperCase();
+        const cleanTo = to.trim().toUpperCase();
+
+        const res = await fetch(`https://api.exchangerate-api.com/v4/latest/${encodeURIComponent(cleanFrom)}`);
+
+        if (!res.ok) return null;
 
         const data = await res.json();
-        return data.rates[to] || null;
+        return (data && data.rates && data.rates[cleanTo]) ? data.rates[cleanTo] : null;
     } catch (error) {
-        console.error('Error fetching currency data:', error);
+        console.error(`Error fetching currency rate for ${from}->${to}:`, error);
         return null;
     }
-}
+});
 
-export async function getAllCurrencyRates(base: string) {
+export const getAllCurrencyRates = cache(async (base: string): Promise<Record<string, number> | null> => {
     try {
-        const res = await fetch(`https://api.exchangerate-api.com/v4/latest/${base}`, {
-            next: { revalidate: 3600 }
-        });
+        const cleanBase = base.trim().toUpperCase();
+        const res = await fetch(`https://api.exchangerate-api.com/v4/latest/${encodeURIComponent(cleanBase)}`);
         if (!res.ok) return null;
         const data = await res.json();
-        return data.rates;
+        return data?.rates || null;
     } catch (error) {
         return null;
     }
-}
+});

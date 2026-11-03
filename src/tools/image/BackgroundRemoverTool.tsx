@@ -3,7 +3,6 @@
 import { useState, useCallback } from 'react';
 import FileUploader from '@/components/tools/FileUploader';
 import { Download, Eraser, Image as ImageIcon, Loader2 } from 'lucide-react';
-import { removeBackground } from '@imgly/background-removal';
 import type { Config } from '@imgly/background-removal';
 
 interface ConvertedImage {
@@ -43,6 +42,7 @@ export default function BackgroundRemoverTool() {
                 }
             };
 
+            const { removeBackground } = await import('@imgly/background-removal');
             // @ts-ignore
             const finalBlob = await removeBackground(target.originalFile, config) as any;
 

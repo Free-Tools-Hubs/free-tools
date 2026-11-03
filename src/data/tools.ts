@@ -5,8 +5,8 @@ export const tools: ToolDefinition[] = [
     // File & Image Tools
     {
         id: 'png-to-jpg',
-        title: 'PNG to JPG Converter',
-        description: 'Convert PNG images to JPG format online for free.',
+        title: 'PNG to JPG Converter Online - 100% Free & Private',
+        description: 'Convert PNG images to JPG format online in seconds. 100% free, private browser-side conversion with no file uploads to servers.',
         longDescription: 'Our PNG to JPG converter allows you to quickly transform your PNG files into high-quality JPEG images. This tool is perfect for reducing file sizes while maintaining visual clarity. It supports batch conversion and ensures your privacy by processing everything in your browser—no registration required.',
         category: 'image',
         slug: 'png-to-jpg',
@@ -28,7 +28,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your PNG file, select quality, and click Convert.',
         relatedToolIds: ['jpg-to-png', 'webp-to-jpg', 'compress-image'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'jpg-to-png',
@@ -51,7 +51,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select your JPG files and click the convert button to get your PNGs.',
         relatedToolIds: ['png-to-jpg', 'webp-to-jpg'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'image-to-pdf',
@@ -74,7 +74,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your images, arrange them, and click "Generate PDF".',
         relatedToolIds: ['pdf-to-jpg', 'screenshot-to-pdf'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'pdf-to-jpg',
@@ -97,12 +97,12 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select your PDF file and download the extracted images as a ZIP archive.',
         relatedToolIds: ['image-to-pdf', 'compress-image'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'compress-image',
-        title: 'Compress Image',
-        description: 'Reduce image file size without losing quality.',
+        title: 'Compress Image Online - Reduce File Size for Free',
+        description: 'Reduce JPG, PNG, and WebP image file sizes without sacrificing quality. 100% free and processed locally in your browser with zero server uploads.',
         longDescription: 'Optimize your images for the web by reducing file sizes without noticeable loss in quality. This helps your website load faster, improves SEO, and saves storage space. Completely free and runs in-browser.',
         category: 'image',
         slug: 'compress-image',
@@ -120,7 +120,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your images, choose the compression level, and download the results.',
         relatedToolIds: ['resize-image', 'png-to-jpg'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'resize-image',
@@ -139,7 +139,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter the new width or height and click Resize.',
         relatedToolIds: ['crop-image', 'compress-image'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'crop-image',
@@ -158,7 +158,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select the area you want to keep and download the cropped image.',
         relatedToolIds: ['resize-image', 'image-watermark'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'color-hub',
@@ -170,7 +170,7 @@ export const tools: ToolDefinition[] = [
         icon: 'Palette',
         keywords: ['color palette generator', 'hex to rgb converter', 'random color maker', 'designer tools'],
         faqs: [
-             { question: 'What formats are supported?', answer: 'We support HEX, RGB, and HSL formats with instant conversion and copy functionality.' }
+            { question: 'What formats are supported?', answer: 'We support HEX, RGB, and HSL formats with instant conversion and copy functionality.' }
         ],
         usageExample: 'Choose a base color or click random to generate an entire design palette.',
         relatedToolIds: ['image-to-base64', 'favicon-generator'],
@@ -193,7 +193,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Drag your WebP file into the box and get a JPG instantly.',
         relatedToolIds: ['heic-to-jpg', 'png-to-jpg'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'heic-to-jpg',
@@ -212,7 +212,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your .HEIC files and download them as .JPG files.',
         relatedToolIds: ['webp-to-jpg', 'png-to-jpg'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'background-remover',
@@ -231,7 +231,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload a product photo or portrait and watch the background disappear.',
         relatedToolIds: ['crop-image', 'image-watermark'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'image-watermark',
@@ -250,7 +250,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Add your logo, place it in the corner, and download your watermarked image.',
         relatedToolIds: ['resize-image', 'background-remover'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'screenshot-to-pdf',
@@ -269,13 +269,13 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your screenshots and get a PDF document ready for sharing.',
         relatedToolIds: ['image-to-pdf', 'pdf-to-jpg'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     // PDF Tools
     {
         id: 'merge-pdf',
-        title: 'Merge PDF',
-        description: 'Combine multiple PDF files into one document.',
+        title: 'Merge PDF Files Online - Free Multi-PDF Combiner',
+        description: 'Combine multiple PDF documents into one single file online. Fast, secure, and free with local browser processing and zero file storage.',
         longDescription: 'Merge PDF documents into a single file easily. Arrange your documents in the sequence you prefer. It is fast, free, and secure as all processing happens locally in your browser.',
         category: 'pdf',
         slug: 'merge-pdf',
@@ -293,7 +293,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your PDF files, arrange them, and click "Merge PDF".',
         relatedToolIds: ['split-pdf', 'compress-pdf'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'split-pdf',
@@ -312,7 +312,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select your PDF, choose the pages to extract, and download the results.',
         relatedToolIds: ['merge-pdf', 'pdf-to-jpg'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'compress-pdf',
@@ -331,7 +331,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your PDF and choose your preferred compression level.',
         relatedToolIds: ['merge-pdf', 'unlock-pdf'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'rotate-pdf',
@@ -350,7 +350,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select the pages you want to rotate and use the rotation buttons.',
         relatedToolIds: ['merge-pdf', 'split-pdf'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'pdf-to-word',
@@ -369,7 +369,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your PDF and wait for the conversion to finish.',
         relatedToolIds: ['word-to-pdf', 'pdf-to-jpg'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'word-to-pdf',
@@ -388,7 +388,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select your Word file and download your new PDF.',
         relatedToolIds: ['pdf-to-word', 'excel-to-pdf'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'excel-to-pdf',
@@ -407,7 +407,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your Excel file and download the PDF version.',
         relatedToolIds: ['word-to-pdf', 'powerpoint-to-pdf'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'powerpoint-to-pdf',
@@ -426,7 +426,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your presentation slides and get a PDF in seconds.',
         relatedToolIds: ['word-to-pdf', 'excel-to-pdf'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'add-watermark-to-pdf',
@@ -445,7 +445,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your PDF, design your watermark, and download the protected file.',
         relatedToolIds: ['protect-pdf', 'unlock-pdf'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'unlock-pdf',
@@ -464,7 +464,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your protected PDF, enter the password, and download the unlocked version.',
         relatedToolIds: ['protect-pdf', 'compress-pdf'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'protect-pdf',
@@ -483,7 +483,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Upload your PDF, set a password, and download the encrypted file.',
         relatedToolIds: ['unlock-pdf', 'add-watermark-to-pdf'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     // Text Tools
     {
@@ -503,7 +503,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your content into the editor and view the statistics update instantly.',
         relatedToolIds: ['case-converter', 'remove-duplicate-lines'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'character-counter',
@@ -522,7 +522,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Type or paste your text and select a target platform to see if you are within the limit.',
         relatedToolIds: ['word-counter', 'case-converter'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'case-converter',
@@ -541,7 +541,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your text, choose the desired case format, and copy the result.',
         relatedToolIds: ['word-counter', 'sort-text-lines'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'remove-duplicate-lines',
@@ -560,7 +560,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your list and click "Remove Duplicates" to get a unique set of lines.',
         relatedToolIds: ['sort-text-lines', 'word-counter'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'sort-text-lines',
@@ -579,7 +579,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Input your list, choose your sorting method, and instantly see the ordered result.',
         relatedToolIds: ['remove-duplicate-lines', 'case-converter'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'text-diff-checker',
@@ -598,7 +598,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste the original text in the left box and the modified text in the right box.',
         relatedToolIds: ['word-counter', 'remove-duplicate-lines'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'unicode-explorer',
@@ -610,7 +610,7 @@ export const tools: ToolDefinition[] = [
         icon: 'Sticker',
         keywords: ['unicode symbols', 'emoji list', 'copy arrows', 'alt codes', 'special characters'],
         faqs: [
-             { question: 'What is Unicode?', answer: 'Unicode is a universal character encoding standard that provides a unique number for every character, regardless of platform, device, application, or language.' }
+            { question: 'What is Unicode?', answer: 'Unicode is a universal character encoding standard that provides a unique number for every character, regardless of platform, device, application, or language.' }
         ],
         usageExample: 'Select a category or search by hex code to find the symbol you need.',
         relatedToolIds: ['word-counter', 'character-counter'],
@@ -620,8 +620,8 @@ export const tools: ToolDefinition[] = [
     // Developer Tools
     {
         id: 'json-formatter',
-        title: 'JSON Formatter',
-        description: 'Beautify and format your JSON data for better readability.',
+        title: 'JSON Formatter & Validator Online - Beautify & Fix JSON',
+        description: 'Format, validate, parse, and beautify your JSON data online with instant syntax error detection and indentation control. 100% browser-based privacy.',
         longDescription: 'Validate and format your minified JSON data into a human-readable format. Our tool handles deep nesting, arrays, and large objects with ease. 100% browser-side processing ensures your data stays private.',
         category: 'developer',
         slug: 'json-formatter',
@@ -639,7 +639,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your raw JSON text and click "Format" to get a clean, indented version.',
         relatedToolIds: ['json-validator', 'base64-encode-decode'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'json-validator',
@@ -658,12 +658,12 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your JSON and click "Validate". If there are errors, they will be highlighted immediately.',
         relatedToolIds: ['json-formatter', 'jwt-decoder'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'base64-encode-decode',
-        title: 'Base64 Encoder / Decoder',
-        description: 'Encode or decode text and files to and from Base64 format.',
+        title: 'Base64 Encoder & Decoder Online - Fast Text & Binary Tool',
+        description: 'Encode and decode text, strings, and binary files to Base64 format instantly. Client-side, fast, completely free with zero server logging.',
         longDescription: 'Convert plain text or binary data to Base64 format and vice versa. Essential for handling data in environments that only support text-based transport, like data URIs or email attachments.',
         category: 'developer',
         slug: 'base64-encode-decode',
@@ -677,7 +677,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select "Encode" or "Decode", enter your content, and get the result instantly.',
         relatedToolIds: ['url-encoder-decoder', 'json-formatter'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'url-encoder-decoder',
@@ -696,7 +696,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your URL or text string and click Encode or Decode to transform it.',
         relatedToolIds: ['base64-encode-decode', 'regex-tester'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'regex-tester',
@@ -715,7 +715,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter your pattern and the test string to see matches highlighted in real-time.',
         relatedToolIds: ['js-minifier', 'url-encoder-decoder'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'timestamp-converter',
@@ -734,7 +734,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter a timestamp or a date string to see the conversion in various formats.',
         relatedToolIds: ['json-formatter', 'url-encoder-decoder'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'html-minifier',
@@ -753,7 +753,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your HTML and click Minify to get the compressed version.',
         relatedToolIds: ['css-minifier', 'js-minifier'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'css-minifier',
@@ -772,7 +772,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Input your CSS code and copy the minified output to your production project.',
         relatedToolIds: ['html-minifier', 'js-minifier'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'js-minifier',
@@ -791,7 +791,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your script and get a production-ready minified JS file.',
         relatedToolIds: ['html-minifier', 'css-minifier'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'url-encoder',
@@ -803,7 +803,7 @@ export const tools: ToolDefinition[] = [
         icon: 'Link',
         keywords: ['url encoder', 'url decoder online', 'encode web url', 'fix link syntax'],
         faqs: [
-             { question: 'What does URL encoding do?', answer: 'It converts special characters into a format that is safe for transmission over the internet.' }
+            { question: 'What does URL encoding do?', answer: 'It converts special characters into a format that is safe for transmission over the internet.' }
         ],
         usageExample: 'Enter your URL to get the properly encoded or decoded string.',
         relatedToolIds: ['base64-encode-decode', 'hash-generator'],
@@ -819,7 +819,7 @@ export const tools: ToolDefinition[] = [
         icon: 'ShieldCheck',
         keywords: ['hash generator', 'sha256 online', 'sha512 generator', 'sha1 hash maker', 'crypto tool'],
         faqs: [
-             { question: 'Is my data safe?', answer: 'Yes, hashing is performed locally in your browser using the native Web Crypto API. No data is sent to any server.' }
+            { question: 'Is my data safe?', answer: 'Yes, hashing is performed locally in your browser using the native Web Crypto API. No data is sent to any server.' }
         ],
         usageExample: 'Enter your string and get multiple secure hash values instantly.',
         relatedToolIds: ['password-generator', 'uuid-generator'],
@@ -846,7 +846,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Paste your JWT string to see the header and payload data formatted clearly.',
         relatedToolIds: ['json-formatter', 'json-validator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'json-to-csv',
@@ -906,7 +906,7 @@ export const tools: ToolDefinition[] = [
         icon: 'FileCode',
         keywords: ['json to xml', 'convert json to xml online', 'json2xml converter'],
         faqs: [
-             { question: 'Does it handle root elements?', answer: 'Yes, you can specify a custom root element name for the generated XML.' }
+            { question: 'Does it handle root elements?', answer: 'Yes, you can specify a custom root element name for the generated XML.' }
         ],
         usageExample: 'Paste your JSON and specify a root name to get the XML equivalent.',
         relatedToolIds: ['xml-to-json', 'json-formatter'],
@@ -922,7 +922,7 @@ export const tools: ToolDefinition[] = [
         icon: 'Braces',
         keywords: ['xml to json', 'convert xml to json online', 'xml2json converter'],
         faqs: [
-             { question: 'Is nested XML supported?', answer: 'Yes, our converter accurately preserves the hierarchy of your XML data in the final JSON.' }
+            { question: 'Is nested XML supported?', answer: 'Yes, our converter accurately preserves the hierarchy of your XML data in the final JSON.' }
         ],
         usageExample: 'Paste your XML source and copy the structured JSON result.',
         relatedToolIds: ['json-to-xml', 'json-validator'],
@@ -938,7 +938,7 @@ export const tools: ToolDefinition[] = [
         icon: 'Binary',
         keywords: ['image to base64', 'binary to text converter', 'data uri generator', 'embed image in css'],
         faqs: [
-             { question: 'Why use Base64 for images?', answer: 'It reduces latencies for small assets by eliminating the need for separate network requests.' }
+            { question: 'Why use Base64 for images?', answer: 'It reduces latencies for small assets by eliminating the need for separate network requests.' }
         ],
         usageExample: 'Upload your image and copy the generated data URI string.',
         relatedToolIds: ['base64-to-image', 'compress-image'],
@@ -954,7 +954,7 @@ export const tools: ToolDefinition[] = [
         icon: 'Image',
         keywords: ['base64 to image', 'decode base64 image', 'preview data uri', 'base64 decoder online'],
         faqs: [
-             { question: 'Can I download the image?', answer: 'Yes, you can preview the image and download it as a PNG or JPG file.' }
+            { question: 'Can I download the image?', answer: 'Yes, you can preview the image and download it as a PNG or JPG file.' }
         ],
         usageExample: 'Paste your Base64 string and download the reconstructed image.',
         relatedToolIds: ['image-to-base64', 'base64-encode-decode'],
@@ -970,7 +970,7 @@ export const tools: ToolDefinition[] = [
         icon: 'Braces',
         keywords: ['json to yaml', 'json to yml converter', 'convert json to yaml free'],
         faqs: [
-             { question: 'Why use YAML instead of JSON?', answer: 'YAML is easier for humans to read and write, and it supports features like comments and anchors.' }
+            { question: 'Why use YAML instead of JSON?', answer: 'YAML is easier for humans to read and write, and it supports features like comments and anchors.' }
         ],
         usageExample: 'Paste your JSON and get a clean YAML output with proper indentation.',
         relatedToolIds: ['yaml-to-json', 'json-validator'],
@@ -986,7 +986,7 @@ export const tools: ToolDefinition[] = [
         icon: 'Braces',
         keywords: ['yaml formatter', 'beautify yaml', 'yaml validator', 'fix yaml indentation'],
         faqs: [
-             { question: 'What indentation size is recommended?', answer: 'Most modern systems use 2 spaces for YAML, but we support both 2 and 4 spaces.' }
+            { question: 'What indentation size is recommended?', answer: 'Most modern systems use 2 spaces for YAML, but we support both 2 and 4 spaces.' }
         ],
         usageExample: 'Paste your YAML and get a perfectly formatted version instantly.',
         relatedToolIds: ['json-to-yaml', 'yaml-to-json'],
@@ -1002,7 +1002,7 @@ export const tools: ToolDefinition[] = [
         icon: 'FileCode',
         keywords: ['markdown to html', 'md to html converter', 'convert markdown online'],
         faqs: [
-             { question: 'Does it support Github Flavored Markdown?', answer: 'Yes, our converter supports GFM features like tables, task lists, and strikethrough.' }
+            { question: 'Does it support Github Flavored Markdown?', answer: 'Yes, our converter supports GFM features like tables, task lists, and strikethrough.' }
         ],
         usageExample: 'Enter your markdown and copy the rendered HTML or the raw code.',
         relatedToolIds: ['html-to-markdown', 'word-counter'],
@@ -1018,7 +1018,7 @@ export const tools: ToolDefinition[] = [
         icon: 'FileCode',
         keywords: ['html to markdown', 'html to md converter', 'clean html to text'],
         faqs: [
-             { question: 'Will it preserve images and links?', answer: 'Yes, it accurately converts <a> and <img> tags into their respective Markdown equivalents.' }
+            { question: 'Will it preserve images and links?', answer: 'Yes, it accurately converts <a> and <img> tags into their respective Markdown equivalents.' }
         ],
         usageExample: 'Paste your HTML snippet and get the simplified Markdown version instantly.',
         relatedToolIds: ['markdown-to-html', 'case-converter'],
@@ -1046,7 +1046,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter your date of birth and click "Calculate Age" to see the result.',
         relatedToolIds: ['date-difference-calculator', 'time-duration-calculator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'percentage-calculator',
@@ -1065,7 +1065,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select the type of calculation, enter your numbers, and get the percentage result.',
         relatedToolIds: ['discount-calculator', 'loan-emi-calculator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'loan-emi-calculator',
@@ -1084,7 +1084,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter the principal amount, interest rate, and months/years to see your monthly payment.',
         relatedToolIds: ['percentage-calculator', 'discount-calculator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'gpa-calculator',
@@ -1103,7 +1103,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Add your courses, select the grade, enter credits, and view your GPA instantly.',
         relatedToolIds: ['age-calculator', 'percentage-calculator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'bmi-calculator',
@@ -1122,7 +1122,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter your weight and height in metric or imperial units to get your BMI score.',
         relatedToolIds: ['age-calculator', 'percentage-calculator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'date-difference-calculator',
@@ -1141,7 +1141,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select the start and end dates to see the duration in multiple units.',
         relatedToolIds: ['age-calculator', 'time-duration-calculator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'discount-calculator',
@@ -1160,7 +1160,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter the original price and the discount percentage to see your savings.',
         relatedToolIds: ['percentage-calculator', 'loan-emi-calculator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'time-duration-calculator',
@@ -1179,7 +1179,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter the start time and end time to get the total duration.',
         relatedToolIds: ['date-difference-calculator', 'age-calculator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     // Generators
     {
@@ -1203,7 +1203,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter your URL or text, customize the appearance, and download your QR code.',
         relatedToolIds: ['barcode-generator', 'slug-generator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'barcode-generator',
@@ -1222,7 +1222,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter the value, select the barcode type, and generate your barcode image.',
         relatedToolIds: ['qr-code-generator', 'uuid-generator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'uuid-generator',
@@ -1241,7 +1241,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Click "Generate" to get a new batch of unique UUIDs.',
         relatedToolIds: ['password-generator', 'slug-generator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'slug-generator',
@@ -1260,7 +1260,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Type your title and copy the generated slug for your article or page.',
         relatedToolIds: ['qr-code-generator', 'uuid-generator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'fake-data-generator',
@@ -1279,12 +1279,12 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select the fields you need and generate a list of mock data in various formats like JSON or CSV.',
         relatedToolIds: ['username-generator', 'random-text-generator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'password-generator',
-        title: 'Strong Password Generator',
-        description: 'Create secure and strong random passwords.',
+        title: 'Strong Password Generator Online - Customizable & Secure',
+        description: 'Generate strong, randomized passwords instantly in your browser with custom length, symbols, numbers, and zero server logging.',
         longDescription: 'Generate cryptographically secure passwords that are impossible to guess. Customize length and include uppercase letters, numbers, and special symbols for maximum security. 100% browser-side generation.',
         category: 'generators',
         slug: 'password-generator',
@@ -1298,7 +1298,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select your preferred length and security options, then copy your new password.',
         relatedToolIds: ['uuid-generator', 'username-generator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'username-generator',
@@ -1317,7 +1317,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Enter a keyword or click "Random" to get a list of creative username ideas.',
         relatedToolIds: ['fake-data-generator', 'password-generator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'random-text-generator',
@@ -1336,7 +1336,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Choose the type of text you need, set the parameters, and click Generate.',
         relatedToolIds: ['lorem-ipsum-generator', 'password-generator'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     {
         id: 'lorem-ipsum-generator',
@@ -1355,7 +1355,7 @@ export const tools: ToolDefinition[] = [
         ],
         usageExample: 'Select the number of paragraphs you need and click Generate.',
         relatedToolIds: ['random-text-generator', 'word-counter'],
-        lastUpdated: '2026-03-08'
+        lastUpdated: '2026-11-02'
     },
     // AI Tools
     {
@@ -1368,7 +1368,7 @@ export const tools: ToolDefinition[] = [
         icon: 'Sparkles',
         keywords: ['ai prompt generator', 'chatgpt prompt engineering', 'midjourney prompt maker', 'optimize ai commands'],
         faqs: [
-             { question: 'Why use a prompt optimizer?', answer: 'AI models perform significantly better when given specific personas, context, and formatting constraints.' }
+            { question: 'Why use a prompt optimizer?', answer: 'AI models perform significantly better when given specific personas, context, and formatting constraints.' }
         ],
         usageExample: 'Enter your simple request and select a template to generate a professional engineering prompt.',
         relatedToolIds: ['random-text-generator', 'slug-generator'],
@@ -1385,7 +1385,7 @@ export const tools: ToolDefinition[] = [
         icon: 'Youtube',
         keywords: ['youtube tag generator', 'video seo tool', 'youtube title maker', 'increase video views'],
         faqs: [
-             { question: 'Does it guarantee more views?', answer: 'While it improves search visibility, views also depend on content quality and thumbnail engagement.' }
+            { question: 'Does it guarantee more views?', answer: 'While it improves search visibility, views also depend on content quality and thumbnail engagement.' }
         ],
         usageExample: 'Enter your video topic and target keywords to get a full set of metadata.',
         relatedToolIds: ['slug-generator', 'prompt-optimizer'],
@@ -1401,7 +1401,7 @@ export const tools: ToolDefinition[] = [
         icon: 'UserCircle',
         keywords: ['instagram bio maker', 'twitter bio generator', 'linkedin summary tool', 'professional bio writer'],
         faqs: [
-             { question: 'Which platforms are supported?', answer: 'We currently support Instagram, Twitter (X), and LinkedIn with tailored templates for each.' }
+            { question: 'Which platforms are supported?', answer: 'We currently support Instagram, Twitter (X), and LinkedIn with tailored templates for each.' }
         ],
         usageExample: 'Enter your name and expertise to get a variety of bio options optimized for your chosen platform.',
         relatedToolIds: ['youtube-metadata', 'slug-generator'],
@@ -1418,7 +1418,7 @@ export const tools: ToolDefinition[] = [
         icon: 'ShieldCheck',
         keywords: ['privacy policy generator', 'free privacy policy', 'gdpr compliance', 'website legal pages'],
         faqs: [
-             { question: 'Is this policy legally binding?', answer: 'Our templates follow global standard practices, but for specific legal advice, you should consult with a professional attorney.' }
+            { question: 'Is this policy legally binding?', answer: 'Our templates follow global standard practices, but for specific legal advice, you should consult with a professional attorney.' }
         ],
         usageExample: 'Fill in your website details and click Generate to get a professional policy template.',
         relatedToolIds: ['terms-generator', 'youtube-metadata'],
@@ -1434,7 +1434,7 @@ export const tools: ToolDefinition[] = [
         icon: 'Scale',
         keywords: ['terms and conditions generator', 'tos maker', 'website legal contract', 'terms of service generator'],
         faqs: [
-             { question: 'Why do I need T&C?', answer: 'Terms and Conditions establish the rules for using your service and protect you from legal liabilities.' }
+            { question: 'Why do I need T&C?', answer: 'Terms and Conditions establish the rules for using your service and protect you from legal liabilities.' }
         ],
         usageExample: 'Enter your business name and website address to generate a custom-tailored agreement.',
         relatedToolIds: ['privacy-policy-generator', 'social-bio-generator'],
@@ -1553,12 +1553,12 @@ export const tools: ToolDefinition[] = [
         icon: 'Search',
         keywords: ['file extension guide', 'mime type list', 'what is this file', 'open unknown files'],
         faqs: [
-             { question: 'What is a MIME type?', answer: 'A MIME type is a label used to identify a type of data. It is used by browsers and operating systems to determine how to process a file.' }
+            { question: 'What is a MIME type?', answer: 'A MIME type is a label used to identify a type of data. It is used by browsers and operating systems to determine how to process a file.' }
         ],
         usageExample: 'Search for any extension or format name to see its full profile.',
         relatedToolIds: ['word-counter', 'json-formatter'],
         lastUpdated: '2026-03-22',
-        customPath: '/formats'
+        customPath: '/file-extension'
     },
     // SEO Tools
     {

@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { topCities } from '@/lib/data-dictionaries';
 import { MapPin, Info, CloudSun, Wind, Thermometer } from 'lucide-react';
 import { ClientSearch } from '@/components/tools/ClientSearch';
-import { ExplorerGrid } from '@/components/tools/ExplorerGrid';
+import { StaticDirectoryGrid } from '@/components/tools/StaticDirectoryGrid';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { generateCityHubArticle } from '@/lib/seo-generator';
@@ -50,7 +50,7 @@ export default function CityHubPage() {
         <div className="min-h-screen flex flex-col bg-surface-50 dark:bg-surface-950">
             <JsonLd data={{
                 "@context": "https://schema.org",
-                "@type": "WebSite",
+                "@type": "CollectionPage",
                 "name": `City Weather Hub | ${SITE_NAME}`,
                 "description": "Find real-time weather information for any city in the world.",
                 "url": `${SITE_URL}/city`
@@ -105,18 +105,16 @@ export default function CityHubPage() {
                     </div>
                 </div>
 
-                {/* The Alphabetical Explorer - Prevents Link Bloat */}
-                <Suspense fallback={<div className="h-64 animate-pulse bg-muted rounded-xl" />}>
-                    <ExplorerGrid
-                        items={topCities.map(city => ({
-                            label: city,
-                            slug: city.toLowerCase().trim().replace(/\s+/g, '-')
-                        }))}
-                        basePath="/city"
-                        title="City"
-                        itemIcon={<MapPin size={14} />}
-                    />
-                </Suspense>
+                {/* Server-Rendered Static Alphabetical Directory - 100% Crawlable Links */}
+                <StaticDirectoryGrid
+                    items={topCities.map(city => ({
+                        label: city,
+                        slug: city.toLowerCase().trim().replace(/\s+/g, '-')
+                    }))}
+                    basePath="/city"
+                    title="City"
+                    itemIcon={<MapPin size={16} />}
+                />
 
                 {/* Rich SEO Content Section */}
                 <div className="mt-20 border-t pt-20">

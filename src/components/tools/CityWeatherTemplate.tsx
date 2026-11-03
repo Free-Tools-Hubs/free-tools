@@ -134,8 +134,8 @@ export function CityWeatherTemplate({ city, description, temp, feelsLike, humidi
                                     Planning a trip to <strong className="text-foreground">{city}</strong>? Currently, it's {temp > 25 ? 'quite warm' : temp < 10 ? 'chilly' : 'mild'}.
                                     {humidity > 70 ? ' Expect some humidity.' : ' The air is relatively dry.'}
                                 </p>
-                                <Link href={`/time-in/${city.toLowerCase()}`} className="text-xs font-black text-brand-primary hover:underline underline-offset-4 flex items-center gap-1">
-                                    CHECK LOCAL TIME <ChevronRight size={12} />
+                                <Link href="/time" className="text-xs font-black text-brand-primary hover:underline underline-offset-4 flex items-center gap-1">
+                                    CHECK WORLD TIME <ChevronRight size={12} />
                                 </Link>
                             </section>
                         </div>

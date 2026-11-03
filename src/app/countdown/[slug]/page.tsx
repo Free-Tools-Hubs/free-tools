@@ -2,6 +2,7 @@ import { CountdownTemplate } from '@/components/tools/CountdownTemplate';
 import countdowns from '@/data/countdowns';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 
 interface PageProps {
     params: Promise<{
@@ -21,19 +22,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!countdown) return { title: 'Not Found' };
 
+    const canonical = `/countdown/${slug}`;
+
     return {
-        title: `Countdown to ${countdown.eventName} | Live Timer`,
+        title: `Countdown to ${countdown.eventName} | Live Timer | ${SITE_NAME}`,
         description: countdown.description,
         keywords: `${countdown.eventName}, countdown, live timer, ${countdown.eventName} date, how many days until ${countdown.eventName}`,
+        alternates: {
+            canonical,
+        },
         openGraph: {
-            title: `Countdown to ${countdown.eventName} | Live Timer`,
+            title: `Countdown to ${countdown.eventName} | Live Timer | ${SITE_NAME}`,
             description: countdown.description,
             type: 'website',
-            url: `https://freetoolshubs.com/countdown/${slug}`,
-            siteName: 'Free Tools',
+            url: `${SITE_URL}${canonical}`,
+            siteName: SITE_NAME,
             images: [
                 {
-                    url: `https://freetoolshubs.com/countdown/${slug}.png`,
+                    url: '/og.png',
                     width: 1200,
                     height: 630,
                     alt: `Countdown to ${countdown.eventName} | Live Timer`,
@@ -41,21 +47,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             ],
         },
         twitter: {
-            title: `Countdown to ${countdown.eventName} | Live Timer`,
+            title: `Countdown to ${countdown.eventName} | Live Timer | ${SITE_NAME}`,
             description: countdown.description,
             card: 'summary_large_image',
-            images: [
-                {
-                    url: `https://freetoolshubs.com/countdown/${slug}.png`,
-                    width: 1200,
-                    height: 630,
-                    alt: `Countdown to ${countdown.eventName} | Live Timer`,
-                },
-            ],
+            images: ['/og.png'],
         },
-        alternates: {
-            canonical: `/countdown/${slug}`
-        }
     };
 }
 

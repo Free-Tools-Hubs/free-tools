@@ -5,38 +5,32 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
 import { JsonLd } from '@/components/seo/JsonLd';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 
 export const metadata = {
-    title: 'World Time Converter - Live Global Timezone Conversion',
+    title: `World Time Converter - Live Global Timezone Conversion | ${SITE_NAME}`,
     description: 'Convert time between PST, IST, EST, GMT, and other global timezones. Accurate world clock and timezone comparison tool for international scheduling.',
     keywords: ['world time converter', 'timezone conversion', 'pst to ist', 'est to pst', 'global time clock'],
     openGraph: {
-        title: 'World Time Converter - Live Global Timezone Conversion',
+        title: `World Time Converter - Live Global Timezone Conversion | ${SITE_NAME}`,
         description: 'Convert time between PST, IST, EST, GMT, and other global timezones. Accurate world clock and timezone comparison tool for international scheduling.',
         type: 'website',
-        url: 'https://freetoolshubs.com/time',
-        siteName: 'Free Tools',
+        url: `${SITE_URL}/time`,
+        siteName: SITE_NAME,
         images: [
             {
-                url: 'https://freetoolshubs.com/time.png',
+                url: '/og.png',
                 width: 1200,
                 height: 630,
-                alt: 'World Time Converter - Live Global Timezone Conversion',
+                alt: `World Time Converter - Live Global Timezone Conversion | ${SITE_NAME}`,
             },
         ],
     },
     twitter: {
-        title: 'World Time Converter - Live Global Timezone Conversion',
+        title: `World Time Converter - Live Global Timezone Conversion | ${SITE_NAME}`,
         description: 'Convert time between PST, IST, EST, GMT, and other global timezones. Accurate world clock and timezone comparison tool for international scheduling.',
         card: 'summary_large_image',
-        images: [
-            {
-                url: 'https://freetoolshubs.com/time.png',
-                width: 1200,
-                height: 630,
-                alt: 'World Time Converter - Live Global Timezone Conversion',
-            },
-        ],
+        images: ['/og.png'],
     },
     alternates: {
         canonical: '/time'

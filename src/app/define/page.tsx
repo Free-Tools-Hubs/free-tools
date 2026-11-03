@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { topWords } from '@/lib/data-dictionaries';
 import { BookOpen, Languages, Sparkles, MessageSquare, Info } from 'lucide-react';
 import { ClientSearch } from '@/components/tools/ClientSearch';
-import { ExplorerGrid } from '@/components/tools/ExplorerGrid';
+import { StaticDirectoryGrid } from '@/components/tools/StaticDirectoryGrid';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { generateDictionaryHubArticle } from '@/lib/seo-generator';
@@ -49,7 +49,7 @@ export default function DictionaryHubPage() {
         <div className="min-h-screen flex flex-col bg-surface-50 dark:bg-surface-950">
             <JsonLd data={{
                 "@context": "https://schema.org",
-                "@type": "WebSite",
+                "@type": "CollectionPage",
                 "name": `English Dictionary Hub | ${SITE_NAME}`,
                 "description": "Free online resource for word definitions and English vocabulary.",
                 "url": `${SITE_URL}/define`
@@ -101,18 +101,16 @@ export default function DictionaryHubPage() {
                     </div>
                 </div>
 
-                {/* The Alphabetical Explorer */}
-                <Suspense fallback={<div className="h-64 animate-pulse bg-muted rounded-xl" />}>
-                    <ExplorerGrid
-                        items={topWords.map(word => ({
-                            label: word,
-                            slug: word.toLowerCase().trim().replace(/\s+/g, '-')
-                        }))}
-                        basePath="/define"
-                        title="Vocabulary"
-                        itemIcon={<BookOpen size={14} />}
-                    />
-                </Suspense>
+                {/* Server-Rendered Static Alphabetical Directory - 100% Crawlable Links */}
+                <StaticDirectoryGrid
+                    items={topWords.map(word => ({
+                        label: word,
+                        slug: word.toLowerCase().trim().replace(/\s+/g, '-')
+                    }))}
+                    basePath="/define"
+                    title="Dictionary"
+                    itemIcon={<BookOpen size={16} />}
+                />
 
                 {/* Rich SEO Content Section */}
                 <div className="mt-20 border-t pt-20">

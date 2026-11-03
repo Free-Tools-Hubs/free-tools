@@ -8,134 +8,150 @@ import countries from '@/data/countries';
 import randoms from '@/data/randoms';
 import { commonCurrencyPairs } from '@/data/currencies';
 import { topCities, topWords } from '@/lib/data-dictionaries';
-
 import { namedColors } from '@/data/named-colors';
 import { normalizeHex } from '@/lib/color-utils';
-
 import { fileExtensions } from '@/data/file-extensions';
-
 import { unicodeSymbols } from '@/data/unicode-symbols';
-
 import { SITE_URL } from '@/lib/config';
 
 export const dynamic = 'force-static';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = SITE_URL;
-    // 1. Core routes
-    const routes = [
-        '', '/tools', '/about', '/privacy', '/terms',
-        '/city', '/country', '/define', '/currency',
-        '/convert', '/random', '/time', '/countdown', '/colors', '/file-extension', '/symbols'
+    const staticLastModified = new Date('2026-03-08T00:00:00.000Z');
+
+    // 1. Core indexable hub pages (Utility pages like /privacy, /terms, /disclaimer, /contact have noindex and are omitted)
+    const coreRoutes: MetadataRoute.Sitemap = [
+        '',
+        '/tools',
+        '/about',
+        '/city',
+        '/country',
+        '/define',
+        '/currency',
+        '/convert',
+        '/random',
+        '/time',
+        '/countdown',
+        '/colors',
+        '/file-extension',
+        '/symbols'
     ].map((route) => ({
         url: `${baseUrl}${route}`,
-        lastModified: new Date(),
+        lastModified: staticLastModified,
         changeFrequency: 'weekly' as const,
-        priority: 1.0,
+        priority: route === '' ? 1.0 : 0.9,
     }));
 
     // 2. Category routes
-    const categoryRoutes = categories.map((cat) => ({
+    const categoryRoutes: MetadataRoute.Sitemap = categories.map((cat) => ({
         url: `${baseUrl}/tools/${cat.id}`,
-        lastModified: new Date(),
+        lastModified: staticLastModified,
         changeFrequency: 'weekly' as const,
         priority: 0.8,
     }));
 
-    // 3. Tool routes
-    const toolRoutes = tools.map((tool) => ({
-        url: `${baseUrl}/tools/${tool.category}/${tool.slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.9,
-    }));
+    // 3. Tool routes (Filter out tools that have customPath redirects to prevent redirecting URLs in sitemap)
+    const toolRoutes: MetadataRoute.Sitemap = tools
+        .filter((tool) => !tool.customPath)
+        .map((tool) => ({
+            url: `${baseUrl}/tools/${tool.category}/${tool.slug}`,
+            lastModified: tool.lastUpdated ? new Date(tool.lastUpdated) : staticLastModified,
+            changeFrequency: 'monthly' as const,
+            priority: 0.9,
+        }));
 
-    // 4. Color Hub routes
-    const colorRoutes = namedColors.map((color) => ({
-        url: `${baseUrl}/colors/${normalizeHex(color.hex)}`,
-        lastModified: new Date(),
+    // 4. Color Hub routes (Deduplicated unique hexes)
+    const uniqueHexes = Array.from(new Set(namedColors.map((color) => normalizeHex(color.hex))));
+    const colorRoutes: MetadataRoute.Sitemap = uniqueHexes.map((hex) => ({
+        url: `${baseUrl}/colors/${hex}`,
+        lastModified: staticLastModified,
         changeFrequency: 'monthly' as const,
         priority: 0.6,
     }));
 
     // 5. File Encyclopedia routes
-    const fileRoutes = fileExtensions.map((file) => ({
-        url: `${baseUrl}/file-extension/${file.ext}`,
-        lastModified: new Date(),
+    const fileRoutes: MetadataRoute.Sitemap = fileExtensions.map((file) => ({
+        url: `${baseUrl}/file-extension/${file.ext.toLowerCase()}`,
+        lastModified: staticLastModified,
         changeFrequency: 'monthly' as const,
         priority: 0.6,
     }));
 
     // 6. Symbol Hub routes
-    const symbolRoutes = unicodeSymbols.map((s) => ({
+    const symbolRoutes: MetadataRoute.Sitemap = unicodeSymbols.map((s) => ({
         url: `${baseUrl}/symbols/${s.slug}`,
-        lastModified: new Date(),
+        lastModified: staticLastModified,
         changeFrequency: 'monthly' as const,
         priority: 0.6,
     }));
 
     // 7. Programmatic Tool routes (Conversions, Time, Countdowns)
-    const conversionRoutes = conversions.map((c) => ({
+    const conversionRoutes: MetadataRoute.Sitemap = conversions.map((c) => ({
         url: `${baseUrl}/convert/${c.slug}`,
-        lastModified: new Date(),
+        lastModified: staticLastModified,
         changeFrequency: 'monthly' as const,
         priority: 0.7,
     }));
 
-    const timeRoutes = times.map((t) => ({
+    const timeRoutes: MetadataRoute.Sitemap = times.map((t) => ({
         url: `${baseUrl}/time/${t.slug}`,
-        lastModified: new Date(),
+        lastModified: staticLastModified,
         changeFrequency: 'monthly' as const,
         priority: 0.6,
     }));
 
-    const countdownRoutes = countdowns.map((c) => ({
+    const countdownRoutes: MetadataRoute.Sitemap = countdowns.map((c) => ({
         url: `${baseUrl}/countdown/${c.slug}`,
-        lastModified: new Date(),
+        lastModified: staticLastModified,
         changeFrequency: 'monthly' as const,
         priority: 0.6,
     }));
 
-    // 6. Data Hubs (Countries, Randoms, Currencies)
-    const countryRoutes = countries.map((c) => ({
+    // 8. Data Hubs (Countries, Randoms, Currencies)
+    const countryRoutes: MetadataRoute.Sitemap = countries.map((c) => ({
         url: `${baseUrl}/country/${c.slug}`,
-        lastModified: new Date(),
+        lastModified: staticLastModified,
         changeFrequency: 'monthly' as const,
         priority: 0.7,
     }));
 
-    const randomRoutes = randoms.map((r) => ({
+    const randomRoutes: MetadataRoute.Sitemap = randoms.map((r) => ({
         url: `${baseUrl}/random/${r.slug}`,
-        lastModified: new Date(),
+        lastModified: staticLastModified,
         changeFrequency: 'monthly' as const,
         priority: 0.6,
     }));
 
-    const currencyRoutes = commonCurrencyPairs.map((p) => ({
+    const currencyRoutes: MetadataRoute.Sitemap = commonCurrencyPairs.map((p) => ({
         url: `${baseUrl}/currency/${p.from.toLowerCase()}-to-${p.to.toLowerCase()}`,
-        lastModified: new Date(),
+        lastModified: staticLastModified,
         changeFrequency: 'daily' as const,
         priority: 0.8,
     }));
 
-    // 7. Dictionary routes
-    const dictionaryRoutes = topWords.map((word) => ({
-        url: `${baseUrl}/define/${word.toLowerCase()}`,
-        lastModified: new Date(),
+    // 9. Dictionary routes (Unique top words)
+    const uniqueWords = Array.from(new Set(topWords.map((w) => w.trim().toLowerCase())));
+    const dictionaryRoutes: MetadataRoute.Sitemap = uniqueWords.map((word) => ({
+        url: `${baseUrl}/define/${word}`,
+        lastModified: staticLastModified,
         changeFrequency: 'monthly' as const,
         priority: 0.5,
     }));
 
-    // 8. City routes
-    const cityRoutes = topCities.map((city) => ({
-        url: `${baseUrl}/city/${city.toLowerCase().replace(/ /g, '-')}`,
-        lastModified: new Date(),
-        changeFrequency: 'hourly' as const,
-        priority: 0.8,
+    // 10. City routes (Deduplicated and normalized slug)
+    const uniqueCitySlugs = Array.from(
+        new Set(topCities.map((city) => city.trim().toLowerCase().replace(/ /g, '-')))
+    );
+    const cityRoutes: MetadataRoute.Sitemap = uniqueCitySlugs.map((slug) => ({
+        url: `${baseUrl}/city/${slug}`,
+        lastModified: staticLastModified,
+        changeFrequency: 'weekly' as const,
+        priority: 0.7,
     }));
 
-    return [
-        ...routes,
+    const allRoutes: MetadataRoute.Sitemap = [
+        ...coreRoutes,
         ...categoryRoutes,
         ...toolRoutes,
         ...colorRoutes,
@@ -148,6 +164,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ...randomRoutes,
         ...currencyRoutes,
         ...dictionaryRoutes,
-        ...cityRoutes
+        ...cityRoutes,
     ];
+
+    // Deduplicate entries by lowercase canonical URL to guarantee uniqueness
+    const urlMap = new Map<string, MetadataRoute.Sitemap[number]>();
+    for (const item of allRoutes) {
+        const key = item.url.toLowerCase();
+        if (!urlMap.has(key)) {
+            urlMap.set(key, item);
+        }
+    }
+
+    return Array.from(urlMap.values());
 }

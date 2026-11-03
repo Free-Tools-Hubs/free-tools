@@ -5,38 +5,32 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
 import { JsonLd } from '@/components/seo/JsonLd';
+import { SITE_NAME, SITE_URL } from '@/lib/config';
 
 export const metadata = {
-    title: 'Free Unit Converter - Instant Weight, Length & Unit Conversion',
+    title: `Free Unit Converter - Instant Weight, Length & Unit Conversion | ${SITE_NAME}`,
     description: 'Accurately convert weights (kg to lb), lengths (meters to feet), and other measurements with our free online unit converter. Fast, simple, and precise.',
     keywords: ['unit converter', 'weight conversion', 'length converter', 'kg to lb', 'metric to imperial'],
     openGraph: {
-        title: 'Free Unit Converter - Instant Weight, Length & Unit Conversion',
+        title: `Free Unit Converter - Instant Weight, Length & Unit Conversion | ${SITE_NAME}`,
         description: 'Accurately convert weights (kg to lb), lengths (meters to feet), and other measurements with our free online unit converter. Fast, simple, and precise.',
         type: 'website',
-        url: 'https://freetoolshubs.com/convert',
-        siteName: 'Free Tools',
+        url: `${SITE_URL}/convert`,
+        siteName: SITE_NAME,
         images: [
             {
-                url: 'https://freetoolshubs.com/convert.png',
+                url: '/og.png',
                 width: 1200,
                 height: 630,
-                alt: 'Free Unit Converter - Instant Weight, Length & Unit Conversion',
+                alt: `Free Unit Converter - Instant Weight, Length & Unit Conversion | ${SITE_NAME}`,
             },
         ],
     },
     twitter: {
-        title: 'Free Unit Converter - Instant Weight, Length & Unit Conversion',
+        title: `Free Unit Converter - Instant Weight, Length & Unit Conversion | ${SITE_NAME}`,
         description: 'Accurately convert weights (kg to lb), lengths (meters to feet), and other measurements with our free online unit converter. Fast, simple, and precise.',
         card: 'summary_large_image',
-        images: [
-            {
-                url: 'https://freetoolshubs.com/convert.png',
-                width: 1200,
-                height: 630,
-                alt: 'Free Unit Converter - Instant Weight, Length & Unit Conversion',
-            },
-        ],
+        images: ['/og.png'],
     },
     alternates: {
         canonical: '/convert'

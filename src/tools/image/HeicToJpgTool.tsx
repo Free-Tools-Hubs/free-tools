@@ -3,7 +3,6 @@
 import { useState, useCallback } from 'react';
 import FileUploader from '@/components/tools/FileUploader';
 import { Download, Image as ImageIcon, Trash2 } from 'lucide-react';
-import heic2any from 'heic2any';
 
 interface ConvertedImage {
     originalFile: File;
@@ -31,6 +30,7 @@ export default function HeicToJpgTool() {
         const target = images[imageIndex];
 
         try {
+            const heic2any = (await import('heic2any')).default;
             // heic2any returns a Blob or Blob[]
             const resultBlob = await heic2any({
                 blob: target.originalFile,
